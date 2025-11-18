@@ -1,0 +1,37 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: easier-tool-server
+  namespace: bcd07f-tools
+  labels:
+    app: easier-tool-server
+    app.kubernetes.io/component: easier-tool-server
+    app.kubernetes.io/instance: easier-tool-server
+spec:
+  nodeSelector: null
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/bcgov/easier-tool.git'
+    contextDir: server
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        name: 'node:16-alpine'
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'easier-tool-server:latest'
+  triggers:
+    - type: GitHub
+      github:
+        secret: YOUR_SERVER_GITHUB_SECRET
+    - type: Generic
+      generic:
+        secret: YOUR_SERVER_GENERIC_SECRET
+    - type: ConfigChange
+    - type: ImageChange
+status:
+  lastVersion: 0

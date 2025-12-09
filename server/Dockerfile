@@ -1,5 +1,5 @@
 # Use an official Node.js runtime as the base image
-FROM node:16-alpine
+FROM docker.io/library/node:24-alpine
 
 # Set the working directory inside the container
 WORKDIR /app

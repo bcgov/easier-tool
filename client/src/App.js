@@ -84,14 +84,51 @@ function App() {
         office: value,
         dcv: updatedDCV,
       }));
-    // auto-populate address based on address mapping
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        office: value,
+        request_office: value,
+        removal_office: value,
+      }));
+      const updatedAddress = addressMapping[value] || '';
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        request_office: value,
+        request_address : updatedAddress,
+        removal_address : updatedAddress,
+      }));
+    // auto-populate addresses based on address mapping
     } else if (name === 'request_office') {
       const updatedAddress = addressMapping[value] || '';
       setFormData((prevFormData) => ({
         ...prevFormData,
         request_office: value,
         request_address : updatedAddress,
-      }));   
+      }));
+    // auto-populate addresses based on address mapping
+    } else if (name === 'removal_office') {
+      const updatedAddress = addressMapping[value] || '';
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        removal_office: value,
+        removal_address : updatedAddress,
+      }));
+    // auto-populate request_firstname when firstname changes
+    } else if (name === 'firstname') {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        firstname: value,
+        request_firstname: value,
+        removal_firstname: value,
+      }));
+    // auto-populate request_lastname when lastname changes
+    } else if (name === 'lastname') {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        lastname: value,
+        request_lastname: value,
+        removal_lastname: value,
+      }));
     // Update checkboxes
     } else {
       setFormData((prevFormData) => ({
@@ -316,10 +353,10 @@ function App() {
             )}
 
             {/* if selected, insert Removal section */}
-            {formData.request_type && formData.request_type.includes('Removal') && (
+            {formData.request_type.includes('Removal') && (
               <RemovalSection 
                 formData={formData} 
-                handleInputChange={handleInputChange} 
+                onChange={handleInputChange} 
               />
             )}
 

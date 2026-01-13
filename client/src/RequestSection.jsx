@@ -421,24 +421,23 @@ export default function RequestSection({ formData, onChange }) {
             )}
             <div>
                 <p>Shipping Information:</p>
-                
                     <div>
-                        <label htmlFor="shipping_firstname">Site Contact First Name: </label>
+                        <label htmlFor="request_firstname">Site Contact First Name: </label>
                         <input
-                            id="shipping_firstname"
+                            id="request_firstname"
                             type="text"
-                            name="shipping_firstname"
-                            value={formData.shipping_firstname}
+                            name="request_firstname"
+                            value={formData.request_firstname}
                             onChange={onChange}
                         />
                     </div>
                     <div>
-                        <label htmlFor="shipping_lastname">Site Contact Last Name: </label>
+                        <label htmlFor="request_lastname">Site Contact Last Name: </label>
                         <input
-                            id="shipping_lastname"
+                            id="request_lastname"
                             type="text"
-                            name="shipping_lastname"
-                            value={formData.shipping_lastname}
+                            name="request_lastname"
+                            value={formData.request_lastname}
                             onChange={onChange}
                         />
                     </div>
@@ -449,7 +448,7 @@ export default function RequestSection({ formData, onChange }) {
                         onChange={onChange}
                     />
                     <div>
-                    <label htmlFor="request_address">Address:</label>
+                    <label htmlFor="request_address">Address: </label>
                     <input
                         id="request_address"
                         type="text"

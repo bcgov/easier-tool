@@ -1,7 +1,7 @@
 import React from 'react';
 import OfficeDropdown from './OfficeDropdown';
 
-export default function RemovalSection({ formData, onChange }) {
+export default function RemovalSection({ formData, onChange, onAddRemovalItem, onRemovalItemChange }) {
   return (
     <>
       <div className="header-container">
@@ -53,6 +53,98 @@ export default function RemovalSection({ formData, onChange }) {
                 </div>
             </div>                
         </section>
+
+        {(formData.removal_electronics === true || formData.removal_furniture === true || formData.removal_other === true) && (
+          <>
+            <p className="field-note">For Electronic devices or Furniture identified as either in "good" or "fair" condition, you are required to attach corresponding photos (below) as they may be listed for auction or offered to another Ministry.</p>
+          </>
+        )}
+        {formData.removal_office_supplies === true && (
+          <>
+            <p className="field-note">If requesting for removal of office stamps, please ensure references to the Ministry are removed (i.e. peel off the rubber, cut it and discard it before shipping the item).</p>           
+          </>
+        )}
+
+        {/* Items Table */}
+        <div style={{ marginTop: '20px' }}>
+          <h5>Items for Removal</h5>
+          <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '10px' }}>
+            <thead>
+              <tr style={{ backgroundColor: '#f0f0f0' }}>
+                <th style={{ border: '1px solid #ccc', padding: '8px' }}>Device Type</th>
+                <th style={{ border: '1px solid #ccc', padding: '8px' }}>Condition</th>
+                <th style={{ border: '1px solid #ccc', padding: '8px' }}>Description</th>
+                <th style={{ border: '1px solid #ccc', padding: '8px' }}>Dimensions</th>
+                <th style={{ border: '1px solid #ccc', padding: '8px' }}>Box Number</th>
+                <th style={{ border: '1px solid #ccc', padding: '8px' }}>Additional Info</th>
+              </tr>
+            </thead>
+            <tbody>
+              {(formData.removal_items || []).map((item) => (
+                <tr key={item.id}>
+                  <td style={{ border: '1px solid #ccc', padding: '8px' }}>
+                    <input 
+                      type="text" 
+                      placeholder="Device Type" 
+                      style={{ width: '100%' }}
+                      value={item.device}
+                      onChange={(e) => onRemovalItemChange(item.id, 'device', e.target.value)}
+                    />
+                  </td>
+                  <td style={{ border: '1px solid #ccc', padding: '8px' }}>
+                    <select 
+                      style={{ width: '100%' }}
+                      value={item.condition}
+                      onChange={(e) => onRemovalItemChange(item.id, 'condition', e.target.value)}
+                    >
+                      <option value="">Please Select: </option>
+                      <option value="good">Good</option>
+                      <option value="fair">Fair</option>
+                      <option value="poor">Poor</option>
+                    </select>
+                  </td>
+                  <td style={{ border: '1px solid #ccc', padding: '8px' }}>
+                    <input 
+                      type="text" 
+                      placeholder="Description" 
+                      style={{ width: '100%' }} 
+                      value={item.description}
+                      onChange={(e) => onRemovalItemChange(item.id, 'description', e.target.value)}
+                    />
+                  </td>
+                  <td style={{ border: '1px solid #ccc', padding: '8px' }}>
+                    <input 
+                      type="text" 
+                      placeholder="Dimensions" 
+                      style={{ width: '100%' }}
+                      value={item.dimensions}
+                      onChange={(e) => onRemovalItemChange(item.id, 'dimensions', e.target.value)}
+                    />
+                  </td>
+                  <td style={{ border: '1px solid #ccc', padding: '8px' }}>
+                    <input 
+                      type="text" 
+                      placeholder="Box Number" 
+                      style={{ width: '100%' }}
+                      value={item.box_number}
+                      onChange={(e) => onRemovalItemChange(item.id, 'box_number', e.target.value)}
+                    />
+                  </td>
+                  <td style={{ border: '1px solid #ccc', padding: '8px' }}>
+                    <input 
+                      type="text" 
+                      placeholder="Additional Info" 
+                      style={{ width: '100%' }}
+                      value={item.info}
+                      onChange={(e) => onRemovalItemChange(item.id, 'info', e.target.value)}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <button type="button" onClick={onAddRemovalItem} style={{ marginBottom: '20px' }}>+ Add Row</button>
+        </div>
 
         <div>
           <p>Shipping Information:</p>

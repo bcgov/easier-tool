@@ -27,6 +27,7 @@ function App() {
     effective_date: today,
     todays_date: today,
     requestor_email: '',
+    removal_items: [{ id: Date.now(), description: '', serialNumber: '', assetTag: '', condition: '', quantity: '', category: '', notes: '' }],
   };
   
   const formRef = useRef(null)
@@ -180,6 +181,27 @@ function App() {
 
   const addNewAttachmentField = () => {
     setAttachments((prevAttachments) => [...prevAttachments, null]); // Add a placeholder for a new file
+  };
+
+  // Handle adding a new removal item row
+  const handleAddRemovalItem = () => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      removal_items: [
+        ...prevFormData.removal_items,
+        { id: Date.now(), description: '', serialNumber: '', assetTag: '', condition: '', quantity: '', category: '', notes: '' }
+      ]
+    }));
+  };
+
+  // Handle updating a removal item field
+  const handleRemovalItemChange = (itemId, fieldName, value) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      removal_items: prevFormData.removal_items.map((item) =>
+        item.id === itemId ? { ...item, [fieldName]: value } : item
+      )
+    }));
   };
 
   // handle form submission
@@ -356,7 +378,9 @@ function App() {
             {formData.request_type.includes('Removal') && (
               <RemovalSection 
                 formData={formData} 
-                onChange={handleInputChange} 
+                onChange={handleInputChange}
+                onAddRemovalItem={handleAddRemovalItem}
+                onRemovalItemChange={handleRemovalItemChange}
               />
             )}
 

@@ -148,42 +148,45 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
 
         <div>
           <p>Shipping Information:</p>
-          <div>
-            <label htmlFor="removal_firstname">Site Contact First Name: </label>
-            <input
-              id="removal_firstname"
-              type="text"
-              name="removal_firstname"
-              value={formData.removal_firstname}
+          <div className="form-grid">
+            <div>
+              <label htmlFor="removal_firstname">Site Contact First Name: </label>
+              <input
+                id="removal_firstname"
+                type="text"
+                name="removal_firstname"
+                value={formData.removal_firstname}
+                onChange={onChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="removal_lastname">Site Contact Last Name: </label>
+              <input
+                id="removal_lastname"
+                type="text"
+                name="removal_lastname"
+                value={formData.removal_lastname}
+                onChange={onChange}
+              />
+            </div>
+            <OfficeDropdown
+              id="removal_office"
+              name="removal_office"
+              value={formData.removal_office}
               onChange={onChange}
             />
+            <div>
+              <label htmlFor="removal_address">Address: </label>
+              <input
+                id="removal_address"
+                type="text"
+                name="removal_address"
+                value={formData.removal_address || ''}
+                onChange={onChange}
+              />
+            </div>
           </div>
-          <div>
-            <label htmlFor="removal_lastname">Site Contact Last Name: </label>
-            <input
-              id="removal_lastname"
-              type="text"
-              name="removal_lastname"
-              value={formData.removal_lastname}
-              onChange={onChange}
-            />
-          </div>
-          <OfficeDropdown
-            id="removal_office"
-            name="removal_office"
-            value={formData.removal_office}
-            onChange={onChange}
-          />
-          <div>
-            <label htmlFor="removal_address">Address: </label>
-            <input
-              id="removal_address"
-              type="text"
-              name="removal_address"
-              value={formData.removal_address || ''}
-              onChange={onChange}
-            />
-          </div>
+          <br></br>
         </div>
       </div>
     </>

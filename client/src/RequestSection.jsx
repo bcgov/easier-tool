@@ -421,6 +421,7 @@ export default function RequestSection({ formData, onChange }) {
             )}
             <div>
                 <p>Shipping Information:</p>
+                <div className="form-grid">
                     <div>
                         <label htmlFor="request_firstname">Site Contact First Name: </label>
                         <input
@@ -457,6 +458,7 @@ export default function RequestSection({ formData, onChange }) {
                         onChange={onChange}
                     />
                     </div>
+                </div>
             </div>
         </div>
     </>

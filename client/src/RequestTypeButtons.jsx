@@ -7,9 +7,6 @@ const RequestTypeButtons = ({ selected, onSelect }) => {
   const requestTypes = [
     "Request",
     "Report",
-    "Repair",
-    "Replacement",
-    "Relocation",
     "Removal"
   ];
 

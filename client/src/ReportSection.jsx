@@ -94,6 +94,16 @@ const ReportSection = ({ formData, onChange }) => {
             <div>
               <input
                   type="checkbox"
+                  id="escalation_report"
+                  name="escalation_report"
+                  checked={formData.escalation_report || false}
+                  onChange={onChange}
+              />
+              <label htmlFor="escalation_report">Escalation</label>
+            </div>
+            <div>
+              <input
+                  type="checkbox"
                   id="other_report"
                   name="other_report"
                   checked={formData.other_report || false}
@@ -105,7 +115,7 @@ const ReportSection = ({ formData, onChange }) => {
 
             <div className="textarea-field">
               <p>
-                Describe in detail the issue you wish to report. Attach any relevant photos/drawings below. In addition, provide justification for the service request you require, and identify impact on people, property or service delivery if the request is not fulfilled:
+                Describe in detail the issue you wish to report. Attach any relevant photos/drawings below, as well as the CBRE ticket number if applicable. In addition, provide justification for the service request you require, and identify impact on people, property or service delivery if the request is not fulfilled:
               </p>
               <textarea
                 id="report_comments"

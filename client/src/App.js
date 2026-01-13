@@ -9,6 +9,7 @@ import { validateFirstname } from './validators';
 // import mappings
 import RequestTypeButtons from './RequestTypeButtons';
 import DCVMapping from './DCVMapping';
+import addressMapping from './addressMapping';
 
 // import sections
 import CurrentInformationSection from './CurrentInformationSection';
@@ -82,6 +83,14 @@ function App() {
         ...prevFormData,
         office: value,
         dcv: updatedDCV,
+      }));
+    // auto-populate address based on address mapping
+    } else if (name === 'request_office') {
+      const updatedAddress = addressMapping[value] || '';
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        request_office: value,
+        request_address : updatedAddress,
       }));   
     // Update checkboxes
     } else {

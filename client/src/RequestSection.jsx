@@ -421,61 +421,43 @@ export default function RequestSection({ formData, onChange }) {
             )}
             <div>
                 <p>Shipping Information:</p>
-                <div className="radio-group">
-                    <label>Shipping Address:</label>
+                
                     <div>
+                        <label htmlFor="shipping_firstname">Site Contact First Name: </label>
                         <input
-                        type="radio"
-                        id="same"
-                        name="shipping_radio"
-                        value="same"
-                        checked={formData.shipping_radio === 'same'}
-                        onChange={onChange}
-                        />
-                        <label htmlFor="same">Same as Above</label>
-                    </div>
-                    <div>
-                        <input
-                        type="radio"
-                        id="different"
-                        name="shipping_radio"
-                        value="different"
-                        checked={formData.shipping_radio === 'different'}
-                        onChange={onChange}
-                        />
-                        <label htmlFor="different">Different Shipping Address</label>
-                    </div>
-                </div>
-                {formData.shipping_radio === 'different' && (
-                <>
-                    <div>
-                        <label htmlFor="shipping_name">Site Contact Name:</label>
-                        <input
-                            id="shipping_name"
+                            id="shipping_firstname"
                             type="text"
-                            name="shipping_name"
-                            value={formData.shipping_name}
+                            name="shipping_firstname"
+                            value={formData.shipping_firstname}
                             onChange={onChange}
                         />
                     </div>
                     <div>
-                        <label htmlFor="shipping_number">Site Contact Number:</label>
+                        <label htmlFor="shipping_lastname">Site Contact Last Name: </label>
                         <input
-                            id="shipping_number"
+                            id="shipping_lastname"
                             type="text"
-                            name="shipping_number"
-                            value={formData.shipping_number}
+                            name="shipping_lastname"
+                            value={formData.shipping_lastname}
                             onChange={onChange}
                         />
                     </div>
                     <OfficeDropdown
-                        id="office"
-                        name="office"
-                        value={formData.office}
+                        id="request_office"
+                        name="request_office"
+                        value={formData.request_office}
                         onChange={onChange}
                     />
-                </>
-                )}
+                    <div>
+                    <label htmlFor="request_address">Address:</label>
+                    <input
+                        id="request_address"
+                        type="text"
+                        name="request_address"
+                        value={formData.request_address || ''}
+                        onChange={onChange}
+                    />
+                    </div>
             </div>
         </div>
     </>

@@ -14,9 +14,6 @@ import DCVMapping from './DCVMapping';
 import CurrentInformationSection from './CurrentInformationSection';
 import RequestSection from './RequestSection';
 import ReportSection from './ReportSection';
-import RepairSection from './RepairSection';
-import ReplacementSection from './ReplacementSection';
-import RelocationSection from './RelocationSection';
 import RemovalSection from './RemovalSection';
 
 function App() {
@@ -306,30 +303,6 @@ function App() {
               <ReportSection
                 formData={formData}
                 onChange={handleInputChange}
-              />
-            )}
-
-            {/* if selected, insert Repair section */}
-            {formData.request_type.includes('Repair') && (
-              <RepairSection
-                formData={formData}
-                onChange={handleInputChange}
-              />
-            )}
-
-            {/* if selected, insert Replacement section */}
-            {formData.request_type.includes('Replacement') && (
-              <ReplacementSection
-                formData={formData}
-                onChange={handleInputChange}
-              />
-            )}
-
-            {/* if selected, insert Relocation section */}
-            {formData.request_type && formData.request_type.includes('Relocation') && (
-              <RelocationSection 
-                formData={formData} 
-                handleInputChange={handleInputChange} 
               />
             )}
 

@@ -732,7 +732,104 @@ export default function RequestSection({ formData, onChange }) {
             )}
             {formData.software === true && (
             <>
-                <p>Cables and Adapters Types and Quantities</p>
+                <p>Software</p>
+                <p className="field-note">All standard software required for employees to complete their work are added by Facilities and Assets to the employee’s workstation. No action is required by the supervisor.</p>
+                <p className="field-note">If the software required is not approved for the position, then a non-standard software request can be initiated using the Easier Tool. Please provide the business case for the software and at a minimum we require the Manager’s approval for the software with the business case (approval email/business case must be attached to this request).</p>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="software_user_name">User Name: </label>
+                        <input
+                        id="software_user_name"
+                        type="text"
+                        name="software_user_name"
+                        value={formData.software_user_name}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="software_position">Position: </label>
+                        <input
+                        id="software_position"
+                        type="text"
+                        name="software_position"
+                        value={formData.software_position}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="software_idir">IDIR: </label>
+                        <input
+                        id="software_idir"
+                        type="text"
+                        name="software_idir"
+                        value={formData.software_idir}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="software_computer">Computer Number: </label>
+                        <input
+                        id="software_computer"
+                        type="text"
+                        name="software_computer"
+                        value={formData.software_computer}
+                        onChange={onChange}
+                        />
+                    </div>
+                </div>
+                <br></br>
+                <div>
+                    <label htmlFor="software_reason">Describe the non-standard subscription and provide a business case for the request: </label>
+                    <textarea
+                    id="software_reason"
+                    name="software_reason"
+                    value={formData.software_reason}
+                    onChange={onChange}
+                    rows="4"
+                    style={{ width: '100%', padding: '8px'}}
+                    />
+                </div>
+                <p className="field-note">If the subscription(s) being requested above is a "temporary requirement" or a "project-based need", please provide a termination date (i.e. the assignment or project end date) to ensure we cancel the subscription at the right time.</p>
+                <div className="radio-group">
+                    <label>The subscription(s) being requested above is: </label>
+                    <div>
+                        <input
+                        type="radio"
+                        id="temporary"
+                        name="software_radio"
+                        value="temporary"
+                        checked={formData.software_radio === 'temporary'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="temporary">Temporary</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="permanent"
+                        name="software_radio"
+                        value="permanent"
+                        checked={formData.software_radio === 'permanent'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="permanent">Permanent</label>
+                    </div>
+                </div>
+                {formData.software_radio === 'temporary' && (
+                <>
+                    <div>
+                        <label htmlFor="software_end_date">Termination Date: </label>
+                        <input
+                        id="software_end_date"
+                        type="date"
+                        name="software_end_date"
+                        value={formData.software_end_date}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <p className="field-note">If the termination date is currently unknown, please note that Facilities & Assets will provide the subscription(s) for a maximum of seven months unless a request for an extension is received.</p>    
+                </>
+                )}
             </>
             )}
             {formData.unified_comms === true && (

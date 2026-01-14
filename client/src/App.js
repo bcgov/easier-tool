@@ -444,7 +444,7 @@ function App() {
             )}
 
             {/* if selected, insert Report section */}
-            {formData.request_type.includes('Report') && (
+            {formData.request_type.includes('Report Building Issue') && (
               <ReportSection
                 formData={formData}
                 onChange={handleInputChange}

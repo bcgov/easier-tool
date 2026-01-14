@@ -6,7 +6,7 @@ import './RequestTypeButtons.css';
 const RequestTypeButtons = ({ selected, onSelect }) => {
   const requestTypes = [
     "Request",
-    "Report",
+    "Report Building Issue",
     "Removal"
   ];
 

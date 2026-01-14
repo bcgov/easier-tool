@@ -5,7 +5,7 @@ const ReportSection = ({ formData, onChange }) => {
   return (
     <>
       <div className="header-container">
-        <h4 style={{ color: '#555555' }}>Reports</h4>
+        <h4 style={{ color: '#555555' }}>Report a Building Issue</h4>
       </div>
       <div className="request-change-content">
         <section className="info-section">

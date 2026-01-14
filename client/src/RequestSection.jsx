@@ -516,22 +516,12 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                     <div>
-                        <label htmlFor="laptop_firstname">First Name: </label>
+                        <label htmlFor="laptop_name">Name: </label>
                         <input
-                        id="laptop_firstname"
+                        id="laptop_name"
                         type="text"
-                        name="laptop_firstname"
-                        value={formData.laptop_firstname}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="laptop_lastname">Last Name: </label>
-                        <input
-                        id="laptop_lastname"
-                        type="text"
-                        name="laptop_lastname"
-                        value={formData.laptop_lastname}
+                        name="laptop_name"
+                        value={formData.laptop_name}
                         onChange={onChange}
                         />
                     </div>
@@ -553,7 +543,101 @@ export default function RequestSection({ formData, onChange }) {
             )}
             {formData.mobile_phones === true && (
             <>
-                <p>Cables and Adapters Types and Quantities</p>
+                <p>Mobile Phones</p>
+                <div className="form-grid">
+                <p className="field-note">Provide the name of the employee who will be using the mobile phone:</p>
+                {formData.mobile_phone_radio === 'transfer_phone' && (
+                    <p className="field-note">Provide the name of the employee who previously used the phone:</p>
+                )}
+                </div>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="mobile_phone_name">Name: </label>
+                        <input
+                        id="mobile_phone_name"
+                        type="text"
+                        name="mobile_phone_name"
+                        value={formData.mobile_phone_name}
+                        onChange={onChange}
+                        />
+                    </div>
+                    {formData.mobile_phone_radio === 'transfer_phone' && (
+                      <>
+                        <div>
+                          <label htmlFor="transfer_name">Prior User: </label>
+                          <input
+                            id="transfer_name"
+                            type="text"
+                            name="transfer_name"
+                            value={formData.transfer_name}
+                            onChange={onChange}
+                          />
+                        </div>
+                      </>
+                    )}
+                </div>
+                
+                <br></br>
+                <div className="radio-group">
+                    <div>
+                        <input
+                        type="radio"
+                        id="new_phone"
+                        name="mobile_phone_radio"
+                        value="new_phone"
+                        checked={formData.mobile_phone_radio === 'new_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="new_phone">New Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="deactivate_phone"
+                        name="mobile_phone_radio"
+                        value="deactivate_phone"
+                        checked={formData.mobile_phone_radio === 'deactivate_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="deactivate_phone">Deactivate Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="upgrade_phone"
+                        name="mobile_phone_radio"
+                        value="upgrade_phone"
+                        checked={formData.mobile_phone_radio === 'upgrade_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="upgrade_phone">Upgrade Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="transfer_phone"
+                        name="mobile_phone_radio"
+                        value="transfer_phone"
+                        checked={formData.mobile_phone_radio === 'transfer_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="transfer_phone">Transfer Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="moving_mobile_phone"
+                        name="mobile_phone_radio"
+                        value="moving_mobile_phone"
+                        checked={formData.mobile_phone_radio === 'moving_mobile_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="moving_mobile_phone">Moving to another Ministry or Division</label>
+                    </div>
+                </div>
+                {formData.mobile_phone_radio === 'deactivate_phone' && (
+                  <p className="field-note">Please ensure the phone has been factory reset, and all data removea from the device</p>
+                )}
             </>
             )}
             {formData.monitors === true && (

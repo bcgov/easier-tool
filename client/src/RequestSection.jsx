@@ -834,7 +834,106 @@ export default function RequestSection({ formData, onChange }) {
             )}
             {formData.unified_comms === true && (
             <>
-                <p>Cables and Adapters Types and Quantities</p>
+                <p>Unified Communications</p>
+                <p className="field-note">Facilities and Assets will request from the supervisor the headset choice for new hires and will order this and Unified Communications – there is no need to complete an Easier Tool.</p>
+                <p className="field-note">Please note this form is for changes only. If your existing headset is broken or damaged, please call 7-7000 to request a device repair. If, your repair request was denied, your device was deemed beyond repair, or your device does not qualify for replacement, please complete the section below.</p>
+                
+                <label>UC Activation or Suppression: </label>
+                <div className="radio-group">
+                    <div>
+                        <input
+                        type="radio"
+                        id="activation"
+                        name="UC_radio"
+                        value="activation"
+                        checked={formData.UC_radio === 'activation'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="activation">Request a new UC Activation</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="suppression"
+                        name="UC_radio"
+                        value="suppression"
+                        checked={formData.UC_radio === 'suppression'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="suppression">Request outgoing UC calls be suppressed</label>
+                    </div>
+                </div>
+                <br></br>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="software_idir">IDIR: </label>
+                        <input
+                        id="software_idir"
+                        type="text"
+                        name="software_idir"
+                        value={formData.software_idir}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="branch_select">Branch:</label>
+                        <select
+                        id="branch_select"
+                        name="branch_select"
+                        value={formData.branch_select || ''}
+                        onChange={onChange}
+                        >
+                        <option value="branch_select">Please Select:</option>
+                        <option value="branch_cs">Community Services</option>
+                        <option value="branch_plms">Prevention and Loss Management Services</option>
+                        <option value="branch_ops">Operations Support</option>
+                        <option value="branch_ss">Strategic Support</option>
+                        <option value="branch_vs">Virtual Services</option>
+                        </select>
+                    </div>
+                    {formData.UC_radio === 'suppression' && (
+                    <>
+                        <div>
+                            <label htmlFor="UC_suppression_number">UC Phone Number:</label>
+                            <input
+                            id="UC_suppression_number"
+                            type="text"
+                            name="UC_suppression_number"
+                            value={formData.UC_suppression_number}
+                            onChange={onChange}
+                            />
+                        </div>
+                    </>
+                    )}
+                    {formData.UC_radio === 'activation' && (
+                    <>
+                        <div>
+                            <label htmlFor="UC_device_select">Preffered Device:</label>
+                            <select
+                            id="UC_device_select"
+                            name="UC_device_select"
+                            value={formData.UC_device_select || ''}
+                            onChange={onChange}
+                            >
+                            <option value="uc_select">Please Select:</option>
+                            <option value="uc_select_wired">Wired Dual Ear</option>
+                            <option value="uc_select_wireless_dual">Wireless Dual Ear</option>
+                            <option value="uc_select_wireless_single">Wireless Single Ear</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label htmlFor="uc_outgoing_suppression">Do you require UC outgoing call suppression?</label>
+                            <input
+                                type="checkbox"
+                                id="uc_outgoing_suppression"
+                                name="uc_outgoing_suppression"
+                                checked={formData.uc_outgoing_suppression || false}
+                                onChange={onChange}
+                            />
+                        </div>
+                    </>
+                    )}
+                </div>
             </>
             )}
             {formData.webcams === true && (

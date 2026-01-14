@@ -938,12 +938,67 @@ export default function RequestSection({ formData, onChange }) {
             )}
             {formData.webcams === true && (
             <>
-                <p>Cables and Adapters Types and Quantities</p>
+                <p>Webcams</p>
+                <p className="field-note">Please provide information about the intended user of the webcam.</p>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="webcam_idir">IDIR: </label>
+                        <input
+                        id="webcam_idir"
+                        type="text"
+                        name="webcam_idir"
+                        value={formData.webcam_idir}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="webcam_computer">Computer Number: </label>
+                        <input
+                        id="webcam_computer"
+                        type="text"
+                        name="webcam_computer"
+                        value={formData.webcam_computer}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="webcam_workstation">Workstation Number: </label>
+                        <input
+                        id="webcam_workstation"
+                        type="text"
+                        name="webcam_workstation"
+                        value={formData.webcam_workstation}
+                        onChange={onChange}
+                        />
+                    </div>
+                </div>
             </>
             )}
             {formData.other_equipment === true && (
             <>
-                <p>Cables and Adapters Types and Quantities</p>
+                <p>Other Equipment</p>
+                <div>
+                    <label htmlFor="other_equipment_description">Description of the request: </label>
+                    <textarea
+                    id="other_equipment_description"
+                    name="other_equipment_description"
+                    value={formData.other_equipment_description}
+                    onChange={onChange}
+                    rows="4"
+                    style={{ width: '100%', padding: '8px'}}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="other_equipment_reason">Rationale for the request: </label>
+                    <textarea
+                    id="other_equipment_reason"
+                    name="other_equipment_reason"
+                    value={formData.other_equipment_reason}
+                    onChange={onChange}
+                    rows="4"
+                    style={{ width: '100%', padding: '8px'}}
+                    />
+                </div>
             </>
             )}
 
@@ -987,6 +1042,7 @@ export default function RequestSection({ formData, onChange }) {
                     />
                     </div>
                 </div>
+                <br></br>
             </div>
         </div>
     </>

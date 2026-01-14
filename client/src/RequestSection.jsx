@@ -681,7 +681,53 @@ export default function RequestSection({ formData, onChange }) {
             )}
             {formData.mouse === true && (
             <>
-                <p>Cables and Adapters Types and Quantities</p>
+                <p>Mice</p>
+                <p className="field-note">All equipment is ergonomic. Please provide the workstation information the mouse is intended for:</p>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="mouse_type">Mouse Type:</label>
+                        <select
+                        id="mouse_type"
+                        name="mouse_type"
+                        value={formData.mouse_type || ''}
+                        onChange={onChange}
+                        >
+                        <option value="wired_mouse_type">Wired Mouse</option>
+                        <option value="wireless_mouse_type">Bluetooth Mouse</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label htmlFor="mouse_computer">Computer Number: </label>
+                        <input
+                        id="mouse_computer"
+                        type="text"
+                        name="mouse_computer"
+                        value={formData.mouse_computer}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="mouse_workstation">Workstation Number: </label>
+                        <input
+                        id="mouse_workstation"
+                        type="text"
+                        name="mouse_workstation"
+                        value={formData.mouse_workstation}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="mouse_quantity">Quantity: </label>
+                        <input
+                        id="mouse_quantity"
+                        type="number"
+                        name="mouse_quantity"
+                        value={formData.mouse_quantity}
+                        onChange={onChange}
+                        />
+                    </div>
+                </div>
+                <p className="field-note">If the Wired Mouse or Wireless Bluetooth Mouse do not meet your needs, requests for non-standard ergonomic equipment accommodations should be submitted to Occupational Health and Safety at sdd.ohs.gov.bc.ca.</p>
             </>
             )}
             {formData.software === true && (

@@ -123,299 +123,341 @@ export default function RequestSection({ formData, onChange }) {
                 </div>
             </div>                
             </section>
-            {formData.drive_folders === true && (
+            {formData.cables_adapters === true && (
             <>
-                <div className="textarea-field">
-                    <label htmlFor="drives_folders">What specific drives and folders are required?</label> <br></br>
-                    <textarea
-                        id="drives_folders"
-                        name="drives_folders"
-                        rows="2" 
-                        value={formData.drives_folders || ''}
+                <p>Cables and Adapters Types and Quantities</p>
+                <div className="form-grid">
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/Displayport.png?csf=1&web=1&e=ukx0iA" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        DisplayPort cables
+                        </a><br />
+                        <input
+                        id="displayport_cable"
+                        type="number"
+                        name="displayport_cable"
+                        value={formData.displayport_cable}
                         onChange={onChange}
-                    />
-                </div>
-                <p className="field-note">
-                Please include the S# of the drive that you are requesting and specific folders. Example S\\12345\Folder
-                </p>
-            </>
-            )}
-            {formData.mailboxes === true && (
-            <>
-                <div className="radio-group">
-                <label><strong>Mailbox change request</strong></label>
-                <div>
-                    <input
-                    type="radio"
-                    id="send_from"
-                    name="mailbox_radio"
-                    value="send_from"
-                    checked={formData.mailbox_radio === 'send_from'}
-                    onChange={onChange}
-                    />
-                    <label htmlFor="send_from">'Send From' access</label>
-                </div>
-                <div>
-                    <input
-                    type="radio"
-                    id="ownership"
-                    name="mailbox_radio"
-                    value="ownership"
-                    checked={formData.mailbox_radio === 'ownership'}
-                    onChange={onChange}
-                    />
-                    <label htmlFor="ownership">Mailbox ownership</label>
-                </div>
-                <div>
-                    <input
-                    type="radio"
-                    id="backup"
-                    name="mailbox_radio"
-                    value="backup"
-                    checked={formData.mailbox_radio === 'backup'}
-                    onChange={onChange}
-                    />
-                    <label htmlFor="backup">Backup ownership</label>
-                </div>
-                <div>
-                    <input
-                    type="radio"
-                    id="removal"
-                    name="mailbox_radio"
-                    value="removal"
-                    checked={formData.mailbox_radio === 'removal'}
-                    onChange={onChange}
-                    />
-                    <label htmlFor="removal">Removal</label>
-                </div>
-                </div>
-                <div className="textarea-field">
-                <label htmlFor="mailbox_comments">Provide the names and emails of the required mailboxes as per the GAL:</label> <br></br>
-                <textarea
-                    id="mailbox_comments"
-                    name="mailbox_comments"
-                    rows="4" 
-                    value={formData.mailbox_comments || ''}
-                    onChange={onChange}
-                />
-                </div><br></br>  
-            </>
-            )}
-            {formData.expense_authority === true && (
-            <>
-                <label>
-                <p>
-                For signing/expense authority access, please ensure that you complete an &nbsp;
-                <a 
-                    href="https://intranet.gov.bc.ca/assets/intranet/documents/sdpr/sdd/operations-support/centralized-recruitment-and-staffing/expense_authority_-_signature_request_form.pdf" 
-                    style={{ color: '#4A90E2', textDecoration: 'underline' }} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                >
-                    Expense Authority Signature Request 
-                </a> 
-                &nbsp; and send it to the &nbsp;
-                <a 
-                    href="mailto:SDSI.OPSSupport.Staffing@gov.bc.ca" 
-                    style={{ color: '#4A90E2', textDecoration: 'underline' }}
-                >
-                    Staffing Inbox
-                </a>.
-                </p>
-                </label>
-            </>
-            )}
-            {formData.third_party_checks === true && (
-            <>
-                <label>
-                <p>
-                <strong>For all Equifax password resets</strong> and/or certificate renewals please contact the&nbsp;
-                <a 
-                    href="mailto:SDSI.OPSSupport.Staffing@gov.bc.ca" 
-                    style={{ color: '#4A90E2', textDecoration: 'underline' }}
-                >
-                    Staffing Inbox
-                </a>.
-                </p>
-                </label>
-                <div>
-                <label htmlFor="third_party_checks_request">
-                    Equifax request details:
-                </label><br></br>
-                <input
-                    id="third_party_checks_request"
-                    type="text"
-                    name="third_party_checks_request"
-                    value={formData.third_party_checks_request}
-                    onChange={onChange}
-                />
-                </div><br></br>
-            </>
-            )}
-            {formData.icbc === true && (
-            <>
-                <label>
-                <strong>ICBC request</strong>
-                </label>
-                <div className="radio-group">
-                <label>Has this employee completed IM117 (Protection of Privacy, Access to Information and Records Management) within the past 24 months?</label>
-                <div>
-                    <input
-                    type="radio"
-                    id="im117_yes"
-                    name="icbc_im117"
-                    value="yes"
-                    checked={formData.icbc_im117 === 'yes'}
-                    onChange={onChange}
-                    />
-                    <label htmlFor="im117_yes">Yes</label>
-                </div>
-                <div>
-                    <input
-                    type="radio"
-                    id="im117_no"
-                    name="icbc_im117"
-                    value="no"
-                    checked={formData.icbc_im117 === 'no'}
-                    onChange={onChange}
-                    />
-                    <label htmlFor="im117_no">No</label>
-                </div>
-                </div>  
-                <div className="date-field">
-                <label htmlFor="im117_date">
-                    Date completed:
-                </label>
-                <input
-                    type="date"
-                    id="im117_date"
-                    name="im117_date"
-                    value={formData.im117_date || ''}
-                    onChange={onChange}
-                />
-                </div> 
-            </>
-            )}
-            {formData.vital_stats === true && (
-            <>
-                <label>
-                <strong>Vital Statistics</strong>
-                </label>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <div>
-                    <label htmlFor="vital_name">Name:</label><br />
-                    <input
-                    id="vital_name"
-                    type="text"
-                    name="vital_name"
-                    value={formData.vital_name}
-                    onChange={onChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="vital_idir">IDIR:</label><br />
-                    <input
-                    id="vital_idir"
-                    type="text"
-                    name="vital_idir"
-                    value={formData.vital_idir}
-                    onChange={onChange}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="vital_email">Email address:</label><br />
-                    <input
-                    id="vital_email"
-                    type="email"
-                    name="vital_email"
-                    value={formData.vital_email}
-                    onChange={onChange}
-                    />
-                </div>
-                <OfficeDropdown
-                    id="vital_office"
-                    name="vital_office"
-                    value={formData.vital_office}
-                    onChange={onChange}
-                />
-                </div>
-                <br />
-            </>
-            )}
-            {formData.new_hires === true && (
-            <>
-                <label>
-                <strong>New hire details</strong>
-                </label>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                
-                <div>
-                    <label htmlFor="new_hire_position">Position:</label><br></br>
-                    <input
-                    id="new_hire_position"
-                    type="text"
-                    name="new_hire_position"
-                    value={formData.new_hire_position}
-                    onChange={onChange}
-                    />
-                </div>
-                <OfficeDropdown
-                    id="new_hire_office"
-                    name="new_hire_office"
-                    value={formData.new_hire_office}
-                    onChange={onChange}
-                />
-                <div>
-                    <label htmlFor="new_hire_service_office">ICM service office:</label><br />
-                    <input
-                    id="new_hire_service_office"
-                    type="text"
-                    name="new_hire_service_office"
-                    value={formData.new_hire_service_office}
-                    onChange={onChange}
-                    />
-                </div>
-                </div>
-                <div style={{ marginTop: '20px' }}>
-                <label htmlFor="new_hire_drives">Drive/folder to be added:</label><br />
-                <input
-                    id="new_hire_drives"
-                    type="text"
-                    name="new_hire_drives"
-                    value={formData.new_hire_drives}
-                    onChange={onChange}
-                    style={{ width: '100%' }}
-                />
-                <p className="field-note">Please include the S# of the drive that you are requesting and specific folders. Example S\\12345\Folder</p>
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/HdmiToHdmi.png?csf=1&web=1&e=BGvaMB" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        HDMI cables
+                        </a><br />
+                        <input
+                        id="hdmi_cable"
+                        type="number"
+                        name="hdmi_cable"
+                        value={formData.hdmi_cable}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/UsbAToUsbB(Blue).png?csf=1&web=1&e=d6k1s8" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        USB-A to USB-B cables
+                        </a><br />
+                        <input
+                        id="usb_cable"
+                        type="number"
+                        name="usb_cable"
+                        value={formData.usb_cable}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/VGACable.png?csf=1&web=1&e=WdhOBW" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        VGA cables
+                        </a><br />
+                        <input
+                        id="vga_cable"
+                        type="number"
+                        name="vga_cable"
+                        value={formData.vga_cable}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/UsbCToDisplayport.png?csf=1&web=1&e=l6xmJk" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        DisplayPort To USB-C adapter
+                        </a><br />
+                        <input
+                        id="displayport_usbc_adapter"
+                        type="number"
+                        name="displayport_usbc_adapter"
+                        value={formData.displayport_usbc_adapter}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/UsbHub4.png?csf=1&web=1&e=F2BrxO" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        External 4-port USB hub
+                        </a><br />
+                        <input
+                        id="four_port_usb_adapter"
+                        type="number"
+                        name="four_port_usb_adapter"
+                        value={formData.four_port_usb_adapter}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/DisplayportToHdmi.png?csf=1&web=1&e=ep7fOC" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        HDMI to DisplayPort adapter
+                        </a><br />
+                        <input
+                        id="hdmi_displayport_adapter"
+                        type="number"
+                        name="hdmi_displayport_adapter"
+                        value={formData.hdmi_displayport_adapter}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/UsbCToHdmi.png?csf=1&web=1&e=iW4GnK" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        HDMI to USB-C adapter
+                        </a><br />
+                        <input
+                        id="hdmi_usbc_adapter"
+                        type="number"
+                        name="hdmi_usbc_adapter"
+                        value={formData.hdmi_usbc_adapter}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/HdmiToVGA.png?csf=1&web=1&e=1sLAnD" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        VGA to HDMI adapter
+                        </a><br />
+                        <input
+                        id="vga_hdmi_adapter"
+                        type="number"
+                        name="vga_hdmi_adapter"
+                        value={formData.vga_hdmi_adapter}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/UsbCToVGA.png?csf=1&web=1&e=eWbxiQ" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        USB-C to VGA Adapter
+                        </a><br />
+                        <input
+                        id="usbc_vga_adapter"
+                        type="number"
+                        name="usbc_vga_adapter"
+                        value={formData.usbc_vga_adapter}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label>Other cables or adapters</label>
+                        <br />
+                        <input
+                        id="other_cable_adapter"
+                        type="text"
+                        name="other_cable_adapter"
+                        value={formData.other_cable_adapter}
+                        onChange={onChange}
+                        />
+                    </div>
                 </div>
             </>
             )}
-            {formData.webaob === true && (
+            {formData.cisb_equipment === true && (
             <>
-                <label>
-                <p>
-                For WebAOB access requests and WebAOB password resets please email: &nbsp;
-                <a 
-                    href="mailto:SDPR.ThirdPartyAccess@gov.bc.ca" 
-                    style={{ color: '#4A90E2', textDecoration: 'underline' }}
-                >
-                    SDPR.ThirdPartyAccess@gov.bc.ca
-                </a>.
-                </p>
-                </label>
-            </>
-            )}
-            {formData.other_access === true && (
-            <>
-                <div className="textarea-field">
-                <label htmlFor="access_comments">What do you need access to?</label> <br></br>
-                <textarea
-                    id="access_comments"
-                    name="access_comments"
-                    rows="4" 
-                    value={formData.access_comments || ''}
-                    onChange={onChange}
-                />
+                <p>CISB Equipment Types and Quantites</p>
+                <div style={{ marginLeft: '20px', marginBottom: '20px' }}>
+                    <label htmlFor="surfacepro_model">Surface Pro Model:</label>
+                    <select
+                      id="surfacepro_model"
+                      name="surfacepro_model"
+                      value={formData.surfacepro_model || ''}
+                      onChange={onChange}
+                      style={{ marginLeft: '10px' }}
+                    >
+                      <option value="surfacepro_eleven">Surface Pro 11</option>
+                      <option value="surfacepro_eight">Surface Pro 8</option>
+                    </select>
+                </div>
+                <div className="form-grid">
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Power%20Adapter.png?csf=1&web=1&e=dcdoBx" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Surface Pro Power Adapter
+                        </a><br />
+                        <input
+                        id="surfacepro_power_adapter"
+                        type="number"
+                        name="surfacepro_power_adapter"
+                        value={formData.surfacepro_power_adapter}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Stylus%20Pen.png?csf=1&web=1&e=tJhgDa" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Surface Pro Stylus Pen
+                        </a><br />
+                        <input
+                        id="surfacepro_stylus"
+                        type="number"
+                        name="surfacepro_stylus"
+                        value={formData.surfacepro_stylus}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Keyboard.jpg?csf=1&web=1&e=HNGp8j" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Surface Pro Keyboard
+                        </a><br />
+                        <input
+                        id="surfacepro_keyboard"
+                        type="number"
+                        name="surfacepro_keyboard"
+                        value={formData.surfacepro_keyboard}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Protective%20Case.png?csf=1&web=1&e=ccMqku" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Surface Pro Protective Case
+                        </a><br />
+                        <input
+                        id="surfacepro_case"
+                        type="number"
+                        name="surfacepro_case"
+                        value={formData.surfacepro_case}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Anti-Glare%20Screen.png?csf=1&web=1&e=RV8Nrh" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Surface Pro Anti-Glare Screen
+                        </a><br />
+                        <input
+                        id="surfacepro_screencover"
+                        type="number"
+                        name="surfacepro_screencover"
+                        value={formData.surfacepro_screencover}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Bluetooth%20Mouse.png?csf=1&web=1&e=XxRHr5" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Bluetooth Mouse
+                        </a><br />
+                        <input
+                        id="cisb_bluetooth_mouse"
+                        type="number"
+                        name="cisb_bluetooth_mouse"
+                        value={formData.cisb_bluetooth_mouse}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Tamper%20Resistant%20Backpack.jpg?csf=1&web=1&e=9oVnax" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Tamper Resistant Backpack
+                        </a><br />
+                        <input
+                        id="cisb_backpack"
+                        type="number"
+                        name="cisb_backpack"
+                        value={formData.cisb_backpack}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Portable%20Power%20Source.jpg?csf=1&web=1&e=IHppsz" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Portable Power Source
+                        </a><br />
+                        <input
+                        id="cisb_portable_power"
+                        type="number"
+                        name="cisb_portable_power"
+                        value={formData.cisb_portable_power}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Reflective%20Safety%20Vest.jpg?csf=1&web=1&e=jHNKAD" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Reflective Safety Vest
+                        </a><br />
+                        <input
+                        id="cisb_safety_vest"
+                        type="number"
+                        name="cisb_safety_vest"
+                        value={formData.cisb_safety_vest}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/USB-C%20to%2014-in-1%20Multifunction%20Hub.png?csf=1&web=1&e=sh8nbD" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        USB-C to 14-in-1 Multifunction Hub
+                        </a><br />
+                        <input
+                        id="cisb_usbc_multifunction_hub"
+                        type="number"
+                        name="cisb_usbc_multifunction_hub"
+                        value={formData.cisb_usbc_multifunction_hub}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Targus%20Rolling%20Laptop%20Bag.jpg?csf=1&web=1&e=vRbrsX" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Targus Rolling Laptop Bag
+                        </a><br />
+                        <input
+                        id="cisb_laptop_bag"
+                        type="number"
+                        name="cisb_laptop_bag"
+                        value={formData.cisb_laptop_bag}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Lightning%20to%20USB%20Cable.png?csf=1&web=1&e=Wsch2M" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Lightning to USB Cable
+                        </a><br />
+                        <input
+                        id="cisb_lightning_usb_cable"
+                        type="number"
+                        name="cisb_lightning_usb_cable"
+                        value={formData.cisb_lightning_usb_cable}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Windproof%20Umbrella.jpg?csf=1&web=1&e=6dybfw" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Windproof Umbrella
+                        </a><br />
+                        <input
+                        id="cisb_umbrella"
+                        type="number"
+                        name="cisb_umbrella"
+                        value={formData.cisb_umbrella}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Rain%20Poncho.png?csf=1&web=1&e=u771iP" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Rain Poncho
+                        </a><br />
+                        <input
+                        id="cisb_poncho"
+                        type="number"
+                        name="cisb_poncho"
+                        value={formData.cisb_poncho}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Rain%20Poncho.png?csf=1&web=1&e=u771iP" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        CISB Clipboard
+                        </a><br />
+                        <input
+                        id="cisb_poncho"
+                        type="number"
+                        name="cisb_poncho"
+                        value={formData.cisb_poncho}
+                        onChange={onChange}
+                        />
+                    </div>
                 </div>
             </>
             )}

@@ -37,19 +37,6 @@ const CurrentInformationSection = ({ formData, onChange }) => {
           />
         </div>
         <div>
-          <label htmlFor="employee_id">
-            <span className="required">*</span> Employee ID:
-          </label>
-          <input
-            id="employee_id"
-            type="number"
-            name="employee_id"
-            value={formData.employee_id}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div>
           <label htmlFor="idir">
             <span className="required">*</span> IDIR:
           </label>
@@ -75,6 +62,12 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             required
           />
         </div>
+        <OfficeDropdown
+          id="office"
+          name="office"
+          value={formData.office}
+          onChange={onChange}
+        />
         <div>
           <label htmlFor="position">Position:</label>
           <input
@@ -85,12 +78,6 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             onChange={onChange}
           />
         </div>
-        <OfficeDropdown
-          id="office"
-          name="office"
-          value={formData.office}
-          onChange={onChange}
-        />
         <div>
           <label htmlFor="dcv">DCV#:</label>
           <input

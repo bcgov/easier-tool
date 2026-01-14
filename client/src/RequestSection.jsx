@@ -34,6 +34,16 @@ export default function RequestSection({ formData, onChange }) {
                 <div>
                 <input
                     type="checkbox"
+                    id="cisb_mobile_office"
+                    name="cisb_mobile_office"
+                    checked={formData.cisb_mobile_office || false}
+                    onChange={onChange}
+                />
+                <label htmlFor="cisb_mobile_office">CISB Mobile Office</label>
+                </div>
+                <div>
+                <input
+                    type="checkbox"
                     id="keyboards"
                     name="keyboards"
                     checked={formData.keyboards || false}
@@ -456,6 +466,37 @@ export default function RequestSection({ formData, onChange }) {
                         type="number"
                         name="cisb_poncho"
                         value={formData.cisb_poncho}
+                        onChange={onChange}
+                        />
+                    </div>
+                </div>
+            </>
+            )}
+            {formData.cisb_mobile_office === true && (
+            <>
+                <p>CISB Mobile Office</p>
+                <div className="form-grid">
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Power%20Adapter.png?csf=1&web=1&e=dcdoBx" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Surface Pro Power Adapter
+                        </a><br />
+                        <input
+                        id="surfacepro_power_adapter"
+                        type="number"
+                        name="surfacepro_power_adapter"
+                        value={formData.surfacepro_power_adapter}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Stylus%20Pen.png?csf=1&web=1&e=tJhgDa" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        Surface Pro Stylus Pen
+                        </a><br />
+                        <input
+                        id="surfacepro_stylus"
+                        type="number"
+                        name="surfacepro_stylus"
+                        value={formData.surfacepro_stylus}
                         onChange={onChange}
                         />
                     </div>

@@ -40,6 +40,7 @@ function App() {
   const [initialized, setInitialized] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [token, setToken] = useState(null); // State to store the token
+  const [accordionOpen, setAccordionOpen] = useState(false); // State for accordion
 
   /*
   useEffect(() => {
@@ -330,9 +331,85 @@ function App() {
               <img src={logo} alt="Logo" className="logo" />
               <img src={banner} alt="Banner" className="banner" />
               <h2 style={{ textAlign: 'left', paddingLeft: '10px', color: '#444444' }}>Easier Tool</h2>
-              <p className="field-note" style={{paddingLeft: '10px'}}>This tool is for SDD staff to send requests to Facilities & Assets.</p>
+              <p className="field-note" style={{paddingLeft: '10px'}}>This tool is for SDD staff to send requests to Facilities & Assets. <br></br>A copy of the form will be sent to the submitter's email.</p>
             </div>
 
+            {/* Collapsible Accordion */}
+            <div style={{ marginBottom: '20px'}}>
+              <button
+                type="button"
+                onClick={() => setAccordionOpen(!accordionOpen)}
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  backgroundColor: '#e2e2e2ff',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                  textAlign: 'left',
+                  fontSize: '0.9em'
+                }}
+              >
+                {accordionOpen ? '▼' : '▶'} Services not covered by Facilities and Assets
+              </button>
+              {accordionOpen && (
+                <div style={{ padding: '15px', backgroundColor: '#fafafa' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
+                    <thead>
+                      <tr style={{ backgroundColor: '#f0f0f0' }}>
+                        <th style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'left' }}>Request Type</th>
+                        <th style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'left' }}>Contact Information</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}><strong>Non-Standard Ergonomic Equipment</strong><br></br> Occupational Health and Safety (OHS) Services</td>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}>
+                          <a href="https://theloop.sdpr.gov.bc.ca/" target="_blank" rel="noopener noreferrer">Occupational health and safety - The Loop: SDPR Intranet</a><br />SDD.OHS@gov.bc.ca
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}><strong>Repairs and Related Services</strong> <br></br><em>*First step: contact 7-7000 and then complete Easier Tool Request and include case number.</em> <br></br><strong>Computers, Landlines, Monitors, MPS Printers, Mobile Devices and Applications, and Unified Communication (UC)</strong></td>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}>
+                          7-7000 Service Desk<br />
+                          1 (250) 387-7000<br />
+                          77000@gov.bc.ca
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}><strong>Buildings</strong> <br></br>Daily and emergency property management facility related services</td>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}>
+                          <strong>CBRE</strong><br />
+                          1-877-222-3112<br />
+                          <a href="https://www2.gov.bc.ca/gov/content/governments/services-for-government/real-estate-space/facilities-management-services/sirequest-web-portal" target="_blank" rel="noopener noreferrer">SIRequest Web Portal</a><br />                                                   
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}><strong>Vehicles</strong> <br></br>Car Bookings</td>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}>
+                          <strong>SDD Vehicle Fleet</strong><br />
+                          <a href="https://www.google.com/maps/d/viewer?mid=1sP1tcELj-_vHWXjhi9NMF8Q_oK96TrQ&ll=52.51373341745337%2c-122.18208899999999&z=6" target="_blank" rel="noopener noreferrer">Click to view fleet contact list</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}><strong>Vehicles</strong> <br></br>Accident, vandalism, incident reports, and ICBC claims</td>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}>
+                          <a href="https://www2.gov.bc.ca/gov/content/bc-procurement-resources/buy-for-government/goods-and-services-catalogue/vehicle-fleet-management/vehicle-fleet-information" target="_blank" rel="noopener noreferrer">Holman Fleet Services</a><br />
+                          1 (855) 446-4274
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}><strong>Vehicles</strong> <br></br>Roadside Assistance</td>
+                        <td style={{ border: '1px solid #ddd', padding: '10px' }}>
+                          <a href="https://www2.gov.bc.ca/assets/gov/government/services-for-government-and-broader-public-sector/buy-goods-services-and-construction/goods-and-services-catalogue/csa-assets/vehicle-fleet-management/accident_management_mapping_process_flowchart.pdf" target="_blank" rel="noopener noreferrer">Holman Accident Management</a><br />
+                          1 (855) 446-4274
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              )}
+            </div>
             
             <div className="request-type-container">
               <label style={{ fontWeight: 'bold', fontSize: '0.9em' }}>

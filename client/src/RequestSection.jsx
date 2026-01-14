@@ -502,7 +502,53 @@ export default function RequestSection({ formData, onChange }) {
             )}
             {formData.laptops === true && (
             <>
-                <p>Cables and Adapters Types and Quantities</p>
+                <p>Laptops:</p>
+                <p className="field-note">Provide information on the new hire or returning employee who will be using the laptop:</p>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="laptop_idir">IDIR: </label>
+                        <input
+                        id="laptop_idir"
+                        type="text"
+                        name="laptop_idir"
+                        value={formData.laptop_idir}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="laptop_firstname">First Name: </label>
+                        <input
+                        id="laptop_firstname"
+                        type="text"
+                        name="laptop_firstname"
+                        value={formData.laptop_firstname}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="laptop_lastname">Last Name: </label>
+                        <input
+                        id="laptop_lastname"
+                        type="text"
+                        name="laptop_lastname"
+                        value={formData.laptop_lastname}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="laptop_startdate">Start Date: </label>
+                        <input
+                        id="laptop_startdate"
+                        type="date"
+                        name="laptop_startdate"
+                        value={formData.laptop_startdate}
+                        onChange={onChange}
+                        />
+                    </div>
+                </div>
+                <br></br>
+                <p className="field-note">To complete your request, Facilities and Assets needs to know where the device must be shipped to ("shipping address") as well as the contact information of a person located at the shipping address ("site contact").</p>               
+                <p className="field-note">For repairs when a loaner is required. If you have a new hire, there is no need to complete the Easier Tool to request a Laptop or Surface Pro.</p>               
             </>
             )}
             {formData.mobile_phones === true && (

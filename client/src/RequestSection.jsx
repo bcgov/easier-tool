@@ -642,7 +642,41 @@ export default function RequestSection({ formData, onChange }) {
             )}
             {formData.monitors === true && (
             <>
-                <p>Cables and Adapters Types and Quantities</p>
+                <p>Monitors</p>
+                <p className="field-note">Please provide the Computer and Workstation information for the monitor's user:</p>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="monitor_computer">Computer Number: </label>
+                        <input
+                        id="monitor_computer"
+                        type="text"
+                        name="monitor_computer"
+                        value={formData.monitor_computer}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="monitor_workstation">Workstation Number: </label>
+                        <input
+                        id="monitor_workstation"
+                        type="text"
+                        name="monitor_workstation"
+                        value={formData.monitor_workstation}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="monitor_quantity">Quantity: </label>
+                        <input
+                        id="monitor_quantity"
+                        type="number"
+                        name="monitor_quantity"
+                        value={formData.monitor_quantity}
+                        onChange={onChange}
+                        />
+                    </div>
+                </div>
+                <p className="field-note">If your monitor has broken, please call 77000 and create a ticket before requesting a replacment monitor.</p>            
             </>
             )}
             {formData.mouse === true && (

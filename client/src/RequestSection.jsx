@@ -54,12 +54,12 @@ export default function RequestSection({ formData, onChange }) {
                 <div>
                 <input
                     type="checkbox"
-                    id="mobile_phone"
-                    name="mobile_phone"
-                    checked={formData.mobile_phone || false}
+                    id="mobile_phones"
+                    name="mobile_phones"
+                    checked={formData.mobile_phones || false}
                     onChange={onChange}
                 />
-                <label htmlFor="mobile_phone">Mobile Phones</label>
+                <label htmlFor="mobile_phones">Mobile Phones</label>
                 </div>
                 <div>
                 <input
@@ -123,6 +123,7 @@ export default function RequestSection({ formData, onChange }) {
                 </div>
             </div>                
             </section>
+
             {formData.cables_adapters === true && (
             <>
                 <p>Cables and Adapters Types and Quantities</p>
@@ -461,6 +462,85 @@ export default function RequestSection({ formData, onChange }) {
                 </div>
             </>
             )}
+            {formData.keyboards === true && (
+            <>
+                <p>Keyboards:</p>
+                <p className="field-note">Please provide the following information for the keyboard's intended user:</p>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="keyboard_idir">IDIR: </label>
+                        <input
+                        id="keyboard_idir"
+                        type="text"
+                        name="keyboard_idir"
+                        value={formData.keyboard_idir}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="keyboard_computer">Computer Number: </label>
+                        <input
+                        id="keyboard_computer"
+                        type="text"
+                        name="keyboard_computer"
+                        value={formData.keyboard_computer}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="keyboard_workstation">Workstation Number: </label>
+                        <input
+                        id="keyboard_workstation"
+                        type="text"
+                        name="keyboard_workstation"
+                        value={formData.keyboard_workstation}
+                        onChange={onChange}
+                        />
+                    </div>
+                </div>
+            </>
+            )}
+            {formData.laptops === true && (
+            <>
+                <p>Cables and Adapters Types and Quantities</p>
+            </>
+            )}
+            {formData.mobile_phones === true && (
+            <>
+                <p>Cables and Adapters Types and Quantities</p>
+            </>
+            )}
+            {formData.monitors === true && (
+            <>
+                <p>Cables and Adapters Types and Quantities</p>
+            </>
+            )}
+            {formData.mouse === true && (
+            <>
+                <p>Cables and Adapters Types and Quantities</p>
+            </>
+            )}
+            {formData.software === true && (
+            <>
+                <p>Cables and Adapters Types and Quantities</p>
+            </>
+            )}
+            {formData.unified_comms === true && (
+            <>
+                <p>Cables and Adapters Types and Quantities</p>
+            </>
+            )}
+            {formData.webcams === true && (
+            <>
+                <p>Cables and Adapters Types and Quantities</p>
+            </>
+            )}
+            {formData.other_equipment === true && (
+            <>
+                <p>Cables and Adapters Types and Quantities</p>
+            </>
+            )}
+
             <div>
                 <p>Shipping Information:</p>
                 <div className="form-grid">

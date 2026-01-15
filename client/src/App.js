@@ -235,6 +235,8 @@ function App() {
       const pdfBase64  = dataUri.split(',')[1];
       window.open(dataUri, '_blank');
 
+      
+      /*
       // 2) now turn each File into { filename, content: base64, contentType }
       const filePromises = files.map(
         file =>
@@ -257,7 +259,6 @@ function App() {
 
       const facilitiesEmail = process.env.REACT_APP_FACILITIES_EMAIL;
 
-      /*
       // 3) POST them
       const API = process.env.REACT_APP_MAIL_SERVER_URL || 'http://localhost:3001';
       const response = await fetch(`${API}/send-pdf`, {

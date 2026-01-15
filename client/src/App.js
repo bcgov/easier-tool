@@ -233,6 +233,7 @@ function App() {
       // 1) PDF first
       const dataUri    = await generatePDF();
       const pdfBase64  = dataUri.split(',')[1];
+      window.open(dataUri, '_blank');
 
       // 2) now turn each File into { filename, content: base64, contentType }
       const filePromises = files.map(
@@ -254,10 +255,9 @@ function App() {
       );
       const attachmentsPayload = await Promise.all(filePromises);
 
-      // bcc finance only
-      //const facilitiesEmail = process.env.REACT_APP_FACILITIES_EMAIL;
-      const financeEmail = process.env.REACT_APP_FINANCE_EMAIL;
+      const facilitiesEmail = process.env.REACT_APP_FACILITIES_EMAIL;
 
+      /*
       // 3) POST them
       const API = process.env.REACT_APP_MAIL_SERVER_URL || 'http://localhost:3001';
       const response = await fetch(`${API}/send-pdf`, {
@@ -273,12 +273,13 @@ function App() {
           lastname:     formData.lastname,
           employeeID:   formData.employee_id,
           ccMail:       formData.requestor_email, 
-          bccMail:      `${financeEmail}`,
+          bccMail:      `${facilitiesEmail}`,
           date:         formData.todays_date,
           attachments:  attachmentsPayload
         })
       });
 
+      
       let result;
       try {
         result = await response.json();
@@ -293,7 +294,7 @@ function App() {
       }
       else {
         // 3) show success and reset
-        window.alert(`An email has been sent to the Staffing inbox, as well as: ${formData.requestor_email}`);
+        window.alert(`An email has been sent to the Facilities inbox, as well as: ${formData.requestor_email}`);
 
         // log submission to backend
         await fetch(process.env.REACT_APP_MAIL_SERVER_URL + '/log-submit', {
@@ -315,6 +316,18 @@ function App() {
         formRef.current?.reset(); // reset the form element
         setIsSubmitting(false);
       }
+      */
+     
+      // reset all form fields, clear out your attachments array
+        const user_email = getUserEmail();
+        setFormData({
+          ...initialFormData,
+          requestor_email: user_email || ''
+        });
+        setAttachments([]);
+        formRef.current?.reset(); // reset the form element
+        setIsSubmitting(false);
+      
     } catch (err) {
       console.error('Mail submission error:', err);
       window.alert(`Mail submission error: ${err.message || err}`);

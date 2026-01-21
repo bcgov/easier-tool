@@ -267,7 +267,6 @@ function App() {
           pdfBase64,
           firstname:    formData.firstname,
           lastname:     formData.lastname,
-          employeeID:   formData.employee_id,
           ccMail:       formData.requestor_email, 
           //bccMail:      `${requestor_email}`,
           date:         formData.todays_date,

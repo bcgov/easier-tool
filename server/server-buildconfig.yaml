@@ -2,7 +2,7 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   name: easier-tool-server
-  namespace: bcd07f-tools
+  namespace: f861e3-tools
   labels:
     app: easier-tool-server
     app.kubernetes.io/component: easier-tool-server

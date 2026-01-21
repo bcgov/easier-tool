@@ -73,9 +73,7 @@ app.post('/send-pdf', async (req, res) => {
       pdfBase64,
       firstname,
       lastname,
-      employeeID,
       ccMail,
-      bccMail,
       date,
       attachments
     } = req.body;
@@ -112,14 +110,13 @@ app.post('/send-pdf', async (req, res) => {
     ];
 
     // build  subject line
-    const subject = `${lastname}, ${firstname}, ${employeeID} – SUF ${date}`;
+    const subject = `Easier Tool - ${lastname}, ${firstname}, ${date}`;
 
     // send the email
     let info = await transporter.sendMail({
-      from:    '"Easier Tool" <????@gov.bc.ca>',
+      from:    '"Easier Tool" <SDPR.OPSSupportFacilitiesAndAssets@gov.bc.ca>',
       to:      email,
       cc:      ccMail,
-      bcc:     bccMail,
       subject: subject,
       html:`
         <p>

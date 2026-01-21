@@ -232,7 +232,9 @@ function App() {
       // 1) PDF first
       const dataUri    = await generatePDF();
       const pdfBase64  = dataUri.split(',')[1];
-      window.open(dataUri, '_blank');
+      
+      // display PDF to browser for testing
+      //window.open(dataUri, '_blank');
 
       // 2) now turn each File into { filename, content: base64, contentType }
       const filePromises = files.map(

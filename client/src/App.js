@@ -36,13 +36,12 @@ function App() {
   const [attachments, setAttachments] = useState([]);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [accordionOpen, setAccordionOpen] = useState(false); // State for accordion
 
   const [initialized, setInitialized] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [token, setToken] = useState(null); // State to store the token
-  const [accordionOpen, setAccordionOpen] = useState(false); // State for accordion
-
-  /*
+  
   useEffect(() => {
     getKeycloak()
       .then((keycloak) => {
@@ -73,7 +72,7 @@ function App() {
   if (!authenticated) {
     return <div>Authentication required. Redirecting...</div>;
   }
-  */
+  
 
   // handle input changes
   const handleInputChange = (e) => {

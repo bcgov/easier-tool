@@ -7,7 +7,7 @@ export async function getKeycloak() {
     keycloakInstance = new Keycloak({
       url:      process.env.REACT_APP_KEYCLOAK_URL || 'https://dev.loginproxy.gov.bc.ca/auth',
       realm:    'standard',
-      clientId: 'easier-tool-6031'
+      clientId: 'easier-tool-6229'
     });
 
     try {

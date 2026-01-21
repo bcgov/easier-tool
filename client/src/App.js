@@ -234,8 +234,6 @@ function App() {
       const pdfBase64  = dataUri.split(',')[1];
       window.open(dataUri, '_blank');
 
-      
-      /*
       // 2) now turn each File into { filename, content: base64, contentType }
       const filePromises = files.map(
         file =>
@@ -256,8 +254,6 @@ function App() {
       );
       const attachmentsPayload = await Promise.all(filePromises);
 
-      const facilitiesEmail = process.env.REACT_APP_FACILITIES_EMAIL;
-
       // 3) POST them
       const API = process.env.REACT_APP_MAIL_SERVER_URL || 'http://localhost:3001';
       const response = await fetch(`${API}/send-pdf`, {
@@ -267,18 +263,17 @@ function App() {
           'Authorization': `Bearer ${token}` // Use the token from state
         },
         body: JSON.stringify({
-          email:        process.env.REACT_APP_STAFFING_EMAIL || 'sinan.soykut@gov.bc.ca',
+          email:        process.env.REACT_APP_FACILITIES_EMAIL || 'sinan.soykut@gov.bc.ca',
           pdfBase64,
           firstname:    formData.firstname,
           lastname:     formData.lastname,
           employeeID:   formData.employee_id,
           ccMail:       formData.requestor_email, 
-          bccMail:      `${facilitiesEmail}`,
+          //bccMail:      `${requestor_email}`,
           date:         formData.todays_date,
           attachments:  attachmentsPayload
         })
       });
-
       
       let result;
       try {
@@ -316,7 +311,6 @@ function App() {
         formRef.current?.reset(); // reset the form element
         setIsSubmitting(false);
       }
-      */
      
       // reset all form fields, clear out your attachments array
         const user_email = getUserEmail();

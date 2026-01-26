@@ -276,7 +276,7 @@ export default function RequestSection({ formData, onChange }) {
             <>
                 <p>CISB Equipment Types and Quantites</p>
                 <div style={{ marginLeft: '20px', marginBottom: '20px' }}>
-                    <label htmlFor="surfacepro_model">Surface Pro Model:</label>
+                    <label htmlFor="surfacepro_model">Surface Pro/Laptop Model:</label>
                     <select
                       id="surfacepro_model"
                       name="surfacepro_model"
@@ -286,6 +286,7 @@ export default function RequestSection({ formData, onChange }) {
                     >
                       <option value="surfacepro_eleven">Surface Pro 11</option>
                       <option value="surfacepro_eight">Surface Pro 8</option>
+                      <option value="14inch_laptop">14” Laptop</option>
                     </select>
                 </div>
                 <div className="form-grid">

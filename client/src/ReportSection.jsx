@@ -9,6 +9,10 @@ const ReportSection = ({ formData, onChange }) => {
       </div>
       <div className="request-change-content">
         <section className="info-section">
+          <p className="field-note">
+              To request facility operations/maintenance services, emergency responses, or service complaints on an existing work order, call CBRE directly at 1 (877) 222-3112.<br></br>
+              "Emergency responses" are facility-related requests requiring immediate action which, if held up or delayed, are certain to cause catastrophic impact on people, property, or service delivery. Examples include but are not limited to: fire, flood, loss of power, break ins
+            </p>
           <p>Select all that apply:</p>
           <div className="checkbox-group">
             <div>
@@ -183,13 +187,7 @@ const ReportSection = ({ formData, onChange }) => {
                 </div>
               </>
             )}
-
             <br />
-            <p className="field-note">
-              To request facility operations and maintenance services, emergency responses, or to initiate a service complaint on an existing work order, please call CBRE directly at 1 (877) 222-3112.<br></br>
-              "Operations and maintenance services" refer to day-to-day facility operations and maintenance functions that are provided by, and contractually covered under, CBRE. This does not incur additional costs to the division.<br></br>
-              "Emergency responses" are facility-related requests requiring immediate action which, if help up or delayed, are certain to cause catastrophic impact on people, property, or service delivery. Examples include but are not limited to: fire, flood, loss of power, break ins
-            </p>
         </section>
       </div>
     </>

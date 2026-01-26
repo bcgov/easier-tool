@@ -109,7 +109,7 @@ export default function RequestSection({ formData, onChange }) {
                     checked={formData.unified_comms || false}
                     onChange={onChange}
                 />
-                <label htmlFor="unified_comms">Unified Communications (UC)</label>
+                <label htmlFor="unified_comms">Unified Communications (UC Headsets)</label>
                 </div>
                 <div>
                 <input
@@ -868,7 +868,7 @@ export default function RequestSection({ formData, onChange }) {
                 <p className="field-note">Facilities and Assets will request from the supervisor the headset choice for new hires and will order this and Unified Communications – there is no need to complete an Easier Tool.</p>
                 <p className="field-note">Please note this form is for changes only. If your existing headset is broken or damaged, please call 7-7000 to request a device repair. If, your repair request was denied, your device was deemed beyond repair, or your device does not qualify for replacement, please complete the section below.</p>
                 
-                <label>UC Activation or Suppression: </label>
+                <label>Request a UC service: </label>
                 <div className="radio-group">
                     <div>
                         <input
@@ -879,7 +879,7 @@ export default function RequestSection({ formData, onChange }) {
                         checked={formData.UC_radio === 'activation'}
                         onChange={onChange}
                         />
-                        <label htmlFor="activation">Request a new UC Activation</label>
+                        <label htmlFor="activation">New UC Activation</label>
                     </div>
                     <div>
                         <input
@@ -890,7 +890,29 @@ export default function RequestSection({ formData, onChange }) {
                         checked={formData.UC_radio === 'suppression'}
                         onChange={onChange}
                         />
-                        <label htmlFor="suppression">Request outgoing UC calls be suppressed</label>
+                        <label htmlFor="suppression">Outgoing UC call suppression</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="UC_replacement"
+                        name="UC_radio"
+                        value="UC_replacement"
+                        checked={formData.UC_radio === 'UC_replacement'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="UC_replacement">Replacement headset</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="UC_other"
+                        name="UC_radio"
+                        value="UC_other"
+                        checked={formData.UC_radio === 'UC_other'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="UC_other">Other</label>
                     </div>
                 </div>
                 <br></br>
@@ -964,6 +986,63 @@ export default function RequestSection({ formData, onChange }) {
                     </>
                     )}
                 </div>
+                <br></br>
+                {formData.UC_radio === 'UC_replacement' && (
+                <>
+                    <div className="radio-group">
+                        <div>
+                            <input
+                            type="radio"
+                            id="UC_replacement_new"
+                            name="UC_replacement_reason"
+                            value="UC_replacement_new"
+                            checked={formData.UC_replacement_reason === 'UC_replacement_new'}
+                            onChange={onChange}
+                            />
+                            <label htmlFor="activUC_replacement_newation">New headset style required</label>
+                        </div>
+                        <div>
+                            <input
+                            type="radio"
+                            id="UC_replacement_damaged"
+                            name="UC_replacement_reason"
+                            value="UC_replacement_damaged"
+                            checked={formData.UC_replacement_reason === 'UC_replacement_damaged'}
+                            onChange={onChange}
+                            />
+                            <label htmlFor="UC_replacement_damaged">Damaged beyond repair</label>
+                        </div>
+                    </div>
+                    <br></br>
+
+                    <div className="textarea-field" style={{ paddingLeft: '30px' }}>
+                        <label htmlFor="comments">Additional Information:</label> <br></br>
+                        <textarea
+                            id="UC_comments"
+                            name="UC_comments"
+                            rows="4" 
+                            value={formData.UC_comments || ''}
+                            onChange={onChange}
+                        />
+                    </div>
+
+                    {formData.UC_replacement_reason === 'UC_replacement_damaged' && (
+                    <>
+                        <div className="textarea-field" style={{ paddingLeft: '30px' }}>
+                            <label>Incident #:</label>
+                            <input
+                                id="UC_incident_number"
+                                type="text"
+                                name="UC_incident_number"
+                                value={formData.UC_incident_number}
+                                onChange={onChange}
+                                required
+                            />
+                        </div>
+                    </>
+                    )}
+                </>
+                )}
             </>
             )}
             {formData.webcams === true && (

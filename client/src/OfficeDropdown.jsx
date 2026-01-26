@@ -11,7 +11,7 @@ const officeOptions = [
   { value: '132 Nanaimo South', label: '132 Nanaimo South' },
   { value: '135 Nanaimo North', label: '135 Nanaimo North' },
   { value: '138 Port Alberni', label: '138 Port Alberni' },
-  { value: '139 Courtney', label: '139 Courtney' },
+  { value: '139 Courtenay', label: '139 Courtenay' },
   { value: '141 Powell River', label: '141 Powell River' },
   { value: '143 Campbell River', label: '143 Campbell River' },
   { value: '144 Port Hardy (SBC)', label: '144 Port Hardy (SBC)' },

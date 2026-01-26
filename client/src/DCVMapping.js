@@ -42,7 +42,7 @@ const DVCMapping = {
   "420 Grand Forks (SBC)":"28932",
   "421 Trail":"127267",
   "422 Nelson":"1309",
-  "432 Nakusp (SBC":"9741",
+  "423 Nakusp (SBC":"9741",
   "430 Princeton (SBC)":"41107",
   "431 Oliver":"2313",
   "432 Penticton":"2844",

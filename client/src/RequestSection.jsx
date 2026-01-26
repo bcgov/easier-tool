@@ -1071,7 +1071,20 @@ export default function RequestSection({ formData, onChange }) {
                         onChange={onChange}
                     />
                     </div>
+                    <div style={{ marginTop: '15px' }}>
+                    <input
+                        type="checkbox"
+                        name="confirm_shipping_info"
+                        checked={formData.confirm_shipping_info || false}
+                        onChange={onChange}
+                        required
+                    />
+                    <label>
+                        <span className="required">* </span>Please confirm the above shipping information
+                    </label>
                 </div>
+                </div>
+                
                 <br></br>
             </div>
         </div>

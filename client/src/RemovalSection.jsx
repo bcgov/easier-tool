@@ -185,6 +185,18 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                 onChange={onChange}
               />
             </div>
+            <div style={{ marginTop: '15px' }}>
+              <input
+                  type="checkbox"
+                  name="confirm_shipping__removal_info"
+                  checked={formData.confirm_shipping__removal_info || false}
+                  onChange={onChange}
+                  required
+              />
+              <label>
+                  <span className="required">* </span>Please confirm the above shipping information
+              </label>
+            </div>
           </div>
           <br></br>
         </div>

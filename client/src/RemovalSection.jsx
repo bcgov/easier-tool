@@ -1,4 +1,6 @@
 import React from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 import OfficeDropdown from './OfficeDropdown';
 
 export default function RemovalSection({ formData, onChange, onAddRemovalItem, onRemovalItemChange }) {
@@ -75,7 +77,9 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                 <th style={{ border: '1px solid #ccc', padding: '8px' }}>Condition</th>
                 <th style={{ border: '1px solid #ccc', padding: '8px' }}>Description</th>
                 <th style={{ border: '1px solid #ccc', padding: '8px' }}>Dimensions</th>
-                <th style={{ border: '1px solid #ccc', padding: '8px' }}>Box Number</th>
+                <Tippy content="If you have boxed up items, and have labelled each box, please provide the box number here" delay={[0, 0]}>
+                  <th style={{ border: '1px solid #ccc', padding: '8px', cursor: 'help' }}>Box Number</th>
+                </Tippy>
                 <th style={{ border: '1px solid #ccc', padding: '8px' }}>Additional Info</th>
               </tr>
             </thead>
@@ -83,13 +87,19 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
               {(formData.removal_items || []).map((item) => (
                 <tr key={item.id}>
                   <td style={{ border: '1px solid #ccc', padding: '8px' }}>
-                    <input 
-                      type="text" 
-                      placeholder="Device Type" 
+                    <select 
                       style={{ width: '100%' }}
-                      value={item.device}
+                      value={item.condition}
                       onChange={(e) => onRemovalItemChange(item.id, 'device', e.target.value)}
-                    />
+                    >
+                      <option value="">Please Select: </option>
+                      <option value="printer">Printer</option>
+                      <option value="electronics">Electronics</option>
+                      <option value="furniture">Furniture</option>
+                      <option value="supplies">Office Supplies</option>
+                      <option value="equipment">Equipment</option>
+                      <option value="other">Other</option>
+                    </select>
                   </td>
                   <td style={{ border: '1px solid #ccc', padding: '8px' }}>
                     <select 

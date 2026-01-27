@@ -124,6 +124,16 @@ export default function RequestSection({ formData, onChange }) {
                 <div>
                 <input
                     type="checkbox"
+                    id="repairs"
+                    name="repairs"
+                    checked={formData.repairs || false}
+                    onChange={onChange}
+                />
+                <label htmlFor="repairs">Repairs</label>
+                </div>
+                <div>
+                <input
+                    type="checkbox"
                     id="other_equipment"
                     name="other_equipment"
                     checked={formData.other_equipment || false}
@@ -1043,6 +1053,104 @@ export default function RequestSection({ formData, onChange }) {
                     )}
                 </>
                 )}
+            </>
+            )}
+            {formData.repairs === true && (
+            <>
+                <p>Repairs</p>
+                
+                <label>Repair for: </label>
+                <div className="radio-group">
+                    <div>
+                        <input
+                        type="radio"
+                        id="repair_radio_desk"
+                        name="repair_radio"
+                        value="repair_radio_desk"
+                        checked={formData.repair_radio === 'repair_radio_desk'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="repair_radio_desk">Broken Desk</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="repair_radio_chair"
+                        name="repair_radio"
+                        value="repair_radio_chair"
+                        checked={formData.repair_radio === 'repair_radio_chair'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="repair_radio_chair">Broken Chair</label>
+                    </div>
+                </div>
+                <br></br>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="repair_workstation">Workstation number: </label>
+                        <input
+                        id="repair_workstation"
+                        type="text"
+                        name="repair_workstation"
+                        value={formData.repair_workstation}
+                        onChange={onChange}
+                        />
+                    </div>
+                    {formData.repair_radio === 'repair_radio_desk' && (
+                    <>
+                        <div>
+                            <label htmlFor="desk_select">Desk Type:</label>
+                            <select
+                            id="desk_select"
+                            name="desk_select"
+                            value={formData.desk_select || ''}
+                            onChange={onChange}
+                            >
+                            <option value="desk_select">Please Select:</option>
+                            <option value="height_adjustable_desk">Height-Adjustable desk</option>
+                            <option value="non_height_adjustable_desk">Non Height-Adjustable desk</option>
+                            <option value="transaction_top">Transaction Top</option>
+                            <option value="other_desk">Other desk</option>
+                            </select>
+                        </div>
+                    </>
+                    )}     
+                    {formData.repair_radio === 'repair_radio_chair' && (
+                    <>
+                        <div>
+                            <label htmlFor="repair_chair_make">Chair Make:</label>
+                            <input
+                            id="repair_chair_make"
+                            type="text"
+                            name="repair_chair_make"
+                            value={formData.repair_chair_make}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="repair_chair_model">Chair Model:</label>
+                            <input
+                            id="repair_chair_model"
+                            type="text"
+                            name="repair_chair_model"
+                            value={formData.repair_chair_model}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="repair_chair_purchase_date">Purchase Date:</label>
+                            <input
+                            id="repair_chair_purchase_date"
+                            type="date"
+                            name="repair_chair_purchase_date"
+                            value={formData.repair_chair_purchase_date}
+                            onChange={onChange}
+                            />
+                        </div>
+                    </>
+                    )}                   
+                </div>
+                <p className="field-note">Using the "Additional information, attachments and sign-off" section below, provide further details regarding the issue you are experiencing. Attach any photos or drawing that may be appropriate.</p>
             </>
             )}
             {formData.webcams === true && (

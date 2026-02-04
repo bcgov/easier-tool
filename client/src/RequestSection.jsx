@@ -1258,18 +1258,20 @@ export default function RequestSection({ formData, onChange }) {
                         onChange={onChange}
                     />
                     </div>
-                    <div style={{ marginTop: '15px' }}>
+                </div>
+                <div style={{ marginLeft: '30px', marginTop: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <input
                         type="checkbox"
                         name="confirm_shipping_info"
                         checked={formData.confirm_shipping_info || false}
                         onChange={onChange}
                         required
+                        id="confirm_shipping_info"
+                        style={{ width: 'auto', margin: 0 }}
                     />
-                    <label>
+                    <label htmlFor="confirm_shipping_info" style={{ margin: 0 }}>
                         <span className="required">* </span>Please confirm the above shipping information
                     </label>
-                </div>
                 </div>
                 
                 <br></br>

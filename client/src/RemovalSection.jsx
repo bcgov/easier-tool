@@ -89,7 +89,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                   <td style={{ border: '1px solid #ccc', padding: '8px' }}>
                     <select 
                       style={{ width: '100%' }}
-                      value={item.condition}
+                      value={item.device}
                       onChange={(e) => onRemovalItemChange(item.id, 'device', e.target.value)}
                     >
                       <option value="">Please Select: </option>

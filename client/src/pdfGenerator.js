@@ -15,6 +15,14 @@ export async function generatePDF() {
   // Add the print-form class to the form for PDF rendering
   formElement.classList.add('print-form');
 
+  // Hide all .no-print elements before rendering to PDF
+  const noPrintElements = formElement.querySelectorAll('.no-print');
+  const noPrintDisplay = [];
+  noPrintElements.forEach(element => {
+    noPrintDisplay.push(element.style.display);
+    element.style.display = 'none';
+  });
+
   const pdf = new jsPDF({
     unit: 'px',
     format: [800, height]
@@ -60,6 +68,10 @@ export async function generatePDF() {
   await pdf.html(formElement, {
     callback: function (doc) {
       formElement.classList.remove('print-form'); // Clean up after rendering
+      // Restore all .no-print elements
+      noPrintElements.forEach((element, index) => {
+        element.style.display = noPrintDisplay[index];
+      });
       // Restore all textareas after PDF rendering
       replacements.forEach(({ textarea, replacement }) => {
         textarea.style.display = '';
@@ -78,6 +90,6 @@ export async function generatePDF() {
     }
   });
 
-  //pdf.save('form.pdf') //print out directly
-  return pdf.output('datauristring');
+  pdf.save('form.pdf') //print out directly
+  //return pdf.output('datauristring');
 }

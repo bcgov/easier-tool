@@ -12,6 +12,17 @@
   pointer-events: none;
 }
 
+/* Hide elements from PDF/print output */
+.no-print {
+  display: block;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

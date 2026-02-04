@@ -343,7 +343,7 @@ function App() {
             </div>
 
             {/* Collapsible Accordion */}
-            <div style={{ marginBottom: '20px'}}>
+            <div className="no-print" style={{ marginBottom: '20px'}}>
               <button
                 type="button"
                 onClick={() => setAccordionOpen(!accordionOpen)}

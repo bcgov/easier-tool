@@ -224,20 +224,30 @@ textarea {
   box-sizing: border-box; /* Include padding and borders in the width calculation */
 }
 
-.radio-group {
-  display: flex; 
-  flex-wrap: wrap; /* Allow wrapping if there are many items */
-  align-items: flex-start; /* Center-align the items vertically */
-  gap: 10px; /* Add space between the items */
+ .radio-group {
+   display: flex; 
+   flex-wrap: wrap; /* Allow wrapping if there are many items */
+   align-items: flex-start; /* Center-align the items vertically */
+   gap: 10px; /* Add space between the items */
+   font-size: 0.8em; /* Slightly smaller font for radio group */
+ }
+.radio-group > div {
+  display: flex; /* place input and label on same line */
+  align-items: center; /* vertically center the radio and label */
 }
 
-.radio-group div input {
-  display: flex; /* Align each radio button and label horizontally */
-  align-items: flex-start; /* Vertically align the radio button and label */
+.radio-group > div label {
+  margin-left: 8px; /* space between input and label */
+  margin-bottom: 0; /* override default label bottom margin */
+  white-space: nowrap; /* keep label on one line when possible */
 }
 
-.radio-group div label {
-  align-items: center; /* Vertically align the radio button and label */
+/* Ensure radios/checkboxes don't inherit full-width from global input rule */
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  vertical-align: middle;
 }
 
 button {

@@ -644,6 +644,17 @@ export default function RequestSection({ formData, onChange }) {
                     <div>
                         <input
                         type="radio"
+                        id="replacement_phone"
+                        name="mobile_phone_radio"
+                        value="replacement_phone"
+                        checked={formData.mobile_phone_radio === 'replacement_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="replacement_phone">Replacement Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
                         id="upgrade_phone"
                         name="mobile_phone_radio"
                         value="upgrade_phone"

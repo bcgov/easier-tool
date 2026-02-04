@@ -1,4 +1,6 @@
 import React from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 const ReportSection = ({ formData, onChange }) => {
 
@@ -186,7 +188,9 @@ const ReportSection = ({ formData, onChange }) => {
                           checked={formData.security_card_type === 'designated'}
                           onChange={onChange}
                         />
-                        <label htmlFor="security_cards_designated" style={{ marginLeft: '8px' }}>Designated access cards/fobs</label>
+                        <Tippy content="'Designated' access cards and fobs are programmed for, and intended for the use of, assigned owners. These are non-transferrable and can only be used by the individuals they are assigned to." delay={[0, 0]}>
+                          <label htmlFor="security_cards_designated" style={{ marginLeft: '8px', cursor: 'help' }}>Designated access cards/fobs</label>
+                        </Tippy>
                       </div>
                       <div>
                         <input
@@ -197,7 +201,9 @@ const ReportSection = ({ formData, onChange }) => {
                           checked={formData.security_card_type === 'stockpile'}
                           onChange={onChange}
                         />
-                        <label htmlFor="security_cards_stockpile" style={{ marginLeft: '8px' }}>Stockpile access cards/fobs</label>
+                        <Tippy content="'Stockpile' access cards and fobs are those yet to be programmed. They are typically ordered as part of an inventory or stock replenishment." delay={[0, 0]}>
+                          <label htmlFor="security_cards_stockpile" style={{ marginLeft: '8px' }}>Stockpile access cards/fobs</label>
+                        </Tippy>
                       </div>
                     </div>
                   </div>
@@ -281,7 +287,9 @@ const ReportSection = ({ formData, onChange }) => {
                           checked={formData.security_keys_type === 'security_keys_designated'}
                           onChange={onChange}
                         />
-                        <label htmlFor="security_keys_designated" style={{ marginLeft: '8px' }}>Designated alarm codes for staff</label>
+                        <Tippy content="'Designated' alarm codes are programmed for, and intended for the use of, assigned owners. These are non-transferrable and can only be used by the individuals they are assigned to. This option is for office buildings without access card readers only." delay={[0, 0]}>
+                          <label htmlFor="security_keys_designated" style={{ marginLeft: '8px' }}>Designated alarm codes for staff</label>
+                        </Tippy>
                       </div>
                       <div>
                         <input
@@ -292,7 +300,9 @@ const ReportSection = ({ formData, onChange }) => {
                           checked={formData.security_keys_type === 'security_keys_generic'}
                           onChange={onChange}
                         />
-                        <label htmlFor="security_keys_generic" style={{ marginLeft: '8px' }}>Generic alarm codes for the office</label>
+                        <Tippy content="'Generic' alarm codes are designated to be shared by several employees who each have their own individual access cards. This option is for office building with access card readers only." delay={[0, 0]}>
+                          <label htmlFor="security_keys_generic" style={{ marginLeft: '8px' }}>Generic alarm codes for the office</label>
+                        </Tippy>
                       </div>
                     </div>
                   </div>

@@ -337,9 +337,10 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                     <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Protective%20Case.png?csf=1&web=1&e=ccMqku" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                        <label style={{ fontSize: '14px', color: '#009bd6'}}>
                         Surface Pro Protective Case
-                        </a><br />
+                        </label>
+                        <br />
                         <input
                         id="surfacepro_case"
                         type="number"

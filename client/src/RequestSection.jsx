@@ -616,6 +616,22 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                       </>
                     )}
+                    {formData.mobile_phone_radio === 'replacement_phone' && (
+                      <>
+                        <div>
+                          <label htmlFor="prior_phone_type">Prior Phone Type:</label>
+                          <select
+                            id="prior_phone_type"
+                            name="prior_phone_type"
+                            value={formData.prior_phone_type || ''}
+                            onChange={onChange}
+                            >
+                            <option value="samsung_phone_type">Samsung</option>
+                            <option value="apple_phone_type">Apple</option>
+                            </select>
+                        </div>
+                      </>
+                    )}
                 </div>
                 
                 <br></br>

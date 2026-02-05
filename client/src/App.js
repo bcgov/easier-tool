@@ -161,7 +161,14 @@ function App() {
 
   // handle form attachments
   const handleFileChange = (e, index = 0) => {
-    const file = e.target.files[0];
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
+    // if multiple selected, delegate to handler
+    if (files.length > 1) {
+      handleFilesSelected(files);
+      return;
+    }
+    const file = files[0];
     if (!file) return;
     if (file.size > 20 * 1024 * 1024) {
       window.alert('Attachment size must be 20MB or less.');
@@ -179,8 +186,35 @@ function App() {
     handleFileChange(e, index);
   };
 
+  // Handle multiple selected or dropped files
+  const handleFilesSelected = (fileList) => {
+    const filesArray = Array.from(fileList);
+    const filtered = [];
+    for (const file of filesArray) {
+      if (file.size > 20 * 1024 * 1024) {
+        window.alert(`Attachment "${file.name}" exceeds 20MB and will be skipped.`);
+        continue;
+      }
+      filtered.push(file);
+    }
+    if (filtered.length === 0) return;
+    setAttachments(prev => [...prev, ...filtered]);
+  };
+
   const addNewAttachmentField = () => {
-    setAttachments((prevAttachments) => [...prevAttachments, null]); // Add a placeholder for a new file
+    // Trigger the hidden file input to allow multi-select/upload
+    if (!fileInputRefs.current[0]) return;
+    fileInputRefs.current[0].click();
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    if (!e.dataTransfer) return;
+    handleFilesSelected(e.dataTransfer.files);
+  };
+
+  const removeAttachment = (index) => {
+    setAttachments(prev => prev.filter((_, i) => i !== index));
   };
 
   // Handle adding a new removal item row
@@ -489,20 +523,37 @@ function App() {
             </div><br></br>
 
             <div style={{ paddingLeft: '30px' }}>
-              <button type="button" onClick={addNewAttachmentField}>
-                Attach a file
-              </button>
-              <p className="field-note">You can upload pdf's, documents, or other files.</p>            
-            </div>
-            {attachments.map((attachment, index) => (
-              <div key={index} style={{ marginBottom: '10px', paddingLeft: '30px' }}>
+              <div
+                onDragOver={(e) => e.preventDefault()}
+                onDrop={handleDrop}
+                onClick={() => fileInputRefs.current[0]?.click()}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') fileInputRefs.current[0]?.click(); }}
+                role="button"
+                tabIndex={0}
+                style={{ border: '2px dashed #ccc', padding: '12px', borderRadius: '4px', cursor: 'pointer', width: '100%', boxSizing: 'border-box' }}
+              >
                 <input
                   type="file"
-                  ref={el => fileInputRefs.current[index] = el}
-                  onChange={e => handleAddAttachment(e, index)}
+                  id="file-upload"
+                  multiple
+                  style={{ display: 'none' }}
+                  ref={el => fileInputRefs.current[0] = el}
+                  onChange={e => handleFilesSelected(e.target.files)}
                 />
+                <p className="field-note" style={{ margin: '8px 0 0 0' }}>Drag & drop files here, or click to select multiple files (max 20MB per file)</p>
               </div>
-            ))}
+
+              {attachments && attachments.length > 0 && (
+                <ul className="attachment-list">
+                  {attachments.map((file, i) => (
+                    <li key={i} style={{ marginBottom: '6px' }}>
+                      {file.name} &nbsp;
+                      <button type="button" onClick={() => removeAttachment(i)}>Remove</button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
 
             <div style={{ paddingLeft: '30px' }}>
               <button type="submit" style={{ backgroundColor: '#2172ff', color: 'white' }} disabled={isSubmitting}>Email</button>

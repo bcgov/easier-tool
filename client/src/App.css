@@ -344,3 +344,14 @@ input[type="number"] {
 .current-information-section {
   padding-left: 30px;
 }
+
+/* Attachment list (file names) styling */
+.attachment-list {
+  font-size: 0.85em; /* slightly smaller text for attachment list */
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.attachment-list li {
+  margin-bottom: 6px;
+}

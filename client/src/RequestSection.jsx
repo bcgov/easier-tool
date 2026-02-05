@@ -1,5 +1,7 @@
 import React from 'react';
 import OfficeDropdown from './OfficeDropdown';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 export default function RequestSection({ formData, onChange }) {
   return (
@@ -24,22 +26,12 @@ export default function RequestSection({ formData, onChange }) {
                 <div>
                 <input
                     type="checkbox"
-                    id="cisb_equipment"
-                    name="cisb_equipment"
-                    checked={formData.cisb_equipment || false}
+                    id="cisb"
+                    name="cisb"
+                    checked={formData.cisb || false}
                     onChange={onChange}
                 />
-                <label htmlFor="cisb_equipment">CISB Equipment</label>
-                </div>
-                <div>
-                <input
-                    type="checkbox"
-                    id="cisb_mobile_office"
-                    name="cisb_mobile_office"
-                    checked={formData.cisb_mobile_office || false}
-                    onChange={onChange}
-                />
-                <label htmlFor="cisb_mobile_office">CISB Mobile Office</label>
+                <label htmlFor="cisb">CISB</label>
                 </div>
                 <div>
                 <input
@@ -282,225 +274,348 @@ export default function RequestSection({ formData, onChange }) {
                 </div>
             </>
             )}
-            {formData.cisb_equipment === true && (
+            {formData.cisb === true && (
             <>
                 <p>CISB Equipment Types and Quantites</p>
-                <div style={{ marginLeft: '20px', marginBottom: '20px' }}>
-                    <label htmlFor="surfacepro_model">Surface Pro/Laptop Model:</label>
-                    <select
-                      id="surfacepro_model"
-                      name="surfacepro_model"
-                      value={formData.surfacepro_model || ''}
-                      onChange={onChange}
-                      style={{ marginLeft: '10px' }}
-                    >
-                      <option value="surfacepro_eleven">Surface Pro 11</option>
-                      <option value="surfacepro_eight">Surface Pro 8</option>
-                      <option value="14inch_laptop">14” Laptop</option>
-                    </select>
-                </div>
-                <div className="form-grid">
+                <label>In-Office or Mobile Office:</label>
+                <div className="radio-group">
                     <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Power%20Adapter.png?csf=1&web=1&e=dcdoBx" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Surface Pro Power Adapter
-                        </a><br />
                         <input
-                        id="surfacepro_power_adapter"
-                        type="number"
-                        name="surfacepro_power_adapter"
-                        value={formData.surfacepro_power_adapter}
+                        type="radio"
+                        id="cisb_office"
+                        name="cisb_radio"
+                        value="cisb_office"
+                        checked={formData.cisb_radio === 'cisb_office'}
                         onChange={onChange}
                         />
+                        <label htmlFor="cisb_office">CISB in-Office</label>
                     </div>
                     <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Stylus%20Pen.png?csf=1&web=1&e=tJhgDa" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Surface Pro Stylus Pen
-                        </a><br />
                         <input
-                        id="surfacepro_stylus"
-                        type="number"
-                        name="surfacepro_stylus"
-                        value={formData.surfacepro_stylus}
+                        type="radio"
+                        id="cisb_mobile"
+                        name="cisb_radio"
+                        value="cisb_mobile"
+                        checked={formData.cisb_radio === 'cisb_mobile'}
                         onChange={onChange}
                         />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Keyboard.jpg?csf=1&web=1&e=HNGp8j" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Surface Pro Keyboard
-                        </a><br />
-                        <input
-                        id="surfacepro_keyboard"
-                        type="number"
-                        name="surfacepro_keyboard"
-                        value={formData.surfacepro_keyboard}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <label style={{ fontSize: '14px', color: '#009bd6'}}>
-                        Surface Pro Protective Case
-                        </label>
-                        <br />
-                        <input
-                        id="surfacepro_case"
-                        type="number"
-                        name="surfacepro_case"
-                        value={formData.surfacepro_case}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Anti-Glare%20Screen.png?csf=1&web=1&e=RV8Nrh" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Surface Pro Anti-Glare Screen
-                        </a><br />
-                        <input
-                        id="surfacepro_screencover"
-                        type="number"
-                        name="surfacepro_screencover"
-                        value={formData.surfacepro_screencover}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Bluetooth%20Mouse.png?csf=1&web=1&e=XxRHr5" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Bluetooth Mouse
-                        </a><br />
-                        <input
-                        id="cisb_bluetooth_mouse"
-                        type="number"
-                        name="cisb_bluetooth_mouse"
-                        value={formData.cisb_bluetooth_mouse}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Tamper%20Resistant%20Backpack.jpg?csf=1&web=1&e=9oVnax" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Tamper Resistant Backpack
-                        </a><br />
-                        <input
-                        id="cisb_backpack"
-                        type="number"
-                        name="cisb_backpack"
-                        value={formData.cisb_backpack}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Portable%20Power%20Source.jpg?csf=1&web=1&e=IHppsz" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Portable Power Source
-                        </a><br />
-                        <input
-                        id="cisb_portable_power"
-                        type="number"
-                        name="cisb_portable_power"
-                        value={formData.cisb_portable_power}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Reflective%20Safety%20Vest.jpg?csf=1&web=1&e=jHNKAD" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Reflective Safety Vest
-                        </a><br />
-                        <input
-                        id="cisb_safety_vest"
-                        type="number"
-                        name="cisb_safety_vest"
-                        value={formData.cisb_safety_vest}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/USB-C%20to%2014-in-1%20Multifunction%20Hub.png?csf=1&web=1&e=sh8nbD" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        USB-C to 14-in-1 Multifunction Hub
-                        </a><br />
-                        <input
-                        id="cisb_usbc_multifunction_hub"
-                        type="number"
-                        name="cisb_usbc_multifunction_hub"
-                        value={formData.cisb_usbc_multifunction_hub}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Targus%20Rolling%20Laptop%20Bag.jpg?csf=1&web=1&e=vRbrsX" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Targus Rolling Laptop Bag
-                        </a><br />
-                        <input
-                        id="cisb_laptop_bag"
-                        type="number"
-                        name="cisb_laptop_bag"
-                        value={formData.cisb_laptop_bag}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Lightning%20to%20USB%20Cable.png?csf=1&web=1&e=Wsch2M" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Lightning to USB Cable
-                        </a><br />
-                        <input
-                        id="cisb_lightning_usb_cable"
-                        type="number"
-                        name="cisb_lightning_usb_cable"
-                        value={formData.cisb_lightning_usb_cable}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Windproof%20Umbrella.jpg?csf=1&web=1&e=6dybfw" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Windproof Umbrella
-                        </a><br />
-                        <input
-                        id="cisb_umbrella"
-                        type="number"
-                        name="cisb_umbrella"
-                        value={formData.cisb_umbrella}
-                        onChange={onChange}
-                        />
-                    </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/clipboard.jpg?csf=1&web=1&e=lMBVlU" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        CISB Clipboard
-                        </a><br />
-                        <input
-                        id="cisb_poncho"
-                        type="number"
-                        name="cisb_poncho"
-                        value={formData.cisb_poncho}
-                        onChange={onChange}
-                        />
+                        <label htmlFor="cisb_mobile">CISB Mobile</label>
                     </div>
                 </div>
-            </>
-            )}
-            {formData.cisb_mobile_office === true && (
-            <>
-                <p>CISB Mobile Office</p>
-                <div className="form-grid">
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Power%20Adapter.png?csf=1&web=1&e=dcdoBx" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Surface Pro Power Adapter
-                        </a><br />
-                        <input
-                        id="surfacepro_power_adapter"
-                        type="number"
-                        name="surfacepro_power_adapter"
-                        value={formData.surfacepro_power_adapter}
+                <br></br>
+
+                {formData.cisb_radio === 'cisb_office' && (
+                <>
+                    <div style={{ marginLeft: '20px', marginBottom: '20px' }}>
+                        <label htmlFor="surfacepro_model">Surface Pro/Laptop Model:</label>
+                        <select
+                        id="surfacepro_model"
+                        name="surfacepro_model"
+                        value={formData.surfacepro_model || ''}
                         onChange={onChange}
-                        />
+                        style={{ marginLeft: '10px' }}
+                        >
+                        <option value="surfacepro_eleven">Surface Pro 11</option>
+                        <option value="surfacepro_eight">Surface Pro 8</option>
+                        <option value="14inch_laptop">14” Laptop</option>
+                        </select>
                     </div>
-                    <div>
-                        <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Stylus%20Pen.png?csf=1&web=1&e=tJhgDa" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                        Surface Pro Stylus Pen
-                        </a><br />
-                        <input
-                        id="surfacepro_stylus"
-                        type="number"
-                        name="surfacepro_stylus"
-                        value={formData.surfacepro_stylus}
-                        onChange={onChange}
-                        />
+                    <div className="form-grid">
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Power%20Adapter.png?csf=1&web=1&e=dcdoBx" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Surface Pro Power Adapter
+                            </a><br />
+                            <input
+                            id="surfacepro_power_adapter"
+                            type="number"
+                            name="surfacepro_power_adapter"
+                            value={formData.surfacepro_power_adapter}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Stylus%20Pen.png?csf=1&web=1&e=tJhgDa" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Surface Pro Stylus Pen
+                            </a><br />
+                            <input
+                            id="surfacepro_stylus"
+                            type="number"
+                            name="surfacepro_stylus"
+                            value={formData.surfacepro_stylus}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Keyboard.jpg?csf=1&web=1&e=HNGp8j" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Surface Pro Keyboard
+                            </a><br />
+                            <input
+                            id="surfacepro_keyboard"
+                            type="number"
+                            name="surfacepro_keyboard"
+                            value={formData.surfacepro_keyboard}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            Surface Pro Protective Case
+                            </label>
+                            <br />
+                            <input
+                            id="surfacepro_case"
+                            type="number"
+                            name="surfacepro_case"
+                            value={formData.surfacepro_case}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Surface%20Pro%208%20Anti-Glare%20Screen.png?csf=1&web=1&e=RV8Nrh" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Surface Pro Anti-Glare Screen
+                            </a><br />
+                            <input
+                            id="surfacepro_screencover"
+                            type="number"
+                            name="surfacepro_screencover"
+                            value={formData.surfacepro_screencover}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Bluetooth%20Mouse.png?csf=1&web=1&e=XxRHr5" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Bluetooth Mouse
+                            </a><br />
+                            <input
+                            id="cisb_bluetooth_mouse"
+                            type="number"
+                            name="cisb_bluetooth_mouse"
+                            value={formData.cisb_bluetooth_mouse}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Tamper%20Resistant%20Backpack.jpg?csf=1&web=1&e=9oVnax" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Tamper Resistant Backpack
+                            </a><br />
+                            <input
+                            id="cisb_backpack"
+                            type="number"
+                            name="cisb_backpack"
+                            value={formData.cisb_backpack}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Portable%20Power%20Source.jpg?csf=1&web=1&e=IHppsz" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Portable Power Source
+                            </a><br />
+                            <input
+                            id="cisb_portable_power"
+                            type="number"
+                            name="cisb_portable_power"
+                            value={formData.cisb_portable_power}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Reflective%20Safety%20Vest.jpg?csf=1&web=1&e=jHNKAD" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Reflective Safety Vest
+                            </a><br />
+                            <input
+                            id="cisb_safety_vest"
+                            type="number"
+                            name="cisb_safety_vest"
+                            value={formData.cisb_safety_vest}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/USB-C%20to%2014-in-1%20Multifunction%20Hub.png?csf=1&web=1&e=sh8nbD" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            USB-C to 14-in-1 Multifunction Hub
+                            </a><br />
+                            <input
+                            id="cisb_usbc_multifunction_hub"
+                            type="number"
+                            name="cisb_usbc_multifunction_hub"
+                            value={formData.cisb_usbc_multifunction_hub}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Targus%20Rolling%20Laptop%20Bag.jpg?csf=1&web=1&e=vRbrsX" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Targus Rolling Laptop Bag
+                            </a><br />
+                            <input
+                            id="cisb_laptop_bag"
+                            type="number"
+                            name="cisb_laptop_bag"
+                            value={formData.cisb_laptop_bag}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Lightning%20to%20USB%20Cable.png?csf=1&web=1&e=Wsch2M" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Lightning to USB Cable
+                            </a><br />
+                            <input
+                            id="cisb_lightning_usb_cable"
+                            type="number"
+                            name="cisb_lightning_usb_cable"
+                            value={formData.cisb_lightning_usb_cable}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Windproof%20Umbrella.jpg?csf=1&web=1&e=6dybfw" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            Windproof Umbrella
+                            </a><br />
+                            <input
+                            id="cisb_umbrella"
+                            type="number"
+                            name="cisb_umbrella"
+                            value={formData.cisb_umbrella}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/clipboard.jpg?csf=1&web=1&e=lMBVlU" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
+                            CISB Clipboard
+                            </a><br />
+                            <input
+                            id="cisb_poncho"
+                            type="number"
+                            name="cisb_poncho"
+                            value={formData.cisb_poncho}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                             Vehicle: Mobile Desk
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_vehicle_mobile_desk"
+                            type="number"
+                            name="cisb_vehicle_mobile_desk"
+                            value={formData.cisb_vehicle_mobile_desk}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <Tippy content="(1 Package = 10 Backseat; 10 Frontseat)" delay={[0, 0]}>
+                                <label htmlFor="cisb_vehicle_seat_covers" style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Disposable Seat Covers</label>
+                            </Tippy>
+                            <br />
+                            <input
+                            id="cisb_vehicle_seat_covers"
+                            type="number"
+                            name="cisb_vehicle_seat_covers"
+                            value={formData.cisb_vehicle_seat_covers}
+                            onChange={onChange}
+                            />
+                        </div>
                     </div>
-                </div>
+                </>
+                )}
+                {formData.cisb_radio === 'cisb_mobile' && (
+                <>
+                    <div className="form-grid">
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Wireless Mobile Printer</label><br />
+                            <input
+                                id="cisb_mobile_printer"
+                                type="number"
+                                name="cisb_mobile_printer"
+                                value={formData.cisb_mobile_printer}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Folding Table</label><br />
+                            <input
+                                id="cisb_folding_table"
+                                type="number"
+                                name="cisb_folding_table"
+                                value={formData.cisb_folding_table}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Folding Chair</label><br />
+                            <input
+                                id="cisb_folding_chair"
+                                type="number"
+                                name="cisb_folding_chair"
+                                value={formData.cisb_folding_chair}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Bin/Totes</label><br />
+                            <input
+                                id="cisb_bins_totes"
+                                type="number"
+                                name="cisb_bins_totes"
+                                value={formData.cisb_bins_totes}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Fire Extinguisher</label><br />
+                            <input
+                                id="cisb_fire_extinguisher"
+                                type="number"
+                                name="cisb_fire_extinguisher"
+                                value={formData.cisb_fire_extinguisher}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Folding Canopy</label><br />
+                            <input
+                                id="cisb_folding_canopy"
+                                type="number"
+                                name="cisb_folding_canopy"
+                                value={formData.cisb_folding_canopy}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Outdoor Rated Extension Cord</label><br />
+                            <input
+                                id="cisb_extension_cord"
+                                type="number"
+                                name="cisb_extension_cord"
+                                value={formData.cisb_extension_cord}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Charging Adapter</label><br />
+                            <input
+                                id="cisb_charging_adapter"
+                                type="number"
+                                name="cisb_charging_adapter"
+                                value={formData.cisb_charging_adapter}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Other</label><br />
+                            <input
+                                id="cisb_other"
+                                type="number"
+                                name="cisb_other"
+                                value={formData.cisb_other}
+                                onChange={onChange}
+                            />
+                        </div>
+                    </div>
+                    <p className="field-note">If the item(s) above are replacement requests, or if the item is not listed, please provide details on each request in the box below (ie. item lost, broken, new office, item requested, etc).</p>
+                </>
+                )}
             </>
             )}
             {formData.keyboards === true && (

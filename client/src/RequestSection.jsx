@@ -1314,6 +1314,16 @@ export default function RequestSection({ formData, onChange }) {
                         onChange={onChange}
                     />
                     </div>
+                    <div>
+                        <label htmlFor="request_phone_number"><span className="required">*</span> Site Contact Phone Number: </label>                 <input
+                            id="request_phone_number"
+                            type="text"
+                            name="request_phone_number"
+                            value={formData.request_phone_number}
+                            onChange={onChange}
+                            required
+                        />
+                    </div>
                 </div>
                 <div style={{ marginLeft: '30px', marginTop: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <input

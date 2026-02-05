@@ -195,6 +195,16 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                 onChange={onChange}
               />
             </div>
+            <div>
+              <label htmlFor="removal_phone_number"><span className="required">*</span> Site Contact Phone Number: </label>                 <input
+                  id="removal_phone_number"
+                  type="text"
+                  name="removal_phone_number"
+                  value={formData.removal_phone_number}
+                  onChange={onChange}
+                  required
+              />
+          </div>
           </div>
           <div style={{ marginLeft: '30px', marginTop: '15px', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <input

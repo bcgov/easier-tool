@@ -1176,8 +1176,36 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                     </>
-                    )}                   
+                    )}                    
                 </div>
+                {formData.desk_select === 'height_adjustable_desk' && (
+                <>
+                    <br></br>
+                    <div style={{ marginLeft: '30px'}}>
+                        <p className="field-note">For height adjustable desk issues related to raising/lowering the desk, please ensure:</p>
+                        <ul style={{ fontSize: '0.8em' }}>
+                            <li>All wires are connected and the power supply is on</li>
+                            <li><a href="https://bcgov.sharepoint.com/:b:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/Instructions%20-%20Height-Adjustable%20Desk%20Reset%20(8).pdf?csf=1&web=1&e=rzmLeP" target="_blank" rel="noopener noreferrer">A reset has been performed</a></li>
+                        </ul>
+
+                        <div style={{ marginTop: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <input
+                                type="checkbox"
+                                id="desk_troubleshoot_confirm"
+                                name="desk_troubleshoot_confirm"
+                                checked={formData.desk_troubleshoot_confirm || false}
+                                onChange={onChange}
+                                required
+                                style={{ width: 'auto', margin: 0 }}
+                            />
+                            <label htmlFor="desk_troubleshoot_confirm" style={{ margin: 0 }}>
+                                I hereby confirm that before submitting a height adjustable desk-related request, I have performed the troubleshooting instructions above.
+                            </label>
+                        </div>
+                    </div>
+                    <br></br>
+                </>
+                )}  
                 <p className="field-note">Using the "Additional information, attachments and sign-off" section below, provide further details regarding the issue you are experiencing. Attach any photos or drawing that may be appropriate.</p>
             </>
             )}

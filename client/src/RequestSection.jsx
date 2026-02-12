@@ -533,12 +533,32 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
+                            <label style={{ fontSize: '14px'}}>Printer - Mobile Office Number</label><br />
+                            <input
+                                id="cisb_printer_mobile_office_number"
+                                type="number"
+                                name="cisb_printer_mobile_office_number"
+                                value={formData.cisb_printer_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
                             <label style={{ fontSize: '14px'}}>Folding Table</label><br />
                             <input
                                 id="cisb_folding_table"
                                 type="number"
                                 name="cisb_folding_table"
                                 value={formData.cisb_folding_table}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Folding Table - Mobile Office Number</label><br />
+                            <input
+                                id="folding_table_mobile_office_number"
+                                type="number"
+                                name="folding_table_mobile_office_number"
+                                value={formData.folding_table_mobile_office_number}
                                 onChange={onChange}
                             />
                         </div>
@@ -553,12 +573,32 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
+                            <label style={{ fontSize: '14px'}}>Folding Chair - Mobile Office Number</label><br />
+                            <input
+                                id="folding_chair_mobile_office_number"
+                                type="number"
+                                name="folding_chair_mobile_office_number"
+                                value={formData.folding_chair_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
                             <label style={{ fontSize: '14px'}}>Bin/Totes</label><br />
                             <input
                                 id="cisb_bins_totes"
                                 type="number"
                                 name="cisb_bins_totes"
                                 value={formData.cisb_bins_totes}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Bin/Tote - Mobile Office Number</label><br />
+                            <input
+                                id="bin_tote_mobile_office_number"
+                                type="number"
+                                name="bin_tote_mobile_office_number"
+                                value={formData.bin_tote_mobile_office_number}
                                 onChange={onChange}
                             />
                         </div>
@@ -573,12 +613,32 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
+                            <label style={{ fontSize: '14px'}}>Fire Extinguisher - Mobile Office Number</label><br />
+                            <input
+                                id="fire_extinguisher_mobile_office_number"
+                                type="number"
+                                name="fire_extinguisher_mobile_office_number"
+                                value={formData.fire_extinguisher_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
                             <label style={{ fontSize: '14px'}}>Folding Canopy</label><br />
                             <input
                                 id="cisb_folding_canopy"
                                 type="number"
                                 name="cisb_folding_canopy"
                                 value={formData.cisb_folding_canopy}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Canopy - Mobile Office Number</label><br />
+                            <input
+                                id="canopy_mobile_office_number"
+                                type="number"
+                                name="canopy_mobile_office_number"
+                                value={formData.canopy_mobile_office_number}
                                 onChange={onChange}
                             />
                         </div>
@@ -593,6 +653,16 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
+                            <label style={{ fontSize: '14px'}}>Extension Cord - Mobile Office Number</label><br />
+                            <input
+                                id="extension_cord_mobile_office_number"
+                                type="number"
+                                name="extension_cord_mobile_office_number"
+                                value={formData.extension_cord_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
                             <label style={{ fontSize: '14px'}}>Charging Adapter</label><br />
                             <input
                                 id="cisb_charging_adapter"
@@ -603,12 +673,32 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
+                            <label style={{ fontSize: '14px'}}>Charging Adapter - Mobile Office Number</label><br />
+                            <input
+                                id="charging_adapter_mobile_office_number"
+                                type="number"
+                                name="charging_adapter_mobile_office_number"
+                                value={formData.charging_adapter_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
                             <label style={{ fontSize: '14px'}}>Other</label><br />
                             <input
                                 id="cisb_other"
                                 type="number"
                                 name="cisb_other"
                                 value={formData.cisb_other}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Other - Mobile Office Number</label><br />
+                            <input
+                                id="other_mobile_office_number"
+                                type="number"
+                                name="other_mobile_office_number"
+                                value={formData.other_mobile_office_number}
                                 onChange={onChange}
                             />
                         </div>
@@ -1293,11 +1383,11 @@ export default function RequestSection({ formData, onChange }) {
                     </>
                     )}                    
                 </div>
-                {formData.desk_select === 'height_adjustable_desk' && (
+                {((formData.desk_select === 'height_adjustable_desk') && (formData.repair_radio === 'repair_radio_desk')) && (
                 <>
                     <br></br>
                     <div style={{ marginLeft: '30px'}}>
-                        <p className="field-note">For height adjustable desk issues related to raising/lowering the desk, please ensure:</p>
+                        <p style={{ fontSize: '0.8em'}}>For height adjustable desk issues related to raising/lowering the desk, please ensure:</p>
                         <ul style={{ fontSize: '0.8em' }}>
                             <li>All wires are connected and the power supply is on</li>
                             <li><a href="https://bcgov.sharepoint.com/:b:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/Instructions%20-%20Height-Adjustable%20Desk%20Reset%20(8).pdf?csf=1&web=1&e=rzmLeP" target="_blank" rel="noopener noreferrer">A reset has been performed</a></li>

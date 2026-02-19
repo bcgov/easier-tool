@@ -1317,6 +1317,20 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                     </>
                     )}
+                    {formData.UC_radio === 'UC_replacement' && (
+                    <>
+                        <div>
+                            <label htmlFor="UC_replacement_csbc_ticket">CSBC Ticket Number:</label>
+                            <input
+                            id="UC_replacement_csbc_ticket"
+                            type="text"
+                            name="UC_replacement_csbc_ticket"
+                            value={formData.UC_replacement_csbc_ticket}
+                            onChange={onChange}
+                            />
+                        </div>
+                    </>
+                    )}
                     {formData.UC_radio === 'activation' && (
                     <>
                         <div>

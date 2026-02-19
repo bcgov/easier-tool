@@ -1447,6 +1447,17 @@ export default function RequestSection({ formData, onChange }) {
                         />
                         <label htmlFor="repair_radio_chair">Broken Chair</label>
                     </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="repair_radio_other"
+                        name="repair_radio"
+                        value="repair_radio_other"
+                        checked={formData.repair_radio === 'repair_radio_other'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="repair_radio_other">Other</label>
+                    </div>
                 </div>
                 <br></br>
                 <div className="form-grid">
@@ -1512,8 +1523,13 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                     </>
-                    )}                    
+                    )}           
                 </div>
+                {formData.repair_radio === 'repair_radio_other' && (
+                <>
+                    <p className="field-note">Please describe the required repair in the additional information box below</p>
+                </>
+                )} 
                 {((formData.desk_select === 'height_adjustable_desk') && (formData.repair_radio === 'repair_radio_desk')) && (
                 <>
                     <br></br>

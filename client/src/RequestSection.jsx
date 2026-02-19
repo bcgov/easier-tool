@@ -1071,7 +1071,7 @@ export default function RequestSection({ formData, onChange }) {
             )}
             {formData.mouse === true && (
             <>
-                <p>Mice</p>
+                <p>Mouse</p>
                 <p className="field-note">All equipment is ergonomic. Please provide the workstation information the mouse is intended for:</p>
                 <div className="form-grid">
                     <div>
@@ -1117,7 +1117,7 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                 </div>
-                <p className="field-note">If the Wired Mouse or Wireless Bluetooth Mouse do not meet your needs, requests for non-standard ergonomic equipment accommodations should be submitted to Occupational Health and Safety at sdd.ohs.gov.bc.ca.</p>
+                <p className="field-note">Requests for non-standard ergonomic equipment accommodations should be submitted to Occupational Health and Safety at sdd.ohs.gov.bc.ca.</p>
             </>
             )}
             {formData.software === true && (

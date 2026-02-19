@@ -737,6 +737,18 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                     <div>
+                        <label htmlFor="keyboard_type">Keyboard Type:</label>
+                        <select
+                        id="keyboard_type"
+                        name="keyboard_type"
+                        value={formData.keyboard_type || ''}
+                        onChange={onChange}
+                        >
+                        <option value="keyboard_type_wired">Wired Keyboard</option>
+                        <option value="keyboard_type_bluetooth">Bluetooth Keyboard</option>
+                        </select>
+                    </div>
+                    <div>
                         <label htmlFor="keyboard_computer">Computer Number: </label>
                         <input
                         id="keyboard_computer"

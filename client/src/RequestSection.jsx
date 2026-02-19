@@ -835,6 +835,73 @@ export default function RequestSection({ formData, onChange }) {
                             <option value="apple_phone_type">Apple</option>
                             </select>
                         </div>
+                        <div>
+                          <label htmlFor="csbc_ticket">GILR Number: </label>
+                          <input
+                            id="csbc_ticket"
+                            type="text"
+                            name="csbc_ticket"
+                            value={formData.csbc_ticket}
+                            onChange={onChange}
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="csbc_ticket">CSBC Ticket Number: </label>
+                          <input
+                            id="csbc_ticket"
+                            type="text"
+                            name="csbc_ticket"
+                            value={formData.csbc_ticket}
+                            onChange={onChange}
+                          />
+                        </div>
+                        <p className="field-note">Please attach the GILR at the bottom of this form.</p>
+                      </>
+                    )}
+                    {formData.mobile_phone_radio === 'moving_mobile_phone' && (
+                      <>
+                        <div>
+                          <label htmlFor="mobile_phone_new_ministry">New Ministry: </label>
+                          <input
+                            id="mobile_phone_new_ministry"
+                            type="text"
+                            name="mobile_phone_new_ministry"
+                            value={formData.mobile_phone_new_ministry}
+                            onChange={onChange}
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="mobile_phone_new_supervisor">New Supervisor: </label>
+                          <input
+                            id="mobile_phone_new_supervisor"
+                            type="text"
+                            name="mobile_phone_new_supervisor"
+                            value={formData.mobile_phone_new_supervisor}
+                            onChange={onChange}
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="moving_mobile_phone_reason">Reason:</label>
+                          <select
+                            id="moving_mobile_phone_reason"
+                            name="moving_mobile_phone_reason"
+                            value={formData.moving_mobile_phone_reason || ''}
+                            onChange={onChange}
+                            >
+                            <option value="moving_mobile_phone_reason_ta">TA</option>
+                            <option value="moving_mobile_phone_reason_permanent">Permanent</option>
+                            </select>
+                        </div>
+                        <div>
+                          <label htmlFor="moving_mobile_phone_date">Date of Transfer: </label>
+                          <input
+                            id="moving_mobile_phone_date"
+                            type="date"
+                            name="moving_mobile_phone_date"
+                            value={formData.moving_mobile_phone_date}
+                            onChange={onChange}
+                          />
+                        </div>
                       </>
                     )}
                 </div>

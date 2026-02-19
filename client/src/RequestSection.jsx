@@ -299,7 +299,7 @@ export default function RequestSection({ formData, onChange }) {
                         checked={formData.cisb_radio === 'cisb_mobile'}
                         onChange={onChange}
                         />
-                        <label htmlFor="cisb_mobile">CISB Mobile</label>
+                        <label htmlFor="cisb_mobile">CISB Mobile Office</label>
                     </div>
                 </div>
                 <br></br>
@@ -463,6 +463,19 @@ export default function RequestSection({ formData, onChange }) {
                             type="number"
                             name="cisb_lightning_usb_cable"
                             value={formData.cisb_lightning_usb_cable}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            USB-C to USB-A Cable
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_usbc_usba_cable"
+                            type="number"
+                            name="cisb_usbc_usba_cable"
+                            value={formData.cisb_usbc_usba_cable}
                             onChange={onChange}
                             />
                         </div>

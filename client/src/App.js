@@ -27,7 +27,7 @@ function App() {
     effective_date: today,
     todays_date: today,
     requestor_email: '',
-    removal_items: [{ id: Date.now(), description: '', serialNumber: '', assetTag: '', condition: '', quantity: '', category: '', notes: '' }],
+    removal_items: [{ id: Date.now(), description: '', serialNumber: '', assetTag: '', condition: '', quantity: '', category: '', device: '', notes: '' }],
   };
   
   const formRef = useRef(null)

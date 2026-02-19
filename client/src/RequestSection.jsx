@@ -1008,7 +1008,18 @@ export default function RequestSection({ formData, onChange }) {
             {formData.monitors === true && (
             <>
                 <p>Monitors</p>
+                <div>
+                    <label htmlFor="replacement_monitor">Is this a replacement monitor? </label>
+                    <input
+                    id="replacement_monitor"
+                    type="checkbox"
+                    name="replacement_monitor"
+                    checked={formData.replacement_monitor}
+                    onChange={onChange}
+                    />
+                </div>
                 <p className="field-note">Please provide the Computer and Workstation information for the monitor's user:</p>
+                
                 <div className="form-grid">
                     <div>
                         <label htmlFor="monitor_computer">Computer Number: </label>
@@ -1040,6 +1051,20 @@ export default function RequestSection({ formData, onChange }) {
                         onChange={onChange}
                         />
                     </div>
+                    {formData.replacement_monitor === true && (
+                      <>
+                        <div>
+                            <label htmlFor="monitor_csbc_ticket">CSBC Ticket Number: </label>
+                            <input
+                            id="monitor_csbc_ticket"
+                            type="text"
+                            name="monitor_csbc_ticket"
+                            value={formData.monitor_csbc_ticket}
+                            onChange={onChange}
+                            />
+                        </div>
+                      </>
+                    )}
                 </div>
                 <p className="field-note">If your monitor has broken, please call 77000 and create a ticket before requesting a replacment monitor.</p>            
             </>

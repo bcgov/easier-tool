@@ -529,6 +529,19 @@ export default function RequestSection({ formData, onChange }) {
                             onChange={onChange}
                             />
                         </div>
+                        <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            Other
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_inoffice_other"
+                            type="number"
+                            name="cisb_inoffice_other"
+                            value={formData.cisb_inoffice_other}
+                            onChange={onChange}
+                            />
+                        </div>
                     </div>
                 </>
                 )}
@@ -698,10 +711,10 @@ export default function RequestSection({ formData, onChange }) {
                         <div>
                             <label style={{ fontSize: '14px'}}>Other</label><br />
                             <input
-                                id="cisb_other"
+                                id="cisb_mobile_other"
                                 type="number"
-                                name="cisb_other"
-                                value={formData.cisb_other}
+                                name="cisb_mobile_other"
+                                value={formData.cisb_mobile_other}
                                 onChange={onChange}
                             />
                         </div>

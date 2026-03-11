@@ -376,7 +376,7 @@ function App() {
               <p className="field-note" style={{paddingLeft: '10px'}}>This tool is for SDD staff to send requests to Facilities & Assets. <br></br>A copy of the form will be sent to the submitter's email.</p>
               <p className="field-note" style={{paddingLeft: '10px'}}>Instructions:<br></br>
                 1. Fill out the form below. Note that you can make multiple requests with the same submission.<br></br>
-                2. Once finished, use the "Email" button at the bottom of the page to submit.<br></br>
+                2. Once finished, use the "Submit" button at the bottom of the page to submit.<br></br>
                 3. You will receive a copy of the submission by email.<br></br>
               </p>
             </div>

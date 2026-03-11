@@ -69,7 +69,7 @@ const DVCMapping = {
   "589 Smithers (SBC)":"2399",
   "594 Terrace (SBC)":"32581",
   "596 Prince Rupert":"117316",
-  "597 Masset (SBC)":"",
+  "597 Daajing Giids (SBC)":"",
   "904 HITT (PLMS)":"",
   "932 CIU (108A)":"",
   "934 START (PLMS)":"",

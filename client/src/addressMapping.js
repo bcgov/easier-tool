@@ -70,7 +70,7 @@ const addressMapping = {
   "589 Smithers (SBC)":"1020 Murray St. Smithers, BC, V0J 2N0",
   "594 Terrace (SBC)":"101-3220 Eby St. Terrace, BC, V8G 5K8",
   "596 Prince Rupert":"316 3rd Ave. West Prince Rupert, BC, V8J 1L4",
-  "597 Masset (SBC)":"216 Oceanview Drive, Box 309, Daajing Giids, V0T 1S0",
+  "597 Daajing Giids (SBC)":"216 Oceanview Drive, Box 309, Daajing Giids, V0T 1S0",
   "904 HITT (PLMS)":"",
   "932 CIU (108A)":"102-9180 King George Blvd. Surrey, BC, V3T 5V9",
   "934 START (PLMS)":"",

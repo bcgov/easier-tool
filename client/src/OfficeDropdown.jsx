@@ -72,7 +72,7 @@ const officeOptions = [
   { value: '589 Smithers (SBC)', label: '589 Smithers (SBC)' },
   { value: '594 Terrace (SBC)', label: '594 Terrace (SBC)' },
   { value: '596 Prince Rupert', label: '596 Prince Rupert' },
-  { value: '597 Masset (SBC)', label: '597 Masset (SBC)' },
+  { value: '597 Daajing Giids (SBC)', label: '597 Daajing Giids (SBC)' },
   { value: '904 HITT (PLMS)', label: '904 HITT (PLMS)' },
   { value: '932 CIU (108A)', label: '932 CIU (108A)' },
   { value: '934 START (PLMS)', label: '934 START (PLMS)' },

@@ -157,7 +157,6 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
         </div>
 
         <div>
-          <p>Shipping Information:</p>
           <div className="form-grid">
             <div>
               <label htmlFor="removal_firstname">Site Contact First Name: </label>
@@ -217,7 +216,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                   style={{ width: 'auto', margin: 0 }}
               />
               <label htmlFor="confirm_shipping__removal_info" style={{ margin: 0 }}>
-                  <span className="required">* </span>Please confirm the above shipping information
+                  <span className="required">* </span>Please confirm the site contact information
               </label>
           </div>
           <br></br>

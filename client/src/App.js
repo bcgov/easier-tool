@@ -561,7 +561,7 @@ function App() {
             </div>
 
             <div style={{ paddingLeft: '30px' }}>
-              <button type="submit" style={{ backgroundColor: '#2172ff', color: 'white' }} disabled={isSubmitting}>Email</button>
+              <button type="submit" style={{ backgroundColor: '#2172ff', color: 'white' }} disabled={isSubmitting}>Submit</button>
             </div>
           </div>
         </form>

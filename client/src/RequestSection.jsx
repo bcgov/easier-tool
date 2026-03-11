@@ -750,18 +750,6 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                     <div>
-                        <label htmlFor="keyboard_type">Keyboard Type:</label>
-                        <select
-                        id="keyboard_type"
-                        name="keyboard_type"
-                        value={formData.keyboard_type || ''}
-                        onChange={onChange}
-                        >
-                        <option value="keyboard_type_wired">Wired Keyboard</option>
-                        <option value="keyboard_type_bluetooth">Bluetooth Keyboard</option>
-                        </select>
-                    </div>
-                    <div>
                         <label htmlFor="keyboard_computer">Computer Number: </label>
                         <input
                         id="keyboard_computer"
@@ -782,6 +770,8 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                 </div>
+                <p className="field-note">Requests for non-standard ergonomic equipment accommodations should be submitted to Occupational Health and Safety at sdd.ohs.gov.bc.ca.</p>
+                <p className="field-note">If the item(s) are replacement requests, or if the item is not listed, please provide details on each request in the box below (ie. item lost, broken, new office, item requested, etc.)</p>
             </>
             )}
             {formData.laptops === true && (
@@ -1131,6 +1121,7 @@ export default function RequestSection({ formData, onChange }) {
                     </div>
                 </div>
                 <p className="field-note">Requests for non-standard ergonomic equipment accommodations should be submitted to Occupational Health and Safety at sdd.ohs.gov.bc.ca.</p>
+                <p className="field-note">If the item(s) are replacement requests, or if the item is not listed, please provide details on each request in the box below (ie. item lost, broken, new office, item requested, etc.)</p>
             </>
             )}
             {formData.software === true && (

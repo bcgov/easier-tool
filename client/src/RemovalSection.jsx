@@ -75,6 +75,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
               <tr style={{ backgroundColor: '#f0f0f0' }}>
                 <th style={{ border: '1px solid #ccc', padding: '8px' }}>Device Type</th>
                 <th style={{ border: '1px solid #ccc', padding: '8px' }}>Condition</th>
+                <th style={{ border: '1px solid #ccc', padding: '8px' }}>Quantity</th>
                 <th style={{ border: '1px solid #ccc', padding: '8px' }}>Description</th>
                 <th style={{ border: '1px solid #ccc', padding: '8px' }}>Dimensions</th>
                 <Tippy content="If you have boxed up items, and have labelled each box, please provide the box number here" delay={[0, 0]}>
@@ -112,6 +113,15 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                       <option value="fair">Fair</option>
                       <option value="poor">Poor</option>
                     </select>
+                  </td>
+                  <td style={{ border: '1px solid #ccc', padding: '8px' }}>
+                    <input 
+                      type="text" 
+                      placeholder="Quantity" 
+                      style={{ width: '100%' }} 
+                      value={item.quantity}
+                      onChange={(e) => onRemovalItemChange(item.id, 'quantity', e.target.value)}
+                    />
                   </td>
                   <td style={{ border: '1px solid #ccc', padding: '8px' }}>
                     <input 

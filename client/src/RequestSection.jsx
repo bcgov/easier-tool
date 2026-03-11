@@ -835,6 +835,18 @@ export default function RequestSection({ formData, onChange }) {
                         onChange={onChange}
                         />
                     </div>
+                    <div>
+                        <label htmlFor="requested_phone_type">Mobile Type:</label>
+                        <select
+                        id="requested_phone_type"
+                        name="requested_phone_type"
+                        value={formData.requested_phone_type || ''}
+                        onChange={onChange}
+                        >
+                        <option value="requested_phone_type_android">Android</option>
+                        <option value="requested_phone_type_apple">iPhone</option>
+                        </select>
+                    </div>
                     {formData.mobile_phone_radio === 'transfer_phone' && (
                       <>
                         <div>
@@ -859,7 +871,7 @@ export default function RequestSection({ formData, onChange }) {
                             value={formData.prior_phone_type || ''}
                             onChange={onChange}
                             >
-                            <option value="samsung_phone_type">Samsung</option>
+                            <option value="android_phone_type">Android</option>
                             <option value="apple_phone_type">Apple</option>
                             </select>
                         </div>
@@ -1004,7 +1016,7 @@ export default function RequestSection({ formData, onChange }) {
                     </div>
                 </div>
                 {formData.mobile_phone_radio === 'deactivate_phone' && (
-                  <p className="field-note">Please ensure the phone has been factory reset, and all data removea from the device</p>
+                  <p className="field-note">Please ensure the phone has been factory reset, and all data removed from the device</p>
                 )}
             </>
             )}
@@ -1254,7 +1266,7 @@ export default function RequestSection({ formData, onChange }) {
                         checked={formData.UC_radio === 'suppression'}
                         onChange={onChange}
                         />
-                        <label htmlFor="suppression">Outgoing UC call suppression</label>
+                        <label htmlFor="suppression">Outgoing UC Call Suppression</label>
                     </div>
                     <div>
                         <input
@@ -1265,7 +1277,7 @@ export default function RequestSection({ formData, onChange }) {
                         checked={formData.UC_radio === 'UC_replacement'}
                         onChange={onChange}
                         />
-                        <label htmlFor="UC_replacement">Replacement headset</label>
+                        <label htmlFor="UC_replacement">Replacement Headset</label>
                     </div>
                     <div>
                         <input
@@ -1403,22 +1415,6 @@ export default function RequestSection({ formData, onChange }) {
                             onChange={onChange}
                         />
                     </div>
-
-                    {formData.UC_replacement_reason === 'UC_replacement_damaged' && (
-                    <>
-                        <div className="textarea-field" style={{ paddingLeft: '30px' }}>
-                            <label>Incident #:</label>
-                            <input
-                                id="UC_incident_number"
-                                type="text"
-                                name="UC_incident_number"
-                                value={formData.UC_incident_number}
-                                onChange={onChange}
-                                required
-                            />
-                        </div>
-                    </>
-                    )}
                 </>
                 )}
             </>

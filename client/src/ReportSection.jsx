@@ -347,7 +347,15 @@ const ReportSection = ({ formData, onChange }) => {
         </section>
         <div className="form-grid">
             <div>
-              <label htmlFor="report_phone_number"><span className="required">*</span> Site Contact Phone Number: </label>                 <input
+              <label htmlFor="report_contact_name"> Site Contact Name: </label> <input
+                  id="report_contact_name"
+                  type="text"
+                  name="report_contact_name"
+                  value={formData.report_contact_name}
+                  onChange={onChange}
+              />
+            </div><div>
+              <label htmlFor="report_phone_number"><span className="required">*</span> Site Contact Phone Number: </label> <input
                   id="report_phone_number"
                   type="text"
                   name="report_phone_number"

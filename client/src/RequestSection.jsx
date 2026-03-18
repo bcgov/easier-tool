@@ -505,7 +505,20 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <label style={{ fontSize: '14px', color: '#009bd6'}}>
-                            Cooler
+                            Other
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_inoffice_other"
+                            type="number"
+                            name="cisb_inoffice_other"
+                            value={formData.cisb_inoffice_other}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            Vehicle: Cooler
                             </label>
                             <br />
                             <input
@@ -517,16 +530,36 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Cooler - Mobile Office Number</label><br />
+                            <input
+                                id="cisb_cooler_mobile_office_number"
+                                type="number"
+                                name="cisb_cooler_mobile_office_number"
+                                value={formData.cisb_cooler_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
                             <label style={{ fontSize: '14px', color: '#009bd6'}}>
-                            Car Phone Holder
+                            Vehicle: Phone Holder
                             </label>
                             <br />
                             <input
-                            id="cisb_car_phone_holder"
+                            id="cisb_vehicle_phone_holder"
                             type="number"
-                            name="cisb_car_phone_holder"
-                            value={formData.cisb_car_phone_holder}
+                            name="cisb_vehicle_phone_holder"
+                            value={formData.cisb_vehicle_phone_holder}
                             onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Phone Holder - Mobile Office Number</label><br />
+                            <input
+                                id="cisb_vehicle_phone_holder_mobile_office_number"
+                                type="number"
+                                name="cisb_vehicle_phone_holder_mobile_office_number"
+                                value={formData.cisb_vehicle_phone_holder_mobile_office_number}
+                                onChange={onChange}
                             />
                         </div>
                         <div>
@@ -543,6 +576,16 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Mobile Desk - Mobile Office Number</label><br />
+                            <input
+                                id="cisb_vehicle_mobile_desk_mobile_office_number"
+                                type="number"
+                                name="cisb_vehicle_mobile_desk_mobile_office_number"
+                                value={formData.cisb_vehicle_mobile_desk_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
                             <Tippy content="(1 Package = 10 Backseat; 10 Frontseat)" delay={[0, 0]}>
                                 <label htmlFor="cisb_vehicle_seat_covers" style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Disposable Seat Covers</label>
                             </Tippy>
@@ -555,18 +598,14 @@ export default function RequestSection({ formData, onChange }) {
                             onChange={onChange}
                             />
                         </div>
-                        
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
-                            Other
-                            </label>
-                            <br />
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Disposable Seat Covers - Mobile Office Number</label><br />
                             <input
-                            id="cisb_inoffice_other"
-                            type="number"
-                            name="cisb_inoffice_other"
-                            value={formData.cisb_inoffice_other}
-                            onChange={onChange}
+                                id="cisb_vehicle_seat_covers_mobile_office_number"
+                                type="number"
+                                name="cisb_vehicle_seat_covers_mobile_office_number"
+                                value={formData.cisb_vehicle_seat_covers_mobile_office_number}
+                                onChange={onChange}
                             />
                         </div>
                     </div>
@@ -736,7 +775,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Cooler</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Cooler</label><br />
                             <input
                                 id="cisb_mobile_cooler"
                                 type="number"
@@ -746,7 +785,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Cooler - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Cooler - Mobile Office Number</label><br />
                             <input
                                 id="cooler_mobile_office_number"
                                 type="number"
@@ -756,22 +795,22 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Car Phone Holder</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Phone Holder</label><br />
                             <input
-                                id="cisb_mobile_car_phone_holder"
+                                id="cisb_mobile_vehicle_phone_holder"
                                 type="number"
-                                name="cisb_mobile_car_phone_holder"
-                                value={formData.cisb_mobile_car_phone_holder}
+                                name="cisb_mobile_vehicle_phone_holder"
+                                value={formData.cisb_mobile_vehicle_phone_holder}
                                 onChange={onChange}
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Car Phone Holder - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Phone Holder - Mobile Office Number</label><br />
                             <input
-                                id="car_phone_holder_mobile_office_number"
+                                id="vehicle_phone_holder_mobile_office_number"
                                 type="number"
-                                name="car_phone_holder_mobile_office_number"
-                                value={formData.car_phone_holder_mobile_office_number}
+                                name="vehicle_phone_holder_mobile_office_number"
+                                value={formData.vehicle_phone_holder_mobile_office_number}
                                 onChange={onChange}
                             />
                         </div>

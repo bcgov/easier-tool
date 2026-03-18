@@ -505,7 +505,33 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <label style={{ fontSize: '14px', color: '#009bd6'}}>
-                             Vehicle: Mobile Desk
+                            Cooler
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_cooler"
+                            type="number"
+                            name="cisb_cooler"
+                            value={formData.cisb_cooler}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            Car Phone Holder
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_car_phone_holder"
+                            type="number"
+                            name="cisb_car_phone_holder"
+                            value={formData.cisb_car_phone_holder}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            Vehicle: Mobile Desk
                             </label>
                             <br />
                             <input
@@ -529,6 +555,7 @@ export default function RequestSection({ formData, onChange }) {
                             onChange={onChange}
                             />
                         </div>
+                        
                         <div>
                             <label style={{ fontSize: '14px', color: '#009bd6'}}>
                             Other
@@ -705,6 +732,66 @@ export default function RequestSection({ formData, onChange }) {
                                 type="number"
                                 name="charging_adapter_mobile_office_number"
                                 value={formData.charging_adapter_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Cooler</label><br />
+                            <input
+                                id="cisb_mobile_cooler"
+                                type="number"
+                                name="cisb_mobile_cooler"
+                                value={formData.cisb_mobile_cooler}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Cooler - Mobile Office Number</label><br />
+                            <input
+                                id="cooler_mobile_office_number"
+                                type="number"
+                                name="cooler_mobile_office_number"
+                                value={formData.cooler_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Car Phone Holder</label><br />
+                            <input
+                                id="cisb_mobile_car_phone_holder"
+                                type="number"
+                                name="cisb_mobile_car_phone_holder"
+                                value={formData.cisb_mobile_car_phone_holder}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Car Phone Holder - Mobile Office Number</label><br />
+                            <input
+                                id="car_phone_holder_mobile_office_number"
+                                type="number"
+                                name="car_phone_holder_mobile_office_number"
+                                value={formData.car_phone_holder_mobile_office_number}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Vehicle: Mobile Desk</label><br />
+                            <input
+                                id="cisb_mobile_vehicle_mobile_desk"
+                                type="number"
+                                name="cisb_mobile_vehicle_mobile_desk"
+                                value={formData.cisb_mobile_vehicle_mobile_desk}
+                                onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>Vehicle: Mobile Desk - Mobile Office Number</label><br />
+                            <input
+                                id="vehicle_mobile_desk_mobile_office_number"
+                                type="number"
+                                name="vehicle_mobile_desk_mobile_office_number"
+                                value={formData.vehicle_mobile_desk_mobile_office_number}
                                 onChange={onChange}
                             />
                         </div>

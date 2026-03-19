@@ -625,7 +625,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Printer - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Printer - Mobile Office Unit Number</label><br />
                             <input
                                 id="cisb_printer_mobile_office_number"
                                 type="number"
@@ -645,7 +645,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Folding Table - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Folding Table - Mobile Office Unit Number</label><br />
                             <input
                                 id="folding_table_mobile_office_number"
                                 type="number"
@@ -665,7 +665,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Folding Chair - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Folding Chair - Mobile Office Unit Number</label><br />
                             <input
                                 id="folding_chair_mobile_office_number"
                                 type="number"
@@ -685,7 +685,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Bin/Tote - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Bin/Tote - Mobile Office Unit Number</label><br />
                             <input
                                 id="bin_tote_mobile_office_number"
                                 type="number"
@@ -705,7 +705,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Fire Extinguisher - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Fire Extinguisher - Mobile Office Unit Number</label><br />
                             <input
                                 id="fire_extinguisher_mobile_office_number"
                                 type="number"
@@ -725,7 +725,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Canopy - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Canopy - Mobile Office Unit Number</label><br />
                             <input
                                 id="canopy_mobile_office_number"
                                 type="number"
@@ -745,7 +745,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Extension Cord - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Extension Cord - Mobile Office Unit Number</label><br />
                             <input
                                 id="extension_cord_mobile_office_number"
                                 type="number"
@@ -765,7 +765,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Charging Adapter - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Charging Adapter - Mobile Office Unit Number</label><br />
                             <input
                                 id="charging_adapter_mobile_office_number"
                                 type="number"
@@ -785,7 +785,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Vehicle: Cooler - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Cooler - Mobile Office Unit Number</label><br />
                             <input
                                 id="cooler_mobile_office_number"
                                 type="number"
@@ -805,7 +805,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Vehicle: Phone Holder - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Phone Holder - Mobile Office Unit Number</label><br />
                             <input
                                 id="vehicle_phone_holder_mobile_office_number"
                                 type="number"
@@ -825,7 +825,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Vehicle: Mobile Desk - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Mobile Desk - Mobile Office Unit Number</label><br />
                             <input
                                 id="vehicle_mobile_desk_mobile_office_number"
                                 type="number"
@@ -845,7 +845,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>Other - Mobile Office Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Other - Mobile Office Unit Number</label><br />
                             <input
                                 id="other_mobile_office_number"
                                 type="number"

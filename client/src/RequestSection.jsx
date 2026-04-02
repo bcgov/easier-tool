@@ -358,7 +358,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            <label style={{ fontSize: '14px'}}>
                             Surface Pro Protective Case
                             </label>
                             <br />
@@ -467,19 +467,6 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
-                            USB-C to USB-A Cable
-                            </label>
-                            <br />
-                            <input
-                            id="cisb_usbc_usba_cable"
-                            type="number"
-                            name="cisb_usbc_usba_cable"
-                            value={formData.cisb_usbc_usba_cable}
-                            onChange={onChange}
-                            />
-                        </div>
-                        <div>
                             <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Windproof%20Umbrella.jpg?csf=1&web=1&e=6dybfw" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
                             Windproof Umbrella
                             </a><br />
@@ -504,20 +491,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
-                            Other
-                            </label>
-                            <br />
-                            <input
-                            id="cisb_inoffice_other"
-                            type="number"
-                            name="cisb_inoffice_other"
-                            value={formData.cisb_inoffice_other}
-                            onChange={onChange}
-                            />
-                        </div>
-                        <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            <label style={{ fontSize: '14px'}}>
                             Vehicle: Cooler
                             </label>
                             <br />
@@ -530,7 +504,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Cooler - Vehicle Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Cooler - Vehicle Number</label><br />
                             <input
                                 id="cisb_cooler_vehicle_number"
                                 type="number"
@@ -540,7 +514,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            <label style={{ fontSize: '14px'}}>
                             Vehicle: Phone Holder
                             </label>
                             <br />
@@ -553,7 +527,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Phone Holder - Vehicle Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Phone Holder - Vehicle Number</label><br />
                             <input
                                 id="cisb_vehicle_phone_holder_vehicle_number"
                                 type="number"
@@ -563,7 +537,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>
+                            <label style={{ fontSize: '14px'}}>
                             Vehicle: Mobile Desk
                             </label>
                             <br />
@@ -576,7 +550,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Mobile Desk - Vehicle Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Mobile Desk - Vehicle Number</label><br />
                             <input
                                 id="cisb_vehicle_mobile_desk_vehicle_number"
                                 type="number"
@@ -587,7 +561,7 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <Tippy content="(1 Package = 10 Backseat; 10 Frontseat)" delay={[0, 0]}>
-                                <label htmlFor="cisb_vehicle_seat_covers" style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Disposable Seat Covers</label>
+                                <label htmlFor="cisb_vehicle_seat_covers" style={{ fontSize: '14px'}}>Vehicle: Disposable Seat Covers</label>
                             </Tippy>
                             <br />
                             <input
@@ -599,13 +573,39 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px', color: '#009bd6'}}>Vehicle: Disposable Seat Covers - Vehicle Number</label><br />
+                            <label style={{ fontSize: '14px'}}>Vehicle: Disposable Seat Covers - Vehicle Number</label><br />
                             <input
                                 id="cisb_vehicle_seat_covers_vehicle_number"
                                 type="number"
                                 name="cisb_vehicle_seat_covers_vehicle_number"
                                 value={formData.cisb_vehicle_seat_covers_vehicle_number}
                                 onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>
+                            USB-C to USB-A Cable
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_usbc_usba_cable"
+                            type="number"
+                            name="cisb_usbc_usba_cable"
+                            value={formData.cisb_usbc_usba_cable}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>
+                            Other
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_inoffice_other"
+                            type="number"
+                            name="cisb_inoffice_other"
+                            value={formData.cisb_inoffice_other}
+                            onChange={onChange}
                             />
                         </div>
                     </div>

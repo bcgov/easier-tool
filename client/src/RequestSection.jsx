@@ -1164,8 +1164,6 @@ export default function RequestSection({ formData, onChange }) {
             {formData.software === true && (
             <>
                 <p>Software</p>
-                <p className="field-note">All standard software required for employees to complete their work are added by Facilities and Assets to the employee’s workstation. No action is required by the supervisor.</p>
-                <p className="field-note">If the software required is not approved for the position, then a non-standard software request can be initiated using the Easier Tool. Please provide the business case for the software and at a minimum we require the Manager’s approval for the software with the business case (approval email/business case must be attached to this request).</p>
                 <div className="form-grid">
                     <div>
                         <label htmlFor="software_user_name">User Name: </label>
@@ -1209,20 +1207,9 @@ export default function RequestSection({ formData, onChange }) {
                     </div>
                 </div>
                 <br></br>
-                <div>
-                    <label htmlFor="software_reason">Describe the non-standard subscription and provide a business case for the request: </label>
-                    <textarea
-                    id="software_reason"
-                    name="software_reason"
-                    value={formData.software_reason}
-                    onChange={onChange}
-                    rows="4"
-                    style={{ width: '100%', padding: '8px'}}
-                    />
-                </div>
                 <p className="field-note">If the subscription(s) being requested above is a "temporary requirement" or a "project-based need", please provide a termination date (i.e. the assignment or project end date) to ensure we cancel the subscription at the right time.</p>
-                <div className="radio-group">
-                    <label>The subscription(s) being requested above is: </label>
+                <div className="radio-group" style={{ fontSize: '1em' }}>
+                    <label>Duration:</label>
                     <div>
                         <input
                         type="radio"
@@ -1261,6 +1248,18 @@ export default function RequestSection({ formData, onChange }) {
                     <p className="field-note">If the termination date is currently unknown, please note that Facilities & Assets will provide the subscription(s) for a maximum of seven months unless a request for an extension is received.</p>    
                 </>
                 )}
+                <br></br>
+                <p className="field-note">Standard software is automatically added when an employee starts in their position. To request non-standard software using this form, please provide a short business case/rationale for the software and attach your excluded manager’s (or higher) email approval.</p>
+                <div>
+                    <textarea
+                    id="software_reason"
+                    name="software_reason"
+                    value={formData.software_reason}
+                    onChange={onChange}
+                    rows="4"
+                    style={{ width: '100%', padding: '8px'}}
+                    />
+                </div>
             </>
             )}
             {formData.unified_comms === true && (

@@ -846,12 +846,75 @@ export default function RequestSection({ formData, onChange }) {
             {formData.mobile_phones === true && (
             <>
                 <p>Mobile Phones</p>
-                <div className="form-grid">
-                <p className="field-note">Provide the name of the employee who will be using the mobile phone:</p>
-                {formData.mobile_phone_radio === 'transfer_phone' && (
-                    <p className="field-note">Provide the name of the employee who previously used the phone:</p>
-                )}
+                <div className="radio-group">
+                    <div>
+                        <input
+                        type="radio"
+                        id="new_phone"
+                        name="mobile_phone_radio"
+                        value="new_phone"
+                        checked={formData.mobile_phone_radio === 'new_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="new_phone">New Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="deactivate_phone"
+                        name="mobile_phone_radio"
+                        value="deactivate_phone"
+                        checked={formData.mobile_phone_radio === 'deactivate_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="deactivate_phone">Deactivate Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="replacement_phone"
+                        name="mobile_phone_radio"
+                        value="replacement_phone"
+                        checked={formData.mobile_phone_radio === 'replacement_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="replacement_phone">Replacement Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="upgrade_phone"
+                        name="mobile_phone_radio"
+                        value="upgrade_phone"
+                        checked={formData.mobile_phone_radio === 'upgrade_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="upgrade_phone">Upgrade Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="transfer_phone"
+                        name="mobile_phone_radio"
+                        value="transfer_phone"
+                        checked={formData.mobile_phone_radio === 'transfer_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="transfer_phone">Transfer Phone</label>
+                    </div>
+                    <div>
+                        <input
+                        type="radio"
+                        id="moving_mobile_phone"
+                        name="mobile_phone_radio"
+                        value="moving_mobile_phone"
+                        checked={formData.mobile_phone_radio === 'moving_mobile_phone'}
+                        onChange={onChange}
+                        />
+                        <label htmlFor="moving_mobile_phone">Moving to another Ministry or Division</label>
+                    </div>
                 </div>
+                <br></br>
                 <div className="form-grid">
                     <div>
                         <label htmlFor="mobile_phone_name">Name: </label>
@@ -974,75 +1037,6 @@ export default function RequestSection({ formData, onChange }) {
                     )}
                 </div>
                 
-                <br></br>
-                <div className="radio-group">
-                    <div>
-                        <input
-                        type="radio"
-                        id="new_phone"
-                        name="mobile_phone_radio"
-                        value="new_phone"
-                        checked={formData.mobile_phone_radio === 'new_phone'}
-                        onChange={onChange}
-                        />
-                        <label htmlFor="new_phone">New Phone</label>
-                    </div>
-                    <div>
-                        <input
-                        type="radio"
-                        id="deactivate_phone"
-                        name="mobile_phone_radio"
-                        value="deactivate_phone"
-                        checked={formData.mobile_phone_radio === 'deactivate_phone'}
-                        onChange={onChange}
-                        />
-                        <label htmlFor="deactivate_phone">Deactivate Phone</label>
-                    </div>
-                    <div>
-                        <input
-                        type="radio"
-                        id="replacement_phone"
-                        name="mobile_phone_radio"
-                        value="replacement_phone"
-                        checked={formData.mobile_phone_radio === 'replacement_phone'}
-                        onChange={onChange}
-                        />
-                        <label htmlFor="replacement_phone">Replacement Phone</label>
-                    </div>
-                    <div>
-                        <input
-                        type="radio"
-                        id="upgrade_phone"
-                        name="mobile_phone_radio"
-                        value="upgrade_phone"
-                        checked={formData.mobile_phone_radio === 'upgrade_phone'}
-                        onChange={onChange}
-                        />
-                        <label htmlFor="upgrade_phone">Upgrade Phone</label>
-                    </div>
-                    <div>
-                        <input
-                        type="radio"
-                        id="transfer_phone"
-                        name="mobile_phone_radio"
-                        value="transfer_phone"
-                        checked={formData.mobile_phone_radio === 'transfer_phone'}
-                        onChange={onChange}
-                        />
-                        <label htmlFor="transfer_phone">Transfer Phone</label>
-                    </div>
-                    <div>
-                        <input
-                        type="radio"
-                        id="moving_mobile_phone"
-                        name="mobile_phone_radio"
-                        value="moving_mobile_phone"
-                        checked={formData.mobile_phone_radio === 'moving_mobile_phone'}
-                        onChange={onChange}
-                        />
-                        <label htmlFor="moving_mobile_phone">Moving to another Ministry or Division</label>
-                    </div>
-                </div>
                 {formData.mobile_phone_radio === 'deactivate_phone' && (
                   <p className="field-note">Please ensure the phone has been factory reset, and all data removed from the device</p>
                 )}

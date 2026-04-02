@@ -1112,49 +1112,52 @@ export default function RequestSection({ formData, onChange }) {
                 <p className="field-note">All equipment is ergonomic. Please provide the workstation information the mouse is intended for:</p>
                 <div className="form-grid">
                     <div>
-                        <label htmlFor="mouse_type">Mouse Type:</label>
+                        <label htmlFor="mouse_type"><span className="required">*</span>Mouse Type:</label>
                         <select
                         id="mouse_type"
                         name="mouse_type"
                         value={formData.mouse_type || ''}
                         onChange={onChange}
+                        required
                         >
                         <option value="wired_mouse_type">Wired Mouse</option>
                         <option value="wireless_mouse_type">Bluetooth Mouse</option>
                         </select>
                     </div>
                     <div>
-                        <label htmlFor="mouse_computer">Computer Number: </label>
+                        <label htmlFor="mouse_computer"><span className="required">*</span>Computer Number: </label>
                         <input
                         id="mouse_computer"
                         type="text"
                         name="mouse_computer"
                         value={formData.mouse_computer}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     <div>
-                        <label htmlFor="mouse_workstation">Workstation Number: </label>
+                        <label htmlFor="mouse_workstation"><span className="required">*</span>Workstation Number: </label>
                         <input
                         id="mouse_workstation"
                         type="text"
                         name="mouse_workstation"
                         value={formData.mouse_workstation}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     <div>
-                        <label htmlFor="mouse_quantity">Quantity: </label>
+                        <label htmlFor="mouse_quantity"><span className="required">*</span>Quantity: </label>
                         <input
                         id="mouse_quantity"
                         type="number"
                         name="mouse_quantity"
                         value={formData.mouse_quantity}
                         onChange={onChange}
+                        required
                         />
                     </div>
                 </div>
-                <p className="field-note">Requests for non-standard ergonomic equipment accommodations should be submitted to Occupational Health and Safety at sdd.ohs.gov.bc.ca.</p>
                 <p className="field-note">If the item(s) are replacement requests, or if the item is not listed, please provide details on each request in the box below (ie. item lost, broken, new office, item requested, etc.)</p>
             </>
             )}

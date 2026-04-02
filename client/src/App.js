@@ -380,6 +380,16 @@ function App() {
                 3. You will receive a copy of the submission by email.<br></br>
               </p>
             </div>
+            
+            <div className="request-type-container">
+              <label style={{ fontWeight: 'bold', fontSize: '0.9em' }}>
+                Request Type:
+              </label>
+              <RequestTypeButtons
+                selected={formData.request_type}
+                onSelect={handleRequestTypeSelect}
+              />
+            </div>
 
             {/* Collapsible Accordion */}
             <div className="no-print" style={{ marginBottom: '20px'}}>
@@ -394,7 +404,7 @@ function App() {
                   cursor: 'pointer',
                   fontWeight: 'bold',
                   textAlign: 'left',
-                  fontSize: '0.9em'
+                  fontSize: '0.75em'
                 }}
               >
                 {accordionOpen ? '▼' : '▶'} Services not covered by Facilities and Assets
@@ -412,7 +422,7 @@ function App() {
                       <tr>
                         <td style={{ border: '1px solid #ddd', padding: '10px' }}><strong>Non-Standard Ergonomic Equipment</strong><br></br> Occupational Health and Safety (OHS) Services</td>
                         <td style={{ border: '1px solid #ddd', padding: '10px' }}>
-                          <a href="https://theloop.sdpr.gov.bc.ca/" target="_blank" rel="noopener noreferrer">Occupational health and safety - The Loop: SDPR Intranet</a><br />SDD.OHS@gov.bc.ca
+                          <a href="https://intranet.gov.bc.ca/theloop/staff-workplace/health-culture/occupational-health-safety" target="_blank" rel="noopener noreferrer">Occupational health and safety - The Loop: SDPR Intranet</a><br />SDD.OHS@gov.bc.ca
                         </td>
                       </tr>
                       <tr>
@@ -456,16 +466,6 @@ function App() {
                   </table>
                 </div>
               )}
-            </div>
-            
-            <div className="request-type-container">
-              <label style={{ fontWeight: 'bold', fontSize: '0.9em' }}>
-                Request Type:
-              </label>
-              <RequestTypeButtons
-                selected={formData.request_type}
-                onSelect={handleRequestTypeSelect}
-              />
             </div>
                         
             {formData.request_type && formData.request_type.length > 0 && (

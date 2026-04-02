@@ -10,66 +10,10 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
           <h4 style={{ color: '#555555' }}>Removals</h4>
       </div>
       <div className="request-change-content">
-        <section className="info-section">
-            <p>Select all that apply:</p>
-            <div className="checkbox-group">
-                <div>
-                  <input
-                      type="checkbox"
-                      id="removal_electronics"
-                      name="removal_electronics"
-                      checked={formData.removal_electronics || false}
-                      onChange={onChange}
-                  />
-                  <label htmlFor="removal_electronics">Electronic Devices</label>
-                </div>
-                <div>
-                  <input
-                      type="checkbox"
-                      id="removal_furniture"
-                      name="removal_furniture"
-                      checked={formData.removal_furniture || false}
-                      onChange={onChange}
-                  />
-                  <label htmlFor="removal_furniture">Furniture</label>
-                </div>
-                <div>
-                  <input
-                      type="checkbox"
-                      id="removal_office_supplies"
-                      name="removal_office_supplies"
-                      checked={formData.removal_office_supplies || false}
-                      onChange={onChange}
-                  />
-                  <label htmlFor="removal_office_supplies">Office Supplies and Workstation Equipment</label>
-                </div>
-                <div>
-                  <input
-                      type="checkbox"
-                      id="removal_other"
-                      name="removal_other"
-                      checked={formData.removal_other || false}
-                      onChange={onChange}
-                  />
-                  <label htmlFor="removal_other">Other</label>
-                </div>
-            </div>                
-        </section>
-
-        {(formData.removal_electronics === true || formData.removal_furniture === true || formData.removal_other === true) && (
-          <>
-            <p className="field-note">For Electronic devices or Furniture identified as either in "good" or "fair" condition, you are required to attach corresponding photos (below) as they may be listed for auction or offered to another Ministry.</p>
-          </>
-        )}
-        {formData.removal_office_supplies === true && (
-          <>
-            <p className="field-note">If requesting for removal of office stamps, please ensure references to the Ministry are removed (i.e. peel off the rubber, cut it and discard it before shipping the item).</p>           
-          </>
-        )}
+        <p className="field-note">For Electronic devices or Furniture identified as either in "good" or "fair" condition, you are required to attach corresponding photos (below) as they may be listed for auction or offered to another Ministry</p>
 
         {/* Items Table */}
         <div style={{ marginTop: '20px' }}>
-          <h5>Items for Removal</h5>
           <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '10px' }}>
             <thead>
               <tr style={{ backgroundColor: '#f0f0f0' }}>

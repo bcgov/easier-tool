@@ -50,6 +50,19 @@ const CurrentInformationSection = ({ formData, onChange }) => {
           />
         </div>
         <div>
+          <label htmlFor="employee_id">
+            <span className="required">*</span> Employee ID:
+          </label>
+          <input
+            id="employee_id"
+            type="text"
+            name="employee_id"
+            value={formData.employee_id}
+            onChange={onChange}
+            required
+          />
+        </div>
+        <div>
           <label htmlFor="supervisor">
             <span className="required">*</span> Supervisor:
           </label>

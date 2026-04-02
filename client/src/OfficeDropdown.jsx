@@ -82,7 +82,7 @@ const officeOptions = [
   { value: '0X5 Prince George (4th Ave)', label: '0X5 Prince George (4th Ave)' },
   { value: 'X10 Vefra Victoria (Pandora)', label: 'X10 Vefra Victoria (Pandora)' },
   { value: 'X11 Nanaimo', label: 'X11 Nanaimo' },
-  { value: 'X12 Operations Management (PLMS)', label: 'X12 Operations Management (PLMS)' },
+  { value: 'X12 PLMS Operations', label: 'X12 PLMS Operations' },
   { value: 'X20 Metro Vancouver', label: 'X20 Metro Vancouver' },
   { value: 'X21 Metro Vancouver', label: 'X21 Metro Vancouver' },
   { value: 'X30 Metro Vancouver', label: 'X30 Metro Vancouver' },

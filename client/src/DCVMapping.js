@@ -79,7 +79,7 @@ const DVCMapping = {
   "0X5 Prince George (4th Ave)":"",
   "X10 Vefra Victoria (Pandora)":"128278",
   "X11 Nanaimo":"40522",
-  "X12 Operations Management (PLMS)":"",
+  "X12 PLMS Operations":"",
   "X20 Metro Vancouver":"223626",
   "X21 Metro Vancouver":"223626",
   "X30 Metro Vancouver":"223626",

@@ -80,7 +80,7 @@ const addressMapping = {
   "0X5 Prince George (4th Ave)":"501-1011 4th Ave. Prince George, BC, V2L 3H9",
   "X10 Vefra Victoria (Pandora)":"2nd floor - 908 Pandora Ave. Victoria, BC, V8W 3P3",
   "X11 Nanaimo":"2nd floor - 6475 Metral Dr. Nanaimo, BC, V9T 2L9",
-  "X12 Operations Management (PLMS)":"",
+  "X12 PLMS Operations":"",
   "X20 Metro Vancouver":"203-4601 Canada Way. Burnaby, BC, V5G 4X7",
   "X21 Metro Vancouver":"203-4601 Canada Way. Burnaby, BC, V5G 4X7",
   "X30 Metro Vancouver":"203-4601 Canada Way. Burnaby, BC, V5G 4X7",

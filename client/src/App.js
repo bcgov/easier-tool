@@ -514,16 +514,16 @@ function App() {
             </div> 
             <div><br></br></div>
             <div className="textarea-field" style={{ paddingLeft: '30px' }}>
-              <label htmlFor="comments">Additional Information:</label> <br></br>
               <textarea
                 id="comments"
                 name="comments"
                 rows="4" 
                 value={formData.comments || ''}
+                placeholder="Please do not include any confidential and/or medical information"
                 onChange={handleInputChange}
               />
               <p className="field-note">
-                Enter any additional information or comments you may have (optional)
+                Please enter any comments you may have
               </p>
             </div><br></br>
 

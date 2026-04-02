@@ -1327,7 +1327,7 @@ export default function RequestSection({ formData, onChange }) {
                         >
                         <option value="branch_select">Please Select:</option>
                         <option value="branch_cs">Community Services</option>
-                        <option value="branch_cs">Community Integrations Services Branch</option>
+                        <option value="branch_cisb">Community Integrations Services Branch</option>
                         <option value="branch_plms">Prevention and Loss Management Services</option>
                         <option value="branch_ops">Operations Support</option>
                         <option value="branch_ss">Strategic Support</option>

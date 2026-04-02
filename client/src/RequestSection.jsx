@@ -1659,23 +1659,25 @@ export default function RequestSection({ formData, onChange }) {
                 <p>Shipping Information:</p>
                 <div className="form-grid">
                     <div>
-                        <label htmlFor="request_firstname">Site Contact First Name: </label>
+                        <label htmlFor="request_firstname"><span style={{ color: 'red' }}>*</span> Site Contact First Name: </label>
                         <input
                             id="request_firstname"
                             type="text"
                             name="request_firstname"
                             value={formData.request_firstname}
                             onChange={onChange}
+                            required
                         />
                     </div>
                     <div>
-                        <label htmlFor="request_lastname">Site Contact Last Name: </label>
+                        <label htmlFor="request_lastname"><span style={{ color: 'red' }}>*</span> Site Contact Last Name: </label>
                         <input
                             id="request_lastname"
                             type="text"
                             name="request_lastname"
                             value={formData.request_lastname}
                             onChange={onChange}
+                            required
                         />
                     </div>
                     <OfficeDropdown
@@ -1683,6 +1685,7 @@ export default function RequestSection({ formData, onChange }) {
                         name="request_office"
                         value={formData.request_office}
                         onChange={onChange}
+                        required
                     />
                     <div>
                     <label htmlFor="request_address">Address: </label>

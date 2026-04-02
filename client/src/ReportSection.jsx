@@ -12,8 +12,8 @@ const ReportSection = ({ formData, onChange }) => {
       <div className="request-change-content">
         <section className="info-section">
           <p className="field-note">
-              To request facility operations/maintenance services, emergency responses, or service complaints on an existing work order, call CBRE directly at 1 (877) 222-3112.<br></br>
-              "Emergency responses" are facility-related requests requiring immediate action which, if held up or delayed, are certain to cause catastrophic impact on people, property, or service delivery. Examples include but are not limited to: fire, flood, loss of power, break ins
+              "Emergency responses" are facility-related requests requiring immediate action which, if held up or delayed, are certain to cause catastrophic impact on people, property, or service delivery. Examples include but are not limited to: fire, flood, loss of power, break ins<br></br>
+              To request information for an existing work order or for emergency response requiring immediate action call CBRE directly at 1 (877) 222-3112.              
             </p>
           <p>Select all that apply:</p>
           <div className="checkbox-group">
@@ -118,19 +118,7 @@ const ReportSection = ({ formData, onChange }) => {
               <label htmlFor="other_report">Other</label>
             </div>
           </div>
-
-          <div className="textarea-field">
-            <p>
-              Describe in detail the issue you wish to report. Attach any relevant photos/drawings below, as well as the CBRE ticket number if applicable. In addition, provide justification for the service request you require, and identify impact on people, property or service delivery if the request is not fulfilled:
-            </p>
-            <textarea
-              id="report_comments"
-              name="report_comments"
-              rows="4" 
-              value={formData.report_comments || ''}
-              onChange={onChange}
-            />
-          </div>
+          <br></br>
 
           {formData.security === true && (
             <>
@@ -344,6 +332,20 @@ const ReportSection = ({ formData, onChange }) => {
               )}
             </>
           )}
+          
+          <div className="textarea-field">
+            <p className="field-note">
+              Describe in detail the issue you wish to report. Attach any relevant photos/drawings below, as well as the CBRE ticket number if applicable. In addition, provide justification for the service request you require, and identify impact on people, property or service delivery if the request is not fulfilled:
+            </p>
+            <textarea
+              id="report_comments"
+              name="report_comments"
+              rows="4" 
+              value={formData.report_comments || ''}
+              onChange={onChange}
+            />
+          </div>
+
         </section>
         <div className="form-grid">
             <div>

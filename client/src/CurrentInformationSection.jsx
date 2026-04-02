@@ -51,7 +51,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
         </div>
         <div>
           <label htmlFor="supervisor">
-            <span className="required">*</span> Employee's Supervisor:
+            <span className="required">*</span> Supervisor:
           </label>
           <input
             id="supervisor"

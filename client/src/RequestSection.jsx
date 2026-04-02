@@ -796,7 +796,6 @@ export default function RequestSection({ formData, onChange }) {
             {formData.laptops === true && (
             <>
                 <p>Laptops:</p>
-                <p className="field-note">Provide information on the new hire or returning employee who will be using the laptop:</p>
                 <div className="form-grid">
                     <div>
                         <label htmlFor="laptop_idir">IDIR: </label>
@@ -825,6 +824,16 @@ export default function RequestSection({ formData, onChange }) {
                         type="date"
                         name="laptop_startdate"
                         value={formData.laptop_startdate}
+                        onChange={onChange}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="laptop_csbc_ticket">CSBC Ticket Number: </label>
+                        <input
+                        id="laptop_csbc_ticket"
+                        type="text"
+                        name="laptop_csbc_ticket"
+                        value={formData.laptop_csbc_ticket}
                         onChange={onChange}
                         />
                     </div>

@@ -1273,17 +1273,6 @@ export default function RequestSection({ formData, onChange }) {
                     <div>
                         <input
                         type="radio"
-                        id="activation"
-                        name="UC_radio"
-                        value="activation"
-                        checked={formData.UC_radio === 'activation'}
-                        onChange={onChange}
-                        />
-                        <label htmlFor="activation">New UC Activation</label>
-                    </div>
-                    <div>
-                        <input
-                        type="radio"
                         id="suppression"
                         name="UC_radio"
                         value="suppression"
@@ -1318,13 +1307,14 @@ export default function RequestSection({ formData, onChange }) {
                 <br></br>
                 <div className="form-grid">
                     <div>
-                        <label htmlFor="software_idir">IDIR: </label>
+                        <label htmlFor="software_idir"><span style={{ color: 'red' }}>*</span> IDIR: </label>
                         <input
                         id="software_idir"
                         type="text"
                         name="software_idir"
                         value={formData.software_idir}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     <div>
@@ -1371,34 +1361,6 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                     </>
                     )}
-                    {formData.UC_radio === 'activation' && (
-                    <>
-                        <div>
-                            <label htmlFor="UC_device_select">Preffered Device:</label>
-                            <select
-                            id="UC_device_select"
-                            name="UC_device_select"
-                            value={formData.UC_device_select || ''}
-                            onChange={onChange}
-                            >
-                            <option value="uc_select">Please Select:</option>
-                            <option value="uc_select_wired">Wired Dual Ear</option>
-                            <option value="uc_select_wireless_dual">Wireless Dual Ear</option>
-                            <option value="uc_select_wireless_single">Wireless Single Ear</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label htmlFor="uc_outgoing_suppression">Do you require UC outgoing call suppression?</label>
-                            <input
-                                type="checkbox"
-                                id="uc_outgoing_suppression"
-                                name="uc_outgoing_suppression"
-                                checked={formData.uc_outgoing_suppression || false}
-                                onChange={onChange}
-                            />
-                        </div>
-                    </>
-                    )}
                 </div>
                 <br></br>
                 {formData.UC_radio === 'UC_replacement' && (
@@ -1430,12 +1392,13 @@ export default function RequestSection({ formData, onChange }) {
                     <br></br>
 
                     <div className="textarea-field" style={{ paddingLeft: '30px' }}>
-                        <label htmlFor="comments">Additional Information:</label> <br></br>
+                        <label htmlFor="comments">Description of Request:</label> <br></br>
                         <textarea
                             id="UC_comments"
                             name="UC_comments"
                             rows="4" 
                             value={formData.UC_comments || ''}
+                            placeholder="Please do not include any confidential and/or medical information"
                             onChange={onChange}
                         />
                     </div>
@@ -1549,11 +1512,6 @@ export default function RequestSection({ formData, onChange }) {
                     </>
                     )}           
                 </div>
-                {formData.repair_radio === 'repair_radio_other' && (
-                <>
-                    <p className="field-note">Please describe the required repair in the additional information box below</p>
-                </>
-                )} 
                 {((formData.desk_select === 'height_adjustable_desk') && (formData.repair_radio === 'repair_radio_desk')) && (
                 <>
                     <br></br>
@@ -1582,7 +1540,31 @@ export default function RequestSection({ formData, onChange }) {
                     <br></br>
                 </>
                 )}  
-                <p className="field-note">Using the "Additional information, attachments and sign-off" section below, provide further details regarding the issue you are experiencing. Attach any photos or drawing that may be appropriate.</p>
+                <br></br>
+                <div>
+                    <label htmlFor="repair_equipment_description">Description of the request: </label>
+                    <textarea
+                    id="repair_equipment_description"
+                    name="repair_equipment_description"
+                    value={formData.repair_equipment_description}
+                    onChange={onChange}
+                    rows="4"
+                    style={{ width: '100%', padding: '8px'}}
+                    placeholder="Please do not include any confidential and/or medical information"
+                    />
+                </div>
+                <div>
+                    <label htmlFor="repair_equipment_reason">Rationale for the request: </label>
+                    <textarea
+                    id="repair_equipment_reason"
+                    name="repair_equipment_reason"
+                    value={formData.repair_equipment_reason}
+                    onChange={onChange}
+                    rows="4"
+                    style={{ width: '100%', padding: '8px'}}
+                    placeholder="Please do not include any confidential and/or medical information"
+                    />
+                </div>
             </>
             )}
             {formData.webcams === true && (
@@ -1635,6 +1617,7 @@ export default function RequestSection({ formData, onChange }) {
                     onChange={onChange}
                     rows="4"
                     style={{ width: '100%', padding: '8px'}}
+                    placeholder="Please do not include any confidential and/or medical information"
                     />
                 </div>
                 <div>
@@ -1646,6 +1629,7 @@ export default function RequestSection({ formData, onChange }) {
                     onChange={onChange}
                     rows="4"
                     style={{ width: '100%', padding: '8px'}}
+                    placeholder="Please do not include any confidential and/or medical information"
                     />
                 </div>
             </>

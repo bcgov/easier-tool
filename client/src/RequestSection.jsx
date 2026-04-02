@@ -759,13 +759,14 @@ export default function RequestSection({ formData, onChange }) {
                 <p className="field-note">Please provide the following information for the keyboard's intended user:</p>
                 <div className="form-grid">
                     <div>
-                        <label htmlFor="keyboard_idir">IDIR: </label>
+                        <label htmlFor="keyboard_idir"><span style={{ color: 'red' }}>*</span> IDIR: </label>
                         <input
                         id="keyboard_idir"
                         type="text"
                         name="keyboard_idir"
                         value={formData.keyboard_idir}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     <div>
@@ -789,7 +790,6 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                 </div>
-                <p className="field-note">Requests for non-standard ergonomic equipment accommodations should be submitted to Occupational Health and Safety at sdd.ohs.gov.bc.ca.</p>
                 <p className="field-note">If the item(s) are replacement requests, or if the item is not listed, please provide details on each request in the box below (ie. item lost, broken, new office, item requested, etc.)</p>
             </>
             )}

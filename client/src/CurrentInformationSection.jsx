@@ -67,6 +67,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
           name="office"
           value={formData.office}
           onChange={onChange}
+          required
         />
         <div>
           <label htmlFor="position">Position:</label>

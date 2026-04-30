@@ -66,7 +66,7 @@ const validateToken = (req, res, next) => {
   });
 };
 
-app.post('/send-pdf', async (req, res) => {
+app.post('/send-pdf', validateToken, async (req, res) => {
   try {
     const {
       email,

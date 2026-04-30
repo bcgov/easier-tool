@@ -204,6 +204,7 @@ const ReportSection = ({ formData, onChange }) => {
                         id="series_number"
                         type="text"
                         name="series_number"
+                        maxLength={256}
                         value={formData.series_number}
                         onChange={onChange}
                       />
@@ -214,6 +215,7 @@ const ReportSection = ({ formData, onChange }) => {
                         id="count_required"
                         type="text"
                         name="count_required"
+                        maxLength={256}
                         value={formData.count_required}
                         onChange={onChange}
                       />
@@ -240,6 +242,7 @@ const ReportSection = ({ formData, onChange }) => {
                         id="other_access_text"
                         type="text"
                         name="other_access_text"
+                        maxLength={256}
                         value={formData.other_access_text}
                         onChange={onChange}
                       />
@@ -305,6 +308,7 @@ const ReportSection = ({ formData, onChange }) => {
                         id="key_count"
                         type="text"
                         name="key_count"
+                        maxLength={256}
                         value={formData.key_count}
                         onChange={onChange}
                       />
@@ -321,6 +325,7 @@ const ReportSection = ({ formData, onChange }) => {
                       <textarea
                         id="alarm_codes"
                         name="alarm_codes"
+                        maxLength={64000}
                         rows="4" 
                         value={formData.alarm_codes || ''}
                         onChange={onChange}
@@ -340,6 +345,7 @@ const ReportSection = ({ formData, onChange }) => {
             <textarea
               id="report_comments"
               name="report_comments"
+              maxLength={64000}
               rows="4" 
               value={formData.report_comments || ''}
               onChange={onChange}

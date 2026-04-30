@@ -114,7 +114,8 @@ app.post('/send-pdf', async (req, res) => {
 
     // send the email
     let info = await transporter.sendMail({
-      from:    '"Easier Tool" <SDPR.OPSSupportFacilitiesAndAssets@gov.bc.ca>',
+      //from:    '"Easier Tool" <SDPR.OPSSupportFacilitiesAndAssets@gov.bc.ca>',
+      from:    '"Easier Tool" <sinan.soykut@gov.bc.ca>',
       to:      email,
       cc:      ccMail,
       subject: subject,

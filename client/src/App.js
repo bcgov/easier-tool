@@ -186,6 +186,9 @@ function App() {
     handleFileChange(e, index);
   };
 
+  // Allowed file types for attachments
+  const ALLOWED_TYPES = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
   // Handle multiple selected or dropped files
   const handleFilesSelected = (fileList) => {
     const filesArray = Array.from(fileList);
@@ -193,6 +196,10 @@ function App() {
     for (const file of filesArray) {
       if (file.size > 20 * 1024 * 1024) {
         window.alert(`Attachment "${file.name}" exceeds 20MB and will be skipped.`);
+        continue;
+      }
+      if (!ALLOWED_TYPES.includes(file.type)) {
+        window.alert(`File type "${file.type}" is not allowed. Only PDF and Word documents are accepted.`);
         continue;
       }
       filtered.push(file);
@@ -517,6 +524,7 @@ function App() {
               <textarea
                 id="comments"
                 name="comments"
+                maxLength={64000}
                 rows="4" 
                 value={formData.comments || ''}
                 placeholder="Please do not include any confidential and/or medical information"
@@ -541,6 +549,7 @@ function App() {
                   type="file"
                   id="file-upload"
                   multiple
+                  accept=".pdf,.doc,.docx"
                   style={{ display: 'none' }}
                   ref={el => fileInputRefs.current[0] = el}
                   onChange={e => handleFilesSelected(e.target.files)}

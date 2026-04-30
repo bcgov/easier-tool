@@ -148,6 +148,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="displayport_cable"
                         type="number"
                         name="displayport_cable"
+                        maxLength={256}
                         value={formData.displayport_cable}
                         onChange={onChange}
                         />
@@ -160,6 +161,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="hdmi_cable"
                         type="number"
                         name="hdmi_cable"
+                        maxLength={256}
                         value={formData.hdmi_cable}
                         onChange={onChange}
                         />
@@ -172,6 +174,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="usb_cable"
                         type="number"
                         name="usb_cable"
+                        maxLength={256}
                         value={formData.usb_cable}
                         onChange={onChange}
                         />
@@ -184,6 +187,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="vga_cable"
                         type="number"
                         name="vga_cable"
+                        maxLength={256}
                         value={formData.vga_cable}
                         onChange={onChange}
                         />
@@ -196,6 +200,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="displayport_usbc_adapter"
                         type="number"
                         name="displayport_usbc_adapter"
+                        maxLength={256}
                         value={formData.displayport_usbc_adapter}
                         onChange={onChange}
                         />
@@ -208,6 +213,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="four_port_usb_adapter"
                         type="number"
                         name="four_port_usb_adapter"
+                        maxLength={256}
                         value={formData.four_port_usb_adapter}
                         onChange={onChange}
                         />
@@ -220,6 +226,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="hdmi_displayport_adapter"
                         type="number"
                         name="hdmi_displayport_adapter"
+                        maxLength={256}
                         value={formData.hdmi_displayport_adapter}
                         onChange={onChange}
                         />
@@ -232,6 +239,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="hdmi_usbc_adapter"
                         type="number"
                         name="hdmi_usbc_adapter"
+                        maxLength={256}
                         value={formData.hdmi_usbc_adapter}
                         onChange={onChange}
                         />
@@ -244,6 +252,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="vga_hdmi_adapter"
                         type="number"
                         name="vga_hdmi_adapter"
+                        maxLength={256}
                         value={formData.vga_hdmi_adapter}
                         onChange={onChange}
                         />
@@ -256,6 +265,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="usbc_vga_adapter"
                         type="number"
                         name="usbc_vga_adapter"
+                        maxLength={256}
                         value={formData.usbc_vga_adapter}
                         onChange={onChange}
                         />
@@ -267,6 +277,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="other_cable_adapter"
                         type="text"
                         name="other_cable_adapter"
+                        maxLength={256}
                         value={formData.other_cable_adapter}
                         onChange={onChange}
                         />
@@ -284,7 +295,7 @@ export default function RequestSection({ formData, onChange }) {
                         type="radio"
                         id="cisb_office"
                         name="cisb_radio"
-                        value="cisb_office"
+                        value="cisb_office"d
                         checked={formData.cisb_radio === 'cisb_office'}
                         onChange={onChange}
                         />
@@ -309,6 +320,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_mobile_office_number"
                             type="number"
                             name="cisb_mobile_office_number"
+                            maxLength={256}
                             value={formData.cisb_mobile_office_number}
                             onChange={onChange}
                         />
@@ -341,6 +353,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="surfacepro_power_adapter"
                             type="number"
                             name="surfacepro_power_adapter"
+                            maxLength={256}
                             value={formData.surfacepro_power_adapter}
                             onChange={onChange}
                             />
@@ -353,6 +366,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="surfacepro_stylus"
                             type="number"
                             name="surfacepro_stylus"
+                            maxLength={256}
                             value={formData.surfacepro_stylus}
                             onChange={onChange}
                             />
@@ -365,6 +379,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="surfacepro_keyboard"
                             type="number"
                             name="surfacepro_keyboard"
+                            maxLength={256}
                             value={formData.surfacepro_keyboard}
                             onChange={onChange}
                             />
@@ -378,6 +393,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="surfacepro_case"
                             type="number"
                             name="surfacepro_case"
+                            maxLength={256}
                             value={formData.surfacepro_case}
                             onChange={onChange}
                             />
@@ -390,6 +406,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="surfacepro_screencover"
                             type="number"
                             name="surfacepro_screencover"
+                            maxLength={256}
                             value={formData.surfacepro_screencover}
                             onChange={onChange}
                             />
@@ -402,6 +419,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_bluetooth_mouse"
                             type="number"
                             name="cisb_bluetooth_mouse"
+                            maxLength={256}
                             value={formData.cisb_bluetooth_mouse}
                             onChange={onChange}
                             />
@@ -414,6 +432,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_backpack"
                             type="number"
                             name="cisb_backpack"
+                            maxLength={256}
                             value={formData.cisb_backpack}
                             onChange={onChange}
                             />
@@ -426,6 +445,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_portable_power"
                             type="number"
                             name="cisb_portable_power"
+                            maxLength={256}
                             value={formData.cisb_portable_power}
                             onChange={onChange}
                             />
@@ -438,6 +458,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_safety_vest"
                             type="number"
                             name="cisb_safety_vest"
+                            maxLength={256}
                             value={formData.cisb_safety_vest}
                             onChange={onChange}
                             />
@@ -450,6 +471,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_usbc_multifunction_hub"
                             type="number"
                             name="cisb_usbc_multifunction_hub"
+                            maxLength={256}
                             value={formData.cisb_usbc_multifunction_hub}
                             onChange={onChange}
                             />
@@ -462,6 +484,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_laptop_bag"
                             type="number"
                             name="cisb_laptop_bag"
+                            maxLength={256}
                             value={formData.cisb_laptop_bag}
                             onChange={onChange}
                             />
@@ -474,6 +497,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_lightning_usb_cable"
                             type="number"
                             name="cisb_lightning_usb_cable"
+                            maxLength={256}
                             value={formData.cisb_lightning_usb_cable}
                             onChange={onChange}
                             />
@@ -486,6 +510,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_umbrella"
                             type="number"
                             name="cisb_umbrella"
+                            maxLength={256}
                             value={formData.cisb_umbrella}
                             onChange={onChange}
                             />
@@ -498,6 +523,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_poncho"
                             type="number"
                             name="cisb_poncho"
+                            maxLength={256}
                             value={formData.cisb_poncho}
                             onChange={onChange}
                             />
@@ -511,6 +537,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_cooler"
                             type="number"
                             name="cisb_cooler"
+                            maxLength={256}
                             value={formData.cisb_cooler}
                             onChange={onChange}
                             />
@@ -521,6 +548,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_cooler_vehicle_number"
                                 type="number"
                                 name="cisb_cooler_vehicle_number"
+                                maxLength={256}
                                 value={formData.cisb_cooler_vehicle_number}
                                 onChange={onChange}
                             />
@@ -534,6 +562,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_vehicle_phone_holder"
                             type="number"
                             name="cisb_vehicle_phone_holder"
+                            maxLength={256}
                             value={formData.cisb_vehicle_phone_holder}
                             onChange={onChange}
                             />
@@ -544,6 +573,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_vehicle_phone_holder_vehicle_number"
                                 type="number"
                                 name="cisb_vehicle_phone_holder_vehicle_number"
+                                maxLength={256}
                                 value={formData.cisb_vehicle_phone_holder_vehicle_number}
                                 onChange={onChange}
                             />
@@ -557,6 +587,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_vehicle_mobile_desk"
                             type="number"
                             name="cisb_vehicle_mobile_desk"
+                            maxLength={256}
                             value={formData.cisb_vehicle_mobile_desk}
                             onChange={onChange}
                             />
@@ -567,6 +598,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_vehicle_mobile_desk_vehicle_number"
                                 type="number"
                                 name="cisb_vehicle_mobile_desk_vehicle_number"
+                                maxLength={256}
                                 value={formData.cisb_vehicle_mobile_desk_vehicle_number}
                                 onChange={onChange}
                             />
@@ -580,6 +612,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_vehicle_seat_covers"
                             type="number"
                             name="cisb_vehicle_seat_covers"
+                            maxLength={256}
                             value={formData.cisb_vehicle_seat_covers}
                             onChange={onChange}
                             />
@@ -590,6 +623,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_vehicle_seat_covers_vehicle_number"
                                 type="number"
                                 name="cisb_vehicle_seat_covers_vehicle_number"
+                                maxLength={256}
                                 value={formData.cisb_vehicle_seat_covers_vehicle_number}
                                 onChange={onChange}
                             />
@@ -603,6 +637,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_usbc_usba_cable"
                             type="number"
                             name="cisb_usbc_usba_cable"
+                            maxLength={256}
                             value={formData.cisb_usbc_usba_cable}
                             onChange={onChange}
                             />
@@ -616,6 +651,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="cisb_inoffice_other"
                             type="number"
                             name="cisb_inoffice_other"
+                            maxLength={256}
                             value={formData.cisb_inoffice_other}
                             onChange={onChange}
                             />
@@ -632,6 +668,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_mobile_printer"
                                 type="number"
                                 name="cisb_mobile_printer"
+                                maxLength={256}
                                 value={formData.cisb_mobile_printer}
                                 onChange={onChange}
                             />
@@ -643,6 +680,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_folding_table"
                                 type="number"
                                 name="cisb_folding_table"
+                                maxLength={256}
                                 value={formData.cisb_folding_table}
                                 onChange={onChange}
                             />
@@ -653,6 +691,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_folding_chair"
                                 type="number"
                                 name="cisb_folding_chair"
+                                maxLength={256}
                                 value={formData.cisb_folding_chair}
                                 onChange={onChange}
                             />
@@ -663,6 +702,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_bins_totes"
                                 type="number"
                                 name="cisb_bins_totes"
+                                maxLength={256}
                                 value={formData.cisb_bins_totes}
                                 onChange={onChange}
                             />
@@ -673,6 +713,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_fire_extinguisher"
                                 type="number"
                                 name="cisb_fire_extinguisher"
+                                maxLength={256}
                                 value={formData.cisb_fire_extinguisher}
                                 onChange={onChange}
                             />
@@ -683,6 +724,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_folding_canopy"
                                 type="number"
                                 name="cisb_folding_canopy"
+                                maxLength={256}
                                 value={formData.cisb_folding_canopy}
                                 onChange={onChange}
                             />
@@ -693,6 +735,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_extension_cord"
                                 type="number"
                                 name="cisb_extension_cord"
+                                maxLength={256}
                                 value={formData.cisb_extension_cord}
                                 onChange={onChange}
                             />
@@ -703,6 +746,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_charging_adapter"
                                 type="number"
                                 name="cisb_charging_adapter"
+                                maxLength={256}
                                 value={formData.cisb_charging_adapter}
                                 onChange={onChange}
                             />
@@ -713,6 +757,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_mobile_cooler"
                                 type="number"
                                 name="cisb_mobile_cooler"
+                                maxLength={256}
                                 value={formData.cisb_mobile_cooler}
                                 onChange={onChange}
                             />
@@ -723,6 +768,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_mobile_vehicle_phone_holder"
                                 type="number"
                                 name="cisb_mobile_vehicle_phone_holder"
+                                maxLength={256}
                                 value={formData.cisb_mobile_vehicle_phone_holder}
                                 onChange={onChange}
                             />
@@ -733,6 +779,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_mobile_vehicle_mobile_desk"
                                 type="number"
                                 name="cisb_mobile_vehicle_mobile_desk"
+                                maxLength={256}
                                 value={formData.cisb_mobile_vehicle_mobile_desk}
                                 onChange={onChange}
                             />
@@ -743,6 +790,7 @@ export default function RequestSection({ formData, onChange }) {
                                 id="cisb_mobile_other"
                                 type="number"
                                 name="cisb_mobile_other"
+                                maxLength={256}
                                 value={formData.cisb_mobile_other}
                                 onChange={onChange}
                             />
@@ -764,6 +812,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="keyboard_idir"
                         type="text"
                         name="keyboard_idir"
+                        maxLength={256}
                         value={formData.keyboard_idir}
                         onChange={onChange}
                         required
@@ -775,6 +824,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="keyboard_computer"
                         type="text"
                         name="keyboard_computer"
+                        maxLength={256}
                         value={formData.keyboard_computer}
                         onChange={onChange}
                         />
@@ -785,6 +835,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="keyboard_workstation"
                         type="text"
                         name="keyboard_workstation"
+                        maxLength={256}
                         value={formData.keyboard_workstation}
                         onChange={onChange}
                         />
@@ -803,6 +854,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="laptop_idir"
                         type="text"
                         name="laptop_idir"
+                        maxLength={256}
                         value={formData.laptop_idir}
                         onChange={onChange}
                         />
@@ -813,6 +865,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="laptop_name"
                         type="text"
                         name="laptop_name"
+                        maxLength={256}
                         value={formData.laptop_name}
                         onChange={onChange}
                         />
@@ -833,6 +886,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="laptop_csbc_ticket"
                         type="text"
                         name="laptop_csbc_ticket"
+                        maxLength={256}
                         value={formData.laptop_csbc_ticket}
                         onChange={onChange}
                         />
@@ -946,6 +1000,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="transfer_name"
                             type="text"
                             name="transfer_name"
+                            maxLength={256}
                             value={formData.transfer_name}
                             onChange={onChange}
                           />
@@ -967,12 +1022,13 @@ export default function RequestSection({ formData, onChange }) {
                             </select>
                         </div>
                         <div>
-                          <label htmlFor="csbc_ticket">GILR Number: </label>
+                          <label htmlFor="gilr_ticket">GILR Number: </label>
                           <input
-                            id="csbc_ticket"
+                            id="gilr_ticket"
                             type="text"
-                            name="csbc_ticket"
-                            value={formData.csbc_ticket}
+                            name="gilr_ticket"
+                            maxLength={256}
+                            value={formData.gilr_ticket}
                             onChange={onChange}
                           />
                         </div>
@@ -982,6 +1038,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="csbc_ticket"
                             type="text"
                             name="csbc_ticket"
+                            maxLength={256}
                             value={formData.csbc_ticket}
                             onChange={onChange}
                           />
@@ -997,6 +1054,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="mobile_phone_new_ministry"
                             type="text"
                             name="mobile_phone_new_ministry"
+                            maxLength={256}
                             value={formData.mobile_phone_new_ministry}
                             onChange={onChange}
                           />
@@ -1007,6 +1065,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="mobile_phone_new_supervisor"
                             type="text"
                             name="mobile_phone_new_supervisor"
+                            maxLength={256}
                             value={formData.mobile_phone_new_supervisor}
                             onChange={onChange}
                           />
@@ -1064,6 +1123,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="monitor_computer"
                         type="text"
                         name="monitor_computer"
+                        maxLength={256}
                         value={formData.monitor_computer}
                         onChange={onChange}
                         />
@@ -1074,6 +1134,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="monitor_workstation"
                         type="text"
                         name="monitor_workstation"
+                        maxLength={256}
                         value={formData.monitor_workstation}
                         onChange={onChange}
                         />
@@ -1096,6 +1157,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="monitor_csbc_ticket"
                             type="text"
                             name="monitor_csbc_ticket"
+                            maxLength={256}
                             value={formData.monitor_csbc_ticket}
                             onChange={onChange}
                             />
@@ -1130,6 +1192,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="mouse_computer"
                         type="text"
                         name="mouse_computer"
+                        maxLength={256}
                         value={formData.mouse_computer}
                         onChange={onChange}
                         required
@@ -1141,6 +1204,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="mouse_workstation"
                         type="text"
                         name="mouse_workstation"
+                        maxLength={256}
                         value={formData.mouse_workstation}
                         onChange={onChange}
                         required
@@ -1171,6 +1235,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="software_user_name"
                         type="text"
                         name="software_user_name"
+                        maxLength={256}
                         value={formData.software_user_name}
                         onChange={onChange}
                         />
@@ -1181,6 +1246,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="software_position"
                         type="text"
                         name="software_position"
+                        maxLength={256}
                         value={formData.software_position}
                         onChange={onChange}
                         />
@@ -1191,6 +1257,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="software_idir"
                         type="text"
                         name="software_idir"
+                        maxLength={256}
                         value={formData.software_idir}
                         onChange={onChange}
                         />
@@ -1201,6 +1268,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="software_computer"
                         type="text"
                         name="software_computer"
+                        maxLength={256}
                         value={formData.software_computer}
                         onChange={onChange}
                         />
@@ -1257,6 +1325,7 @@ export default function RequestSection({ formData, onChange }) {
                     value={formData.software_reason}
                     onChange={onChange}
                     rows="4"
+                    maxLength={64000}
                     style={{ width: '100%', padding: '8px'}}
                     />
                 </div>
@@ -1312,6 +1381,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="software_idir"
                         type="text"
                         name="software_idir"
+                        maxLength={256}
                         value={formData.software_idir}
                         onChange={onChange}
                         required
@@ -1342,6 +1412,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="UC_suppression_number"
                             type="text"
                             name="UC_suppression_number"
+                            maxLength={256}
                             value={formData.UC_suppression_number}
                             onChange={onChange}
                             />
@@ -1356,6 +1427,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="UC_replacement_csbc_ticket"
                             type="text"
                             name="UC_replacement_csbc_ticket"
+                            maxLength={256}
                             value={formData.UC_replacement_csbc_ticket}
                             onChange={onChange}
                             />
@@ -1397,6 +1469,7 @@ export default function RequestSection({ formData, onChange }) {
                         <textarea
                             id="UC_comments"
                             name="UC_comments"
+                            maxLength={64000}
                             rows="4" 
                             value={formData.UC_comments || ''}
                             placeholder="Please do not include any confidential and/or medical information"
@@ -1455,6 +1528,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="repair_workstation"
                         type="text"
                         name="repair_workstation"
+                        maxLength={256}
                         value={formData.repair_workstation}
                         onChange={onChange}
                         />
@@ -1486,6 +1560,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="repair_chair_make"
                             type="text"
                             name="repair_chair_make"
+                            maxLength={256}
                             value={formData.repair_chair_make}
                             onChange={onChange}
                             />
@@ -1496,6 +1571,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="repair_chair_model"
                             type="text"
                             name="repair_chair_model"
+                            maxLength={256}
                             value={formData.repair_chair_model}
                             onChange={onChange}
                             />
@@ -1550,6 +1626,7 @@ export default function RequestSection({ formData, onChange }) {
                     value={formData.repair_equipment_description}
                     onChange={onChange}
                     rows="4"
+                    maxLength={64000}
                     style={{ width: '100%', padding: '8px'}}
                     placeholder="Please do not include any confidential and/or medical information"
                     />
@@ -1562,6 +1639,7 @@ export default function RequestSection({ formData, onChange }) {
                     value={formData.repair_equipment_reason}
                     onChange={onChange}
                     rows="4"
+                    maxLength={64000}
                     style={{ width: '100%', padding: '8px'}}
                     placeholder="Please do not include any confidential and/or medical information"
                     />
@@ -1579,6 +1657,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="webcam_idir"
                         type="text"
                         name="webcam_idir"
+                        maxLength={256}
                         value={formData.webcam_idir}
                         onChange={onChange}
                         />
@@ -1589,6 +1668,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="webcam_computer"
                         type="text"
                         name="webcam_computer"
+                        maxLength={256}
                         value={formData.webcam_computer}
                         onChange={onChange}
                         />
@@ -1599,6 +1679,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="webcam_workstation"
                         type="text"
                         name="webcam_workstation"
+                        maxLength={256}
                         value={formData.webcam_workstation}
                         onChange={onChange}
                         />
@@ -1617,6 +1698,7 @@ export default function RequestSection({ formData, onChange }) {
                     value={formData.other_equipment_description}
                     onChange={onChange}
                     rows="4"
+                    maxLength={6400}
                     style={{ width: '100%', padding: '8px'}}
                     placeholder="Please do not include any confidential and/or medical information"
                     />
@@ -1629,6 +1711,7 @@ export default function RequestSection({ formData, onChange }) {
                     value={formData.other_equipment_reason}
                     onChange={onChange}
                     rows="4"
+                    maxLength={64000}
                     style={{ width: '100%', padding: '8px'}}
                     placeholder="Please do not include any confidential and/or medical information"
                     />
@@ -1645,6 +1728,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="request_firstname"
                             type="text"
                             name="request_firstname"
+                            maxLength={256}
                             value={formData.request_firstname}
                             onChange={onChange}
                             required
@@ -1656,6 +1740,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="request_lastname"
                             type="text"
                             name="request_lastname"
+                            maxLength={256}
                             value={formData.request_lastname}
                             onChange={onChange}
                             required
@@ -1674,6 +1759,7 @@ export default function RequestSection({ formData, onChange }) {
                         id="request_address"
                         type="text"
                         name="request_address"
+                        maxLength={256}
                         value={formData.request_address || ''}
                         onChange={onChange}
                     />
@@ -1683,6 +1769,7 @@ export default function RequestSection({ formData, onChange }) {
                             id="request_phone_number"
                             type="text"
                             name="request_phone_number"
+                            maxLength={20}
                             value={formData.request_phone_number}
                             onChange={onChange}
                             required

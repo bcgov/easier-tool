@@ -71,6 +71,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                     <input 
                       type="text" 
                       placeholder="Description" 
+                      maxLength={256}
                       style={{ width: '100%' }} 
                       value={item.description}
                       onChange={(e) => onRemovalItemChange(item.id, 'description', e.target.value)}
@@ -80,6 +81,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                     <input 
                       type="text" 
                       placeholder="Dimensions" 
+                      maxLength={256}
                       style={{ width: '100%' }}
                       value={item.dimensions}
                       onChange={(e) => onRemovalItemChange(item.id, 'dimensions', e.target.value)}
@@ -89,6 +91,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                     <input 
                       type="text" 
                       placeholder="Box Number" 
+                      maxLength={256}
                       style={{ width: '100%' }}
                       value={item.box_number}
                       onChange={(e) => onRemovalItemChange(item.id, 'box_number', e.target.value)}
@@ -98,6 +101,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                     <input 
                       type="text" 
                       placeholder="Additional Info" 
+                      maxLength={256}
                       style={{ width: '100%' }}
                       value={item.info}
                       onChange={(e) => onRemovalItemChange(item.id, 'info', e.target.value)}
@@ -118,6 +122,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                 id="removal_firstname"
                 type="text"
                 name="removal_firstname"
+                maxLength={256}
                 value={formData.removal_firstname}
                 onChange={onChange}
               />
@@ -128,6 +133,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                 id="removal_lastname"
                 type="text"
                 name="removal_lastname"
+                maxLength={256}
                 value={formData.removal_lastname}
                 onChange={onChange}
               />
@@ -144,6 +150,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                 id="removal_address"
                 type="text"
                 name="removal_address"
+                maxLength={256}
                 value={formData.removal_address || ''}
                 onChange={onChange}
               />
@@ -153,6 +160,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                   id="removal_phone_number"
                   type="text"
                   name="removal_phone_number"
+                  maxLength={20}
                   value={formData.removal_phone_number}
                   onChange={onChange}
                   required

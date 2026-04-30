@@ -18,6 +18,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             id="firstname"
             type="text"
             name="firstname"
+            maxLength={256}
             value={formData.firstname}
             onChange={onChange}
             required
@@ -31,6 +32,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             id="lastname"
             type="text"
             name="lastname"
+            maxLength={256}
             value={formData.lastname}
             onChange={onChange}
             required
@@ -44,6 +46,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             id="idir"
             type="text"
             name="idir"
+            maxLength={7}
             value={formData.idir}
             onChange={onChange}
             required
@@ -57,6 +60,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             id="employee_id"
             type="text"
             name="employee_id"
+            maxLength={6}
             value={formData.employee_id}
             onChange={onChange}
             required
@@ -70,6 +74,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             id="supervisor"
             type="text"
             name="supervisor"
+            maxLength={256}
             value={formData.supervisor}
             onChange={onChange}
             required
@@ -88,6 +93,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             id="position"
             type="text"
             name="position"
+            maxLength={256}
             value={formData.position || ''}
             onChange={onChange}
           />
@@ -98,6 +104,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             id="dcv"
             type="text"
             name="dcv"
+            maxLength={256}
             value={formData.dcv || ''}
             onChange={onChange}
           />

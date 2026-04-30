@@ -336,11 +336,10 @@ function App() {
         // log submission to backend
         await fetch(process.env.REACT_APP_MAIL_SERVER_URL + '/log-submit', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            idir_username: getUserIDIR(),
-            datetime: formattedDate
-          })
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}` // Include the token for validation
+          }
         });
 
         // reset all form fields, clear out your attachments array

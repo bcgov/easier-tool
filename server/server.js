@@ -149,14 +149,11 @@ app.post('/log-login', (req, res) => {
 });
 
 // Endpoint to log submission events from frontend
-app.post('/log-submit', (req, res) => {
-  const { idir_username, datetime } = req.body;
-  if (idir_username && datetime) {
-    console.log(`submission [${datetime}]: ${idir_username}`);
-    res.json({ ok: true });
-  } else {
-    res.status(400).json({ error: 'Missing idir_username or datetime' });
-  }
+app.post('/log-submit', validateToken, (req, res) => {
+  const idir_username = req.user.idir_username; // Extract from JWT payload
+  const datetime = new Date().toISOString();
+  console.log(`submission [${datetime}]: ${idir_username}`);
+  res.json({ ok: true });
 });
 
 app.listen(3001, () => console.log(`Listening on port 3001`));

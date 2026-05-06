@@ -1204,7 +1204,7 @@ export default function RequestSection({ formData, onChange }) {
                 
                 <div className="form-grid">
                     <div>
-                        <label htmlFor="monitor_computer">Computer Number: </label>
+                        <label htmlFor="monitor_computer"><span style={{ color: 'red' }}>*</span> Computer Number: </label>
                         <input
                         id="monitor_computer"
                         type="text"
@@ -1212,10 +1212,11 @@ export default function RequestSection({ formData, onChange }) {
                         maxLength={256}
                         value={formData.monitor_computer}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     <div>
-                        <label htmlFor="monitor_workstation">Workstation Number: </label>
+                        <label htmlFor="monitor_workstation"><span style={{ color: 'red' }}>*</span> Workstation Number: </label>
                         <input
                         id="monitor_workstation"
                         type="text"
@@ -1223,16 +1224,18 @@ export default function RequestSection({ formData, onChange }) {
                         maxLength={256}
                         value={formData.monitor_workstation}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     <div>
-                        <label htmlFor="monitor_quantity">Quantity: </label>
+                        <label htmlFor="monitor_quantity"><span style={{ color: 'red' }}>*</span> Quantity: </label>
                         <input
                         id="monitor_quantity"
                         type="number"
                         name="monitor_quantity"
                         value={formData.monitor_quantity}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     {formData.replacement_monitor === true && (
@@ -1422,8 +1425,8 @@ export default function RequestSection({ formData, onChange }) {
             {formData.unified_comms === true && (
             <>
                 <p>Unified Communications</p>
-                <p className="field-note">Facilities and Assets will request from the supervisor the headset choice for new hires and will order this and Unified Communications – there is no need to complete an Easier Tool.</p>
-                <p className="field-note">Please note this form is for changes only. If your existing headset is broken or damaged, please call 7-7000 to request a device repair. If, your repair request was denied, your device was deemed beyond repair, or your device does not qualify for replacement, please complete the section below.</p>
+                <p className="field-note">Note, this form is for UC changes only. For new hires, an Easier Tool form is not required. </p>
+                <p className="field-note">If your existing headset is broken or damaged please call 7-7000 to request a device repair. If the repair request is denied, please complete the section below.</p>
                 
                 <label>Request a UC service: </label>
                 <div className="radio-group">
@@ -1611,7 +1614,7 @@ export default function RequestSection({ formData, onChange }) {
                 <br></br>
                 <div className="form-grid">
                     <div>
-                        <label htmlFor="repair_workstation">Workstation number: </label>
+                        <label htmlFor="repair_workstation"><span style={{ color: 'red' }}>*</span> Workstation number: </label>
                         <input
                         id="repair_workstation"
                         type="text"
@@ -1619,6 +1622,7 @@ export default function RequestSection({ formData, onChange }) {
                         maxLength={256}
                         value={formData.repair_workstation}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     {formData.repair_radio === 'repair_radio_desk' && (
@@ -1740,7 +1744,7 @@ export default function RequestSection({ formData, onChange }) {
                 <p className="field-note">Please provide information about the intended user of the webcam.</p>
                 <div className="form-grid">
                     <div>
-                        <label htmlFor="webcam_idir">IDIR: </label>
+                        <label htmlFor="webcam_idir"><span style={{ color: 'red' }}>*</span> IDIR: </label>
                         <input
                         id="webcam_idir"
                         type="text"
@@ -1748,10 +1752,11 @@ export default function RequestSection({ formData, onChange }) {
                         maxLength={256}
                         value={formData.webcam_idir}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     <div>
-                        <label htmlFor="webcam_computer">Computer Number: </label>
+                        <label htmlFor="webcam_computer"><span style={{ color: 'red' }}>*</span> Computer Number: </label>
                         <input
                         id="webcam_computer"
                         type="text"
@@ -1759,10 +1764,11 @@ export default function RequestSection({ formData, onChange }) {
                         maxLength={256}
                         value={formData.webcam_computer}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     <div>
-                        <label htmlFor="webcam_workstation">Workstation Number: </label>
+                        <label htmlFor="webcam_workstation"><span style={{ color: 'red' }}>*</span> Workstation Number: </label>
                         <input
                         id="webcam_workstation"
                         type="text"
@@ -1770,6 +1776,7 @@ export default function RequestSection({ formData, onChange }) {
                         maxLength={256}
                         value={formData.webcam_workstation}
                         onChange={onChange}
+                        required
                         />
                     </div>
                 </div>

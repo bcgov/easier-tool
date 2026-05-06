@@ -331,7 +331,7 @@ function App() {
       }
       else {
         // 3) show success and reset
-        window.alert(`An email has been sent to the Facilities inbox, as well as: ${formData.requestor_email}`);
+        window.alert(`An email has been sent to the Operations Support inbox, as well as: ${formData.requestor_email}`);
 
         // log submission to backend
         await fetch(process.env.REACT_APP_MAIL_SERVER_URL + '/log-submit', {
@@ -379,7 +379,7 @@ function App() {
               <img src={logo} alt="Logo" className="logo" />
               <img src={banner} alt="Banner" className="banner" />
               <h2 style={{ textAlign: 'left', paddingLeft: '10px', color: '#444444' }}>Easier Tool</h2>
-              <p className="field-note" style={{paddingLeft: '10px'}}>This tool is for SDD staff to send requests to Facilities & Assets. <br></br>A copy of the form will be sent to the submitter's email.</p>
+              <p className="field-note" style={{paddingLeft: '10px'}}>This tool is for SDD staff to make workstation and building requests. <br></br>A copy of the form will be sent to the submitter's email.</p>
               <p className="field-note" style={{paddingLeft: '10px'}}>Instructions:<br></br>
                 1. Fill out the form below. Note that you can make multiple requests with the same submission.<br></br>
                 2. Once finished, use the "Submit" button at the bottom of the page to submit.<br></br>
@@ -413,7 +413,7 @@ function App() {
                   fontSize: '0.75em'
                 }}
               >
-                {accordionOpen ? '▼' : '▶'} Services not covered by Facilities and Assets
+                {accordionOpen ? '▼' : '▶'} Services not addredded by this form
               </button>
               {accordionOpen && (
                 <div style={{ padding: '15px', backgroundColor: '#fafafa' }}>
@@ -581,7 +581,7 @@ function App() {
               <h2 style={{ textAlign: 'left', paddingLeft: '10px', color: '#444444' }}>Easier Tool</h2>
             </div>
             <h2>Thank you for submitting!</h2>
-            <p>An email has been sent to the Facilities inbox, as well as: <br></br>{formData.requestor_email}</p>
+            <p>An email has been sent to the Operations Support inbox, as well as: <br></br>{formData.requestor_email}</p>
             <button onClick={() => setSubmitted(false)}>Submit Another</button>
           </div>
         )}

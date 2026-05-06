@@ -893,7 +893,7 @@ export default function RequestSection({ formData, onChange }) {
                     </div>
                 </div>
                 <br></br>
-                <p className="field-note">To complete your request, Facilities and Assets needs to know where the device must be shipped to ("shipping address") as well as the contact information of a person located at the shipping address ("site contact").</p>               
+                <p className="field-note">To complete your request, Operations Support needs to know where the device must be shipped to ("shipping address") as well as the contact information of a person located at the shipping address ("site contact").</p>               
                 <p className="field-note">For repairs when a loaner is required. If you have a new hire, there is no need to complete the Easier Tool to request a Laptop or Surface Pro.</p>               
             </>
             )}
@@ -1313,7 +1313,7 @@ export default function RequestSection({ formData, onChange }) {
                         onChange={onChange}
                         />
                     </div>
-                    <p className="field-note">If the termination date is currently unknown, please note that Facilities & Assets will provide the subscription(s) for a maximum of seven months unless a request for an extension is received.</p>    
+                    <p className="field-note">If the termination date is currently unknown, please note that Operations Support will provide the subscription(s) for a maximum of seven months unless a request for an extension is received.</p>    
                 </>
                 )}
                 <br></br>

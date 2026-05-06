@@ -934,7 +934,7 @@ export default function RequestSection({ formData, onChange }) {
                 <p>Laptops:</p>
                 <div className="form-grid">
                     <div>
-                        <label htmlFor="laptop_idir">IDIR: </label>
+                        <label htmlFor="laptop_idir"><span style={{ color: 'red' }}>*</span> IDIR: </label>
                         <input
                         id="laptop_idir"
                         type="text"
@@ -942,6 +942,7 @@ export default function RequestSection({ formData, onChange }) {
                         maxLength={256}
                         value={formData.laptop_idir}
                         onChange={onChange}
+                        required
                         />
                     </div>
                     <div>
@@ -1315,7 +1316,7 @@ export default function RequestSection({ formData, onChange }) {
                 <p>Software</p>
                 <div className="form-grid">
                     <div>
-                        <label htmlFor="software_user_name">User Name: </label>
+                        <label htmlFor="software_user_name"><span style={{ color: 'red' }}>*</span> User Name: </label>
                         <input
                         id="software_user_name"
                         type="text"
@@ -1326,7 +1327,7 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                     <div>
-                        <label htmlFor="software_position">Position: </label>
+                        <label htmlFor="software_position"><span style={{ color: 'red' }}>*</span> Position: </label>
                         <input
                         id="software_position"
                         type="text"
@@ -1337,7 +1338,7 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                     <div>
-                        <label htmlFor="software_idir">IDIR: </label>
+                        <label htmlFor="software_idir"><span style={{ color: 'red' }}>*</span> IDIR: </label>
                         <input
                         id="software_idir"
                         type="text"
@@ -1348,7 +1349,7 @@ export default function RequestSection({ formData, onChange }) {
                         />
                     </div>
                     <div>
-                        <label htmlFor="software_computer">Computer Number: </label>
+                        <label htmlFor="software_computer"><span style={{ color: 'red' }}>*</span> Computer Number: </label>
                         <input
                         id="software_computer"
                         type="text"
@@ -1360,9 +1361,9 @@ export default function RequestSection({ formData, onChange }) {
                     </div>
                 </div>
                 <br></br>
-                <p className="field-note">If the subscription(s) being requested above is a "temporary requirement" or a "project-based need", please provide a termination date (i.e. the assignment or project end date) to ensure we cancel the subscription at the right time.</p>
+                <p className="field-note">If the subscription(s) being requested above is a "temporary requirement" or a "project-based need", please provide a termination date (i.e. the assignment or project end date) to ensure the subscription is cancelled as required.</p>
                 <div className="radio-group" style={{ fontSize: '1em' }}>
-                    <label>Duration:</label>
+                    <label><span style={{ color: 'red' }}>*</span> Duration:</label>
                     <div>
                         <input
                         type="radio"
@@ -1371,6 +1372,7 @@ export default function RequestSection({ formData, onChange }) {
                         value="temporary"
                         checked={formData.software_radio === 'temporary'}
                         onChange={onChange}
+                        required
                         />
                         <label htmlFor="temporary">Temporary</label>
                     </div>
@@ -1382,6 +1384,7 @@ export default function RequestSection({ formData, onChange }) {
                         value="permanent"
                         checked={formData.software_radio === 'permanent'}
                         onChange={onChange}
+                        required
                         />
                         <label htmlFor="permanent">Permanent</label>
                     </div>

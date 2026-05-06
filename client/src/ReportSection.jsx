@@ -12,9 +12,10 @@ const ReportSection = ({ formData, onChange }) => {
       <div className="request-change-content">
         <section className="info-section">
           <p className="field-note">
-              "Emergency responses" are facility-related requests requiring immediate action which, if held up or delayed, are certain to cause catastrophic impact on people, property, or service delivery. Examples include but are not limited to: fire, flood, loss of power, break ins<br></br>
-              To request information for an existing work order or for emergency response requiring immediate action call CBRE directly at 1 (877) 222-3112.              
-            </p>
+            For emergency response requiring immediate action or to request information for an existing work order call CBRE directly at 1 (877) 222-3112.
+            <br></br> <br></br>
+            Facility-related emergency situations requiring immediate action, include but are not limited to: fire, flood, loss of power, break-in, etc.               
+          </p>
           <p>Select all that apply:</p>
           <div className="checkbox-group">
             <div>
@@ -340,7 +341,7 @@ const ReportSection = ({ formData, onChange }) => {
           
           <div className="textarea-field">
             <p className="field-note">
-              Describe in detail the issue you wish to report. Attach any relevant photos/drawings below, as well as the CBRE ticket number if applicable. In addition, provide justification for the service request you require, and identify impact on people, property or service delivery if the request is not fulfilled:
+              Describe in detail the issue you wish to report. Attach any relevant photos/drawings below, as well as the CBRE ticket number if applicable. In addition, provide rationale for the service request you require, and identify impact on people, property or service delivery if the request is not fulfilled:
             </p>
             <textarea
               id="report_comments"
@@ -355,12 +356,13 @@ const ReportSection = ({ formData, onChange }) => {
         </section>
         <div className="form-grid">
             <div>
-              <label htmlFor="report_contact_name"> Site Contact Name: </label> <input
+              <label htmlFor="report_contact_name"><span className="required">*</span> Site Contact Name: </label> <input
                   id="report_contact_name"
                   type="text"
                   name="report_contact_name"
                   value={formData.report_contact_name}
                   onChange={onChange}
+                  required
               />
             </div><div>
               <label htmlFor="report_phone_number"><span className="required">*</span> Site Contact Phone Number: </label> <input

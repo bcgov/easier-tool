@@ -379,7 +379,7 @@ function App() {
               <img src={logo} alt="Logo" className="logo" />
               <img src={banner} alt="Banner" className="banner" />
               <h2 style={{ textAlign: 'left', paddingLeft: '10px', color: '#444444' }}>Easier Tool</h2>
-              <p className="field-note" style={{paddingLeft: '10px'}}>This tool is for SDD staff to make workstation and building requests. <br></br>A copy of the form will be sent to the submitter's email.</p>
+              <p className="field-note" style={{paddingLeft: '10px'}}>This tool supports a centralized process where <a href="mailto:sdpr.opssupportfacilitiesandassets@gov.bc.ca">Operations Support</a> will act upon requests on behalf of the requestor.ss <br></br>A copy of the form will be sent to the submitter's email.</p>
               <p className="field-note" style={{paddingLeft: '10px'}}>Instructions:<br></br>
                 1. Fill out the form below. Note that you can make multiple requests with the same submission.<br></br>
                 2. Once finished, use the "Submit" button at the bottom of the page to submit.<br></br>
@@ -452,12 +452,9 @@ function App() {
                 maxLength={64000}
                 rows="4" 
                 value={formData.comments || ''}
-                placeholder="Please do not include any confidential and/or medical information"
+                placeholder="Please enter any comments you may have. Do not include any confidential and/or medical information"
                 onChange={handleInputChange}
               />
-              <p className="field-note">
-                Please enter any comments you may have
-              </p>
             </div><br></br>
 
             <div style={{ paddingLeft: '30px' }}>

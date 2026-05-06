@@ -10,7 +10,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
           <h4 style={{ color: '#555555' }}>Removals</h4>
       </div>
       <div className="request-change-content">
-        <p className="field-note">For Electronic devices or Furniture identified as either in "good" or "fair" condition, you are required to attach corresponding photos (below) as they may be listed for auction or offered to another Ministry</p>
+        <p className="field-note">For furniture or electronic devices identified as either in "good" or "fair" condition, please attach corresponding photos. Items may be listed for auction or offered to another Ministry</p>
 
         {/* Items Table */}
         <div style={{ marginTop: '20px' }}>
@@ -117,7 +117,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
         <div>
           <div className="form-grid">
             <div>
-              <label htmlFor="removal_firstname">Site Contact First Name: </label>
+              <label htmlFor="removal_firstname"><span className="required">*</span> Site Contact First Name: </label>
               <input
                 id="removal_firstname"
                 type="text"
@@ -125,10 +125,11 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                 maxLength={256}
                 value={formData.removal_firstname}
                 onChange={onChange}
+                required
               />
             </div>
             <div>
-              <label htmlFor="removal_lastname">Site Contact Last Name: </label>
+              <label htmlFor="removal_lastname"><span className="required">*</span> Site Contact Last Name: </label>
               <input
                 id="removal_lastname"
                 type="text"
@@ -136,6 +137,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
                 maxLength={256}
                 value={formData.removal_lastname}
                 onChange={onChange}
+                required
               />
             </div>
             <OfficeDropdown

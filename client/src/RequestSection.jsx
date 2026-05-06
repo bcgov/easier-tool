@@ -315,7 +315,7 @@ export default function RequestSection({ formData, onChange }) {
                 </div> <br></br>
                 {formData.cisb_radio === 'cisb_mobile' && (
                     <div>
-                        <label style={{ fontSize: '14px'}}>Mobile Office Unit Number</label><br />
+                        <label style={{ fontSize: '14px'}}><span style={{ color: 'red' }}>*</span> Mobile Office Unit Number</label><br />
                         <input
                             id="cisb_mobile_office_number"
                             type="number"
@@ -323,6 +323,7 @@ export default function RequestSection({ formData, onChange }) {
                             maxLength={256}
                             value={formData.cisb_mobile_office_number}
                             onChange={onChange}
+                            required
                         />
                     </div>
                 )}
@@ -530,6 +531,90 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <label style={{ fontSize: '14px'}}>
+                            USB-C to USB-A Cable
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_usbc_usba_cable"
+                            type="number"
+                            name="cisb_usbc_usba_cable"
+                            maxLength={256}
+                            value={formData.cisb_usbc_usba_cable}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>
+                            Whistles
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_whistles"
+                            type="number"
+                            name="cisb_whistles"
+                            maxLength={256}
+                            value={formData.cisb_whistles}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>
+                            Heavy-Duty Disposables Gloves (for chemical handling)
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_heavy_duty_gloves_chem"
+                            type="number"
+                            name="cisb_heavy_duty_gloves_chem"
+                            maxLength={256}
+                            value={formData.cisb_heavy_duty_gloves_chem}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>
+                            Heavy-Duty Disposables Gloves (for sharps handling)
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_heavy_duty_gloves_sharps"
+                            type="number"
+                            name="cisb_heavy_duty_gloves_sharps"
+                            maxLength={256}
+                            value={formData.cisb_heavy_duty_gloves_sharps}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>
+                            Disposables First-Aid Masks
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_first_aid_masks"
+                            type="number"
+                            name="cisb_first_aid_masks"
+                            maxLength={256}
+                            value={formData.cisb_first_aid_masks}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>
+                            Disposables First-Aid Mask Replacement Valve
+                            </label>
+                            <br />
+                            <input
+                            id="cisb_first_aid_mask_replacement_valve"
+                            type="number"
+                            name="cisb_first_aid_mask_replacement_valve"
+                            maxLength={256}
+                            value={formData.cisb_first_aid_mask_replacement_valve}
+                            onChange={onChange}
+                            />
+                        </div>
+                        <div>
+                            <label style={{ fontSize: '14px'}}>
                             Vehicle: Cooler
                             </label>
                             <br />
@@ -630,15 +715,15 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <label style={{ fontSize: '14px'}}>
-                            USB-C to USB-A Cable
+                            Bed Bug Spray
                             </label>
                             <br />
                             <input
-                            id="cisb_usbc_usba_cable"
+                            id="cisb_bed_bug_spray"
                             type="number"
-                            name="cisb_usbc_usba_cable"
+                            name="cisb_bed_bug_spray"
                             maxLength={256}
-                            value={formData.cisb_usbc_usba_cable}
+                            value={formData.cisb_bed_bug_spray}
                             onChange={onChange}
                             />
                         </div>

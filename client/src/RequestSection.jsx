@@ -1,7 +1,5 @@
 import React from 'react';
 import OfficeDropdown from './OfficeDropdown';
-import Tippy from '@tippyjs/react';
-import 'tippy.js/dist/tippy.css';
 
 export default function RequestSection({ formData, onChange }) {
   return (
@@ -341,7 +339,6 @@ export default function RequestSection({ formData, onChange }) {
                         style={{ marginLeft: '10px' }}
                         >
                         <option value="surfacepro_eleven">Surface Pro 11</option>
-                        <option value="surfacepro_eight">Surface Pro 8</option>
                         <option value="14inch_laptop">14” Laptop</option>
                         </select>
                     </div>
@@ -689,9 +686,6 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <Tippy content="(1 Package = 10 Backseat; 10 Frontseat)" delay={[0, 0]}>
-                                <label htmlFor="cisb_vehicle_seat_covers" style={{ fontSize: '14px'}}>Vehicle: Disposable Seat Covers</label>
-                            </Tippy>
                             <br />
                             <input
                             id="cisb_vehicle_seat_covers"
@@ -932,6 +926,7 @@ export default function RequestSection({ formData, onChange }) {
             {formData.laptops === true && (
             <>
                 <p>Laptops:</p>
+                <p className="field-note">For repairs when a loaner is required. If you have a new hire, there is no need to complete the Easier Tool to request a Laptop or Surface Pro.</p>               
                 <div className="form-grid">
                     <div>
                         <label htmlFor="laptop_idir"><span style={{ color: 'red' }}>*</span> IDIR: </label>
@@ -980,7 +975,6 @@ export default function RequestSection({ formData, onChange }) {
                 </div>
                 <br></br>
                 <p className="field-note">To complete your request, Operations Support needs to know where the device must be shipped to ("shipping address") as well as the contact information of a person located at the shipping address ("site contact").</p>               
-                <p className="field-note">For repairs when a loaner is required. If you have a new hire, there is no need to complete the Easier Tool to request a Laptop or Surface Pro.</p>               
             </>
             )}
             {formData.mobile_phones === true && (
@@ -1183,7 +1177,7 @@ export default function RequestSection({ formData, onChange }) {
                 </div>
                 
                 {formData.mobile_phone_radio === 'deactivate_phone' && (
-                  <p className="field-note">Please ensure the phone has been factory reset, and all data removed from the device</p>
+                  <p className="field-note">🛑 Please ensure the phone has been factory reset, and all data removed from the device 🛑</p>
                 )}
             </>
             )}
@@ -1815,6 +1809,8 @@ export default function RequestSection({ formData, onChange }) {
             )}
 
             <div>
+                {formData.cables_adapters === true || formData.cisb === true || formData.keyboards === true || formData.laptops === true || formData.mobile_phones === true || formData.monitors === true || formData.mouse === true || formData.unified_comms === true || formData.webcams === true || formData.repairs === true || formData.other_equipment === true ? (
+                <>
                 <p>Shipping Information:</p>
                 <div className="form-grid">
                     <div>
@@ -1885,7 +1881,38 @@ export default function RequestSection({ formData, onChange }) {
                         <span className="required">* </span>Please confirm the above shipping information
                     </label>
                 </div>
-                
+                </>
+                ) : formData.software === true ? (
+                <>
+                <p>Contact Information:</p>
+                <div className="form-grid">
+                    <div>
+                        <label htmlFor="request_software_supervisor"><span style={{ color: 'red' }}>*</span> Supervisor Name: </label>
+                        <input
+                            id="request_software_supervisor"
+                            type="text"
+                            name="request_software_supervisor"
+                            maxLength={256}
+                            value={formData.request_software_supervisor}
+                            onChange={onChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="request_software_supervisor_email"><span style={{ color: 'red' }}>*</span> Supervisor Email: </label>
+                        <input
+                            id="request_software_supervisor_email"
+                            type="text"
+                            name="request_software_supervisor_email"
+                            maxLength={256}
+                            value={formData.request_software_supervisor_email}
+                            onChange={onChange}
+                            required
+                        />
+                    </div>
+                </div>
+                </>
+                ) : null}
                 <br></br>
             </div>
         </div>

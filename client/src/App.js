@@ -379,7 +379,7 @@ function App() {
               <img src={logo} alt="Logo" className="logo" />
               <img src={banner} alt="Banner" className="banner" />
               <h2 style={{ textAlign: 'left', paddingLeft: '10px', color: '#444444' }}>Easier Tool</h2>
-              <p className="field-note" style={{paddingLeft: '10px'}}>This tool supports a centralized process where <a href="mailto:sdpr.opssupportfacilitiesandassets@gov.bc.ca">Operations Support</a> will act upon requests on behalf of the requestor.ss <br></br>A copy of the form will be sent to the submitter's email.</p>
+              <p className="field-note" style={{paddingLeft: '10px'}}>This tool supports a centralized process where <a href="mailto:sdpr.opssupportfacilitiesandassets@gov.bc.ca">Operations Support</a> will act upon requests on behalf of the requestor. <br></br>A copy of the form will be sent to the submitter's email.</p>
               <p className="field-note" style={{paddingLeft: '10px'}}>Instructions:<br></br>
                 1. Fill out the form below. Note that you can make multiple requests with the same submission.<br></br>
                 2. Once finished, use the "Submit" button at the bottom of the page to submit.<br></br>
@@ -402,8 +402,8 @@ function App() {
  
             {formData.request_type && formData.request_type.length > 0 && (
               <div className="request-type-info">
-                <p style={{ fontSize: '0.8em', fontStyle: 'italic'}}>
-                <b>Collection Notice:</b> We are collecting your personal information for the purpose of obtaining the approvals for access to SDPR HR Data under section 26(c) of the Freedom of Information and Protection of Privacy Act. If you have any questions, please contact WIRTeam@gov.bc.ca.
+                <p style={{ fontSize: '0.8em' }}>
+                  <b>Collection Notice:</b> We are collecting your personal information for the purpose of obtaining the approvals for access to SDPR HR Data under section 26(c) of the <em>Freedom of Information and Protection of Privacy Act</em>. If you have any questions, please contact WIRTeam@gov.bc.ca.
                 </p>
               </div>
             )}     

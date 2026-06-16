@@ -424,7 +424,7 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Tamper%20Resistant%20Backpack.jpg?csf=1&web=1&e=9oVnax" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                            Tamper Resistant Backpack
+                            Backpack
                             </a><br />
                             <input
                             id="cisb_backpack"
@@ -476,14 +476,14 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <a href="https://bcgov.sharepoint.com/:i:/r/sites/SDPR-SDD-ET20/Shared%20Documents/Images/CISB%20Equipment%20Photos/Targus%20Rolling%20Laptop%20Bag.jpg?csf=1&web=1&e=vRbrsX" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', color: '#009bd6', textDecoration: 'underline', cursor: 'pointer' }}>
-                            Targus Rolling Laptop Bag
+                            Rolling Backpack
                             </a><br />
                             <input
-                            id="cisb_laptop_bag"
+                            id="cisb_rolling_backpack"
                             type="number"
-                            name="cisb_laptop_bag"
+                            name="cisb_rolling_backpack"
                             maxLength={256}
-                            value={formData.cisb_laptop_bag}
+                            value={formData.cisb_rolling_backpack}
                             onChange={onChange}
                             />
                         </div>
@@ -661,17 +661,14 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
-                            <label style={{ fontSize: '14px'}}>
-                            Vehicle: Mobile Desk
-                            </label>
-                            <br />
+                            <label style={{ fontSize: '14px'}}> Vehicle: Mobile Desk </label> <br />
                             <input
-                            id="cisb_vehicle_mobile_desk"
-                            type="number"
-                            name="cisb_vehicle_mobile_desk"
-                            maxLength={256}
-                            value={formData.cisb_vehicle_mobile_desk}
-                            onChange={onChange}
+                                id="cisb_vehicle_mobile_desk"
+                                type="number"
+                                name="cisb_vehicle_mobile_desk"
+                                maxLength={256}
+                                value={formData.cisb_vehicle_mobile_desk}
+                                onChange={onChange}
                             />
                         </div>
                         <div>
@@ -686,6 +683,7 @@ export default function RequestSection({ formData, onChange }) {
                             />
                         </div>
                         <div>
+                            <label style={{ fontSize: '14px'}}>Vehicle:  Disposable Seat Covers - Vehicle Number</label><br />
                             <br />
                             <input
                             id="cisb_vehicle_seat_covers"

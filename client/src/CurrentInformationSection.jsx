@@ -46,7 +46,7 @@ const CurrentInformationSection = ({ formData, onChange }) => {
             id="idir"
             type="text"
             name="idir"
-            maxLength={7}
+            maxLength={8}
             value={formData.idir}
             onChange={onChange}
             required

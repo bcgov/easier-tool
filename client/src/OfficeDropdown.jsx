@@ -1,7 +1,7 @@
 import React from 'react';
 
 const officeOptions = [
-  { value: '', label: 'Please Select:' },
+  { value: null, label: 'Please Select:' },
   { value: '055 Victoria Contact Center', label: '055 Victoria Contact Center' },
   { value: '070 Health and Specialized Services', label: '070 Health and Specialized Services' },
   { value: '100 Victoria Regional', label: '100 Victoria Regional' },
@@ -99,7 +99,7 @@ const OfficeDropdown = ({ id, name, value, onChange }) => {
       <br></br>
       <select id={id} name={name} value={value} onChange={onChange}>
         {officeOptions.map((option) => (
-          <option key={option.value || 'default'} value={option.value}>
+          <option key={option.value || 'default'} value={option.value ?? ''}>
             {option.label}
           </option>
         ))}

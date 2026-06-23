@@ -148,7 +148,7 @@ app.post('/log-login', (req, res) => {
 });
 
 // Endpoint to log submission events from frontend
-app.post('/log-submit', validateToken, (req, res) => {
+app.post('/log-submit', (req, res) => {
   const idir_username = req.user.idir_username; // Extract from JWT payload
   const datetime = new Date().toISOString();
   console.log(`submission [${datetime}]: ${idir_username}`);

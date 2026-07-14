@@ -293,7 +293,7 @@ export default function RequestSection({ formData, onChange }) {
                         type="radio"
                         id="cisb_office"
                         name="cisb_radio"
-                        value="cisb_office"d
+                        value="cisb_office"
                         checked={formData.cisb_radio === 'cisb_office'}
                         onChange={onChange}
                         />
@@ -330,7 +330,7 @@ export default function RequestSection({ formData, onChange }) {
                 {formData.cisb_radio === 'cisb_office' && (
                 <>
                     <div style={{ marginLeft: '20px', marginBottom: '20px' }}>
-                        <label htmlFor="surfacepro_asset_number"><span style={{ color: 'red' }}>*</span>Surface Pro/Laptop Asset Number:</label>
+                        <label htmlFor="surfacepro_asset_number"><span style={{ color: 'red' }}>*</span> Surface Pro/Laptop Asset Number: </label>
                         <input
                             id="surfacepro_asset_number"
                             type="text"
@@ -581,6 +581,73 @@ export default function RequestSection({ formData, onChange }) {
                             onChange={onChange}
                             />
                         </div>
+                    </div>
+
+                    {(formData.cisb_heavy_duty_gloves_chem !== '' || formData.cisb_heavy_duty_gloves_sharps !== '') && (
+                    <>
+                        <div style={{ marginLeft: '30px'}}>
+                            <label>Glove Size:</label>
+                            <div className="radio-group">
+                                <div>
+                                    <input
+                                    type="radio"
+                                    id="glovesize_extra_small"
+                                    name="glovesize_radio"
+                                    value="glovesize_extra_small"
+                                    checked={formData.glovesize_radio === 'glovesize_extra_small'}
+                                    onChange={onChange}
+                                    />
+                                    <label htmlFor="glovesize_extra_small">XS</label>
+                                </div><div>
+                                    <input
+                                    type="radio"
+                                    id="glovesize_small"
+                                    name="glovesize_radio"
+                                    value="glovesize_small"
+                                    checked={formData.glovesize_radio === 'glovesize_small'}
+                                    onChange={onChange}
+                                    />
+                                    <label htmlFor="glovesize_small">Small</label>
+                                </div>
+                                <div>
+                                    <input
+                                    type="radio"
+                                    id="glovesize_medium"
+                                    name="glovesize_radio"
+                                    value="glovesize_medium"
+                                    checked={formData.glovesize_radio === 'glovesize_medium'}
+                                    onChange={onChange}
+                                    />
+                                    <label htmlFor="glovesize_medium">Medium</label>
+                                </div>
+                                <div>
+                                    <input
+                                    type="radio"
+                                    id="glovesize_large"
+                                    name="glovesize_radio"
+                                    value="glovesize_large"
+                                    checked={formData.glovesize_radio === 'glovesize_large'}
+                                    onChange={onChange}
+                                    />
+                                    <label htmlFor="glovesize_large">Large</label>
+                                </div>
+                                <div>
+                                    <input
+                                    type="radio"
+                                    id="glovesize_extra_large"
+                                    name="glovesize_radio"
+                                    value="glovesize_extra_large"
+                                    checked={formData.glovesize_radio === 'glovesize_extra_large'}
+                                    onChange={onChange}
+                                    />
+                                    <label htmlFor="glovesize_extra_large">XL</label>
+                                </div>
+                            </div>
+                        </div>                      
+                    </> 
+                    )}
+
+                    <div className="form-grid" style={{ marginTop: '10px' }}>
                         <div>
                             <label style={{ fontSize: '14px'}}>
                             Disposables First-Aid Masks

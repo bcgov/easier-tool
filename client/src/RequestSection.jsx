@@ -330,17 +330,16 @@ export default function RequestSection({ formData, onChange }) {
                 {formData.cisb_radio === 'cisb_office' && (
                 <>
                     <div style={{ marginLeft: '20px', marginBottom: '20px' }}>
-                        <label htmlFor="surfacepro_model">Surface Pro/Laptop Model:</label>
-                        <select
-                        id="surfacepro_model"
-                        name="surfacepro_model"
-                        value={formData.surfacepro_model || ''}
-                        onChange={onChange}
-                        style={{ marginLeft: '10px' }}
-                        >
-                        <option value="surfacepro_eleven">Surface Pro 11</option>
-                        <option value="14inch_laptop">14” Laptop</option>
-                        </select>
+                        <label htmlFor="surfacepro_asset_number"><span style={{ color: 'red' }}>*</span>Surface Pro/Laptop Asset Number:</label>
+                        <input
+                            id="surfacepro_asset_number"
+                            type="text"
+                            name="surfacepro_asset_number"
+                            maxLength={256}
+                            value={formData.surfacepro_asset_number}
+                            onChange={onChange}
+                            required
+                        />
                     </div>
                     <div className="form-grid">
                         <div>
@@ -518,11 +517,11 @@ export default function RequestSection({ formData, onChange }) {
                             CISB Clipboard
                             </a><br />
                             <input
-                            id="cisb_poncho"
+                            id="cisb_clipboard"
                             type="number"
-                            name="cisb_poncho"
+                            name="cisb_clipboard"
                             maxLength={256}
-                            value={formData.cisb_poncho}
+                            value={formData.cisb_clipboard}
                             onChange={onChange}
                             />
                         </div>

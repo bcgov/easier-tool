@@ -27,6 +27,9 @@ function App() {
     effective_date: today,
     todays_date: today,
     requestor_email: '',
+    cisb_heavy_duty_gloves_chem: '',
+    cisb_heavy_duty_gloves_sharps: '',
+    glovesize_radio: '',
     removal_items: [{ id: Date.now(), description: '', serialNumber: '', assetTag: '', condition: '', quantity: '', category: '', device: '', notes: '' }],
   };
   

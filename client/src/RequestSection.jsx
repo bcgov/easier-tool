@@ -664,7 +664,7 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <label style={{ fontSize: '14px'}}>
-                            Disposables First-Aid Mask Replacement Valve
+                            Disposables First-Aid Mask Replacement Valve (10-pack)
                             </label>
                             <br />
                             <input

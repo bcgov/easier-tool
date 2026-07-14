@@ -555,7 +555,7 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <label style={{ fontSize: '14px'}}>
-                            Heavy-Duty Disposables Gloves for chemical handling (box of 100)
+                            Disposables Gloves for chemical handling (box of 100)
                             </label>
                             <br />
                             <input
@@ -569,7 +569,7 @@ export default function RequestSection({ formData, onChange }) {
                         </div>
                         <div>
                             <label style={{ fontSize: '14px'}}>
-                            Heavy-Duty Disposables Gloves for sharps handling (individual pair)
+                            Disposables Gloves for sharps handling (individual pair)
                             </label>
                             <br />
                             <input

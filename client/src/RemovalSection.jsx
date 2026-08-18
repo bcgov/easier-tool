@@ -10,7 +10,7 @@ export default function RemovalSection({ formData, onChange, onAddRemovalItem, o
           <h4 style={{ color: '#555555' }}>Removals</h4>
       </div>
       <div className="request-change-content">
-        <p className="field-note">For furniture or electronic devices identified as either in "good" or "fair" condition, please attach corresponding photos. Items may be listed for auction or offered to another Ministry</p>
+        <p className="field-note"> For all removal requests for furniture, equipment and electronic devices, corresponding photos are required as Asset Investment Recovery (AIR) requires these to determine if items will be auctioned, offered to another ministry, or approved for recycling (broken or items of nominal value).</p>
 
         {/* Items Table */}
         <div style={{ marginTop: '20px' }}>
